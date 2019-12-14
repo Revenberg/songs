@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: info.revenberg.song.test.BundleTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.537 s <<< FAILURE! - in info.revenberg.song.test.BundleTest
+shouldCreateAndUpdateAndDelete  Time elapsed: 1.532 s  <<< ERROR!
+java.net.ConnectException: Connection refused: connect
+	at info.revenberg.song.test.BundleTest.sendPost(BundleTest.java:36)
+	at info.revenberg.song.test.BundleTest.shouldCreateAndUpdateAndDelete(BundleTest.java:83)
+

@@ -52,7 +52,7 @@ spring:
 #      dialect: org.hibernate.dialect.SQLiteDialect
     
   datasource:
-    url: "jdbc:sqlite:D:/Songs/db/test.db"
+    url: "jdbc:sqlite:~/Songs/db/test.db"
     driverClassName: "org.sqlite.JDBC"
     username:
     password:

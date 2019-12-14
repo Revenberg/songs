@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProcessPPT",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.test.ProcessPPT",
+            "projectName": "revenberg-songs"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - test",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.test.test",
+            "projectName": "spring-boot-rest-example"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.Application",
+            "projectName": "spring-boot-rest-example"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.Application",
+            "projectName": "revenberg-songs"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.Application",
+            "projectName": "revenberg-songs"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Application",
+            "request": "launch",
+            "mainClass": "info.revenberg.song.Application",
+            "projectName": "revenberg-songs"
+        }
+    ]
+}

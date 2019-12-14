@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-Test set: info.revenberg.song.test.SongTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.948 s <<< FAILURE! - in info.revenberg.song.test.SongTest
-shouldCreateAndUpdateAndDelete  Time elapsed: 0.947 s  <<< ERROR!
-java.net.ConnectException: Connection refused: connect
-	at info.revenberg.song.test.SongTest.sendPost(SongTest.java:38)
-	at info.revenberg.song.test.SongTest.shouldCreateAndUpdateAndDelete(SongTest.java:96)
-

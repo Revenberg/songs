@@ -58,12 +58,12 @@ public class VersController extends AbstractRestHandler {
         @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get a single vers.", notes = "You have to provide a valid vers ID.")
-        public @ResponseBody Optional<Vers> getVers(
+        public @ResponseBody Vers getVers(
                         @ApiParam(value = "The ID of the vers.", required = true) @PathVariable("id") Long id,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
                 Optional<Vers> vers = this.versService.getVers(id);
                 checkResourceFound(vers);
-                return vers;
+                return vers.get();
         }
 
         @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = { "application/json" }, produces = {

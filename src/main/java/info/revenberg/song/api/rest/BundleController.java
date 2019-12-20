@@ -74,12 +74,12 @@ public class BundleController extends AbstractRestHandler {
         @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get a single bundle.", notes = "You have to provide a valid bundle ID.")
-        public @ResponseBody Optional<Bundle> getBundle(
+        public @ResponseBody Bundle getBundle(
                         @ApiParam(value = "The ID of the bundle.", required = true) @PathVariable("id") Long id,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
                 Optional<Bundle> bundle = this.bundleService.getBundle(id);
                 checkResourceFound(bundle);
-                return bundle;
+                return bundle.get();
         }
 
         @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = { "application/json" }, produces = {

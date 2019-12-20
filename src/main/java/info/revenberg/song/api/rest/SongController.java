@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -107,10 +106,8 @@ public class SongController extends AbstractRestHandler {
                 @ApiParam(value = "The ID of the existing bundle resource.", required = true) @PathVariable("bundleid") Long bundleid,
                         HttpServletRequest request, HttpServletResponse response) {
                 Optional<Bundle> bundle = this.bundleService.getBundle(bundleid);                
-                if (bundle.isPresent()) {
-                        return this.songService.findSongByNameInBundle(name, bundle.get().getBundleid());    
-                }
-                return null;
+                checkResourceFound(bundle);
+                return this.songService.findSongByNameInBundle(name, bundle.get().getBundleid());                    
         }
         
 }

@@ -11,6 +11,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface BundleRepository extends JpaRepository<Bundle, Long>, PagingAndSortingRepository<Bundle, Long> {
+    Page<Bundle> findAll(Pageable pageable);
+
     Bundle findBundleByName(String name);
 
     Bundle findBundleByMnemonic(String mnemonic);
@@ -18,9 +20,7 @@ public interface BundleRepository extends JpaRepository<Bundle, Long>, PagingAnd
     List<Bundle> findBundleAllByName(String name);
 
     List<Bundle> findBundleAllByMnemonic(String mnemonic);
-
-    Page<Bundle> findAll(Pageable pageable);
-
+    
     List<Bundle> findAllBundleByMnemonic(String mnemonic);
 
     @Query(value = "SELECT COALESCE(max(bundleid), 0) FROM bundle b ", nativeQuery = true)

@@ -45,7 +45,6 @@ public class BundleController extends AbstractRestHandler {
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                         HttpServletRequest request, HttpServletResponse response) {
-                System.out.println(this.bundleService.getAllBundles(page, size));
                 return this.bundleService.getAllBundles(page, size);
         }
 

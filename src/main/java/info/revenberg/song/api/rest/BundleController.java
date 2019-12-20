@@ -36,8 +36,8 @@ public class BundleController extends AbstractRestHandler {
                 response.setHeader("Location",
                                 request.getRequestURL().append("/").append(createdBundle.getId()).toString());
                 return createdBundle;
-        }              
-    
+        }
+
         @RequestMapping(value = "", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get a paginated list of all bundles.", notes = "The list is paginated. You can provide a page number (default 0) and a page size (default 100)")
@@ -45,6 +45,7 @@ public class BundleController extends AbstractRestHandler {
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                         HttpServletRequest request, HttpServletResponse response) {
+                System.out.println(this.bundleService.getAllBundles(page, size));
                 return this.bundleService.getAllBundles(page, size);
         }
 
@@ -54,7 +55,7 @@ public class BundleController extends AbstractRestHandler {
         public @ResponseBody List<Bundle> getAllBundlesByName(
                         @ApiParam(value = "The name of the bundle", required = true) @RequestParam(value = "name", required = true) String name,
                         HttpServletRequest request, HttpServletResponse response) {
-                                List<Bundle> bundle = this.bundleService.getAllBundlesByName(name);
+                List<Bundle> bundle = this.bundleService.getAllBundlesByName(name);
                 checkResourceFound(bundle);
                 return bundle;
         }
@@ -63,14 +64,14 @@ public class BundleController extends AbstractRestHandler {
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Find bundle by Mnemonic.")
         public @ResponseBody List<Bundle> getAllBundlesByMnemonic(
-                        @ApiParam(value = "The mnemonic of the bundle", required = true) 
-                        @RequestParam(value = "mnemonic", required = true) String mnemonic,
+                        @ApiParam(value = "The mnemonic of the bundle", required = true) @RequestParam(value = "mnemonic", required = true) String mnemonic,
                         HttpServletRequest request, HttpServletResponse response) {
-                //Page<Bundle> x = this.bundleService.findBundleByName(page, size);
+                // Page<Bundle> x = this.bundleService.findBundleByName(page, size);
                 List<Bundle> bundle = this.bundleService.getAllBundlesByMnemonic(mnemonic);
                 checkResourceFound(bundle);
                 return bundle;
         }
+
         @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get a single bundle.", notes = "You have to provide a valid bundle ID.")

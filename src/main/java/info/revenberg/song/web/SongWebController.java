@@ -27,7 +27,7 @@ public class SongWebController {
     @Autowired
     private SongService songService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String getSongs(Model model) {
         model.addAttribute("songs", songRepository.findAll());
         return "song-list";

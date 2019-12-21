@@ -27,7 +27,7 @@ public class BundleWebController {
     @Autowired
     private BundleService bundleService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public String getBundles(Model model) {
         model.addAttribute("bundles", bundleRepository.findAll());
         return "bundle-list";

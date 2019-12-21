@@ -19,6 +19,12 @@ public class BundleWebController {
     private BundleRepository bundleRepository;
 
     @GetMapping("/bundles")
+    public String getBundles(Model model) {
+        model.addAttribute("bundles", bundleRepository.findAll());
+        return "bundles";
+    }
+
+    @GetMapping("/addBundle")
     public String showSignUpForm(Bundle bundle) {
         return "bundles";
     }

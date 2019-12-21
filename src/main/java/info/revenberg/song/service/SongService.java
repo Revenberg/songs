@@ -65,7 +65,7 @@ public class SongService {
         return songRepository.getSongId();
     }
 
-	public Page<Song> getAllSongsOfBundle(Integer page, Integer size, String bundleid) {
+	public Page<Song> getAllSongsOfBundle(Integer page, Integer size, Long bundleid) {
 		Pageable pageable = PageRequest.of(page, size, Sort.by("name"));
 
         Page<Song> pageOfSongs = songRepository.findAllOfBundle(pageable, bundleid);

@@ -20,7 +20,7 @@ public class BundleWebController {
 
     @GetMapping("/bundles")
     public String showSignUpForm(Bundle bundle) {
-        return "add-bundle";
+        return "bundles";
     }
      
     @PostMapping("/addBundle")

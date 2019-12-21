@@ -1,0 +1,24 @@
+<div th:switch="${bundles}">
+    <h2 th:case="null">No bundles yet!</h2>
+        <div th:case="*">
+            <h2>bundles</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="bundle : ${bundles}">
+                    <td th:text="${bundle.name}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${bundle.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${bundle.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new bundle</a></p>
+</div>

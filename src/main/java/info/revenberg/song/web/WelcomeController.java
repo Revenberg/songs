@@ -1,4 +1,4 @@
-package info.revenberg.song.controller;
+package info.revenberg.song.web;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

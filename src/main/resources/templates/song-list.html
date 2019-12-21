@@ -1,0 +1,21 @@
+<div th:switch="${songs}">
+    <h2 th:case="null">No songs yet!</h2>
+        <div th:case="*">
+            <h2>songs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Edit</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="song : ${songs}">
+                    <td th:text="${song.name}"></td>
+                    <td><a th:href="@{edit/{id}(id=${song.id})}">Edit</a></td>                    
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="@{/add}">Add a new song</a></p>
+</div>

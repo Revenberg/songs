@@ -54,7 +54,7 @@ public class SongController extends AbstractRestHandler {
                 return this.songService.getAllSongs(page, size);
         }
 
-        @RequestMapping(value = "/{bundle}/findByNamefindByName", method = RequestMethod.GET, produces = { "application/json" })
+        @RequestMapping(value = "/{bundle}/findByName", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Find song by name.")
         public @ResponseBody Page<Song> getAllSongesByName(

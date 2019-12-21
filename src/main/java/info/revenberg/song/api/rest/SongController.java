@@ -49,8 +49,7 @@ public class SongController extends AbstractRestHandler {
         @ApiOperation(value = "Get a paginated list of all songs.", notes = "The list is paginated. You can provide a page number (default 0) and a page size (default 100)")
         public @ResponseBody Page<Song> getAllSong(
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
-                        @ApiParam(value = "The page size", required = true) 
-                        @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
+                        @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                         HttpServletRequest request, HttpServletResponse response) {
                 return this.songService.getAllSongs(page, size);
         }
@@ -61,9 +60,9 @@ public class SongController extends AbstractRestHandler {
         public @ResponseBody Page<Song> getAllSongesByName(
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
-                        @RequestParam(value = "bundleid", required = true) Long bundleid, HttpServletRequest request,
+                        @PathVariable("bundleid") Long bundleid, HttpServletRequest request,
                         HttpServletResponse response) throws UnsupportedEncodingException {
-                
+
                 Page<Song> songs = this.songService.getAllSongsOfBundle(page, size, bundleid);
                 return songs;
         }
@@ -95,13 +94,12 @@ public class SongController extends AbstractRestHandler {
         @RequestMapping(value = "/{bundleid}/findByName", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get a paginated list of all songs.", notes = "The list is paginated. You can provide a page number (default 0) and a page size (default 100)")
-        public @ResponseBody Song findSongsByName(
-                @RequestParam(value = "name", required = true) String name,
-                @ApiParam(value = "The ID of the existing bundle resource.", required = true) @PathVariable("bundleid") Long bundleid,
+        public @ResponseBody Song findSongsByName(@RequestParam(value = "name", required = true) String name,
+                        @ApiParam(value = "The ID of the existing bundle resource.", required = true) @PathVariable("bundleid") Long bundleid,
                         HttpServletRequest request, HttpServletResponse response) {
-                Optional<Bundle> bundle = this.bundleService.getBundle(bundleid);                
+                Optional<Bundle> bundle = this.bundleService.getBundle(bundleid);
                 checkResourceFound(bundle);
-                return this.songService.findSongByNameInBundle(name, bundle.get().getBundleid());                    
+                return this.songService.findSongByNameInBundle(name, bundle.get().getBundleid());
         }
-        
+
 }

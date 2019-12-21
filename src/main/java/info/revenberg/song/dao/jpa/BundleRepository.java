@@ -25,4 +25,6 @@ public interface BundleRepository extends JpaRepository<Bundle, Long>, PagingAnd
 
     @Query(value = "SELECT COALESCE(max(bundleid), 0) FROM bundle b ", nativeQuery = true)
     Long getBundleId();
+
+	List<Bundle> getAllBundles();
 }

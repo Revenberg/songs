@@ -69,4 +69,8 @@ public class BundleService {
 	public Long getBundleId() {
 		return bundleRepository.getBundleId();
 	}
+
+	public List<Bundle> getAllBundles() {
+		return bundleRepository.getAllBundles();
+	}
 }

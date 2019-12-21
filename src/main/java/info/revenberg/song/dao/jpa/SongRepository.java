@@ -23,4 +23,6 @@ public interface SongRepository extends JpaRepository<Song, Long>, PagingAndSort
     @Query(value = "SELECT COALESCE(max(songid), 0) FROM song s ", nativeQuery = true)
     long getSongId();
 
+	@Query(value = "SELECT * FROM song s, bundle b where b.bundleid=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
+    Page<Song> findAllOfBundle(Pageable pageable, String bundleid);
 }

@@ -54,24 +54,17 @@ public class SongController extends AbstractRestHandler {
                 return this.songService.getAllSongs(page, size);
         }
 
-        @RequestMapping(value = "/{bundle}/findByName", method = RequestMethod.GET, produces = { "application/json" })
+        @RequestMapping(value = "/{bundleid}/all", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
-        @ApiOperation(value = "Find song by name.")
+        @ApiOperation(value = "Get all song by in bundle")
         public @ResponseBody Page<Song> getAllSongesByName(
-                        // @ApiParam(value = "The name of the bundle.", required = true)
-                        // @PathVariable("bundle") String bundleName,
-                        @ApiParam(value = "The name of the song.", required = true) @PathVariable("song") String songName,
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
-                        @RequestParam(value = "bundle", required = true) String bundleName, HttpServletRequest request,
+                        @RequestParam(value = "bundleid", required = true) String bundleid, HttpServletRequest request,
                         HttpServletResponse response) throws UnsupportedEncodingException {
-                bundleName = URLDecoder.decode(bundleName, "UTF-8").trim();
-                songName = URLDecoder.decode(songName, "UTF-8").trim();
-
-                // Page<Song> songs = this.songService.getAllSongsBundlesByName(page, size,
-                // bundleName, songName);
-                // checkResourceFound(songs);
-                return null;
+                
+                Page<Song> songs = this.songService.getAllSongsOfBundle(page, size, bundleid);
+                return songs;
         }
 
         @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = { "application/json" }, produces = {

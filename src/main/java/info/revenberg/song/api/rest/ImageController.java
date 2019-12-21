@@ -3,7 +3,6 @@ package info.revenberg.song.api.rest;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,8 +27,6 @@ import org.springframework.util.StringUtils;
 @RequestMapping(value = "/rest/v1/image")
 @Api(tags = { "image" })
 public class ImageController {
-	private static final Logger logger = Logger.getLogger(ImageController.class.getName());
-
 	@Value("${upload.location}")
 	private String location;
 

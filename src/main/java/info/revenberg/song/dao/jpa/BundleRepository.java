@@ -24,8 +24,6 @@ public interface BundleRepository extends JpaRepository<Bundle, Long>, PagingAnd
     List<Bundle> findAllBundleByMnemonic(String mnemonic);
 
     @Query(value = "SELECT COALESCE(max(bundleid), 0) FROM bundle b ", nativeQuery = true)
-    Long getBundleId();
+    Long getMaxBundleId();
 
-    @Query(value = "SELECT * FROM bundle b", nativeQuery = true)
-	List<Bundle> getAllBundles();
 }

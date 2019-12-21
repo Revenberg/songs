@@ -23,7 +23,7 @@ public class BundleService {
 
     public Bundle createBundle(Bundle bundle) {
         if (bundle.getBundleid() == 0) {
-            bundle.setBundleid(this.getBundleId() + 1);
+            bundle.setBundleid(this.getMaxBundleId() + 1);
         }
         return bundleRepository.save(bundle);
     }
@@ -66,11 +66,8 @@ public class BundleService {
         return bundleRepository.findBundleByMnemonic(mnemonic);
     }
 
-	public Long getBundleId() {
-		return bundleRepository.getBundleId();
+	public Long getMaxBundleId() {
+		return bundleRepository.getMaxBundleId();
 	}
 
-	public List<Bundle> getAllBundles() {
-		return bundleRepository.getAllBundles();
-	}
 }

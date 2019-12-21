@@ -59,16 +59,6 @@ public class BundleController extends AbstractRestHandler {
                 return bundle;
         }
 
-        @RequestMapping(value = "all", method = RequestMethod.GET, produces = { "application/json" })
-        @ResponseStatus(HttpStatus.OK)
-        @ApiOperation(value = "Get all bundles")
-        public @ResponseBody List<Bundle> getAllBundles(
-                        HttpServletRequest request, HttpServletResponse response) {
-                List<Bundle> bundle = this.bundleService.getAllBundles();
-                checkResourceFound(bundle);
-                return bundle;
-        }
-
         @RequestMapping(value = "findByMnemonic", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Find bundle by Mnemonic.")

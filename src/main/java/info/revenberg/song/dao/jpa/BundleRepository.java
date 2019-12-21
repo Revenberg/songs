@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface BundleRepository extends JpaRepository<Bundle, Long>, PagingAndSortingRepository<Bundle, Long> {
+    @Query(value = "SELECT * FROM bundle b", nativeQuery = true)
     Page<Bundle> findAll(Pageable pageable);
 
     Bundle findBundleByName(String name);

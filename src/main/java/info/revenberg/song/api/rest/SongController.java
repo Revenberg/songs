@@ -58,11 +58,10 @@ public class SongController extends AbstractRestHandler {
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get all song by in bundle")
         public @ResponseBody Page<Song> getAllSongesByName(
+                        @ApiParam(value = "The ID of the existing bundle resource.", required = true) @PathVariable("bundleid") Long bundleid,
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
-                        @ApiParam(value = "The ID of the existing bundle resource.", required = true) @PathVariable("bundleid") Long bundleid, 
-                        HttpServletRequest request,
-                        HttpServletResponse response) throws UnsupportedEncodingException {
+                        HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
 
                 Page<Song> songs = this.songService.getAllSongsOfBundle(page, size, bundleid);
                 return songs;

@@ -8,31 +8,33 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import info.revenberg.song.dao.jpa.BundleRepository;
 import info.revenberg.song.domain.Bundle;
 
 @Controller
+@RequestMapping(value = "bundle")
 public class BundleWebController {
  
     @Autowired
     private BundleRepository bundleRepository;
 
-    @GetMapping("/bundles")
+    @GetMapping("/")
     public String getBundles(Model model) {
         model.addAttribute("bundles", bundleRepository.findAll());
-        return "bundles";
+        return "bundle-list";
     }
 
-    @GetMapping("/addBundle")
+    @GetMapping("/edit")
     public String showSignUpForm(Bundle bundle) {
-        return "bundles";
+        return "bundle-edit";
     }
      
-    @PostMapping("/addBundle")
+    @PostMapping("/add")
     public String addBundle(@Valid Bundle bundle, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "add-bundle";
+            return "bundle-add";
         }         
         
         bundleRepository.save(bundle);

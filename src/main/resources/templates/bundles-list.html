@@ -6,15 +6,13 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Edit</th>                        
                     </tr>
                 </thead>
                 <tbody>
                 <tr th:each="bundle : ${bundles}">
                     <td th:text="${bundle.name}"></td>
-                    <td><a th:href="@{/edit/{id}(id=${bundle.id})}">Edit</a></td>
-                    <td><a th:href="@{/delete/{id}(id=${bundle.id})}">Delete</a></td>
+                    <td><a th:href="@{bundles/edit/{id}(id=${bundle.id})}">Edit</a></td>                    
                 </tr>
             </tbody>
         </table>

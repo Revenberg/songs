@@ -12,10 +12,10 @@
                 <tbody>
                 <tr th:each="bundle : ${bundles}">
                     <td th:text="${bundle.name}"></td>
-                    <td><a th:href="@{bundles/edit/{id}(id=${bundle.id})}">Edit</a></td>                    
+                    <td><a th:href="@{edit/{id}(id=${bundle.id})}">Edit</a></td>                    
                 </tr>
             </tbody>
         </table>
     </div>      
-    <p><a href="/signup">Add a new bundle</a></p>
+    <p><a href="@{/add}">Add a new bundle</a></p>
 </div>

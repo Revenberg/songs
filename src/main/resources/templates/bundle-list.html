@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all"  
       href="../../css/main.css" th:href="@{/css/main.css}" />
-    <script type="text/javascript" src="@{/javascript/dropdown.js}"></script>
+    <script type="text/javascript" src="/js/dropdown.js"></script>
 </head>
 
 <div th:switch="${bundles}">
@@ -28,8 +28,6 @@
     <p><a href="@{/add}">Add a new bundle</a></p>
 </div>
 
-<input type="button" value="Open Curtain" onclick="return change(this);" />
-
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
@@ -39,5 +37,32 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+<a href="javascript:myFunction();" >text</a>
+<button onclick="myFunction()" id="myButton" value="Open Curtain">Open Curtain</button>
+
+<script type="text/javascript">
+function myFunction() {
+
+                var btn = document.getElementById("myButton");
+
+                if (btn.value == "Open Curtain") {
+                    btn.value = "Close Curtain";
+                    btn.innerHTML = "Close Curtain";
+                }
+                else {
+                    btn.value = "Open Curtain";
+                    btn.innerHTML = "Open Curtain";
+                }
+
+            }
+</script>
 
 

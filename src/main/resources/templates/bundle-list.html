@@ -10,7 +10,7 @@
 <div class="dropdown">
   <button class="dropbtn" id="bundledropbtn">Dropdown</button>
   <div class="dropdown-content" >
-        <div th:each="bundle : ${bundles}">
+        <div class="dropdown-content" th:each="bundle : ${bundles}">
             <a th:onclick="|javascript:myFunctionBundleDropbtn(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>

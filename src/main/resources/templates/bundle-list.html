@@ -35,7 +35,7 @@
   <button class="dropbtn" id="myButton">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a th:href="${javascript:myFunction('dropbtn', ${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a th:href="javascript:myFunction('dropbtn', ${bundle.id} )" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>

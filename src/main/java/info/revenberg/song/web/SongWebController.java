@@ -37,6 +37,7 @@ public class SongWebController {
     public String getSongsOfBundle(
         @ApiParam(value = "The BundleId of the bundle.", required = true) @PathVariable("bundleid") Long bundleid,
         Model model) {
+        System.out.println( songRepository.findAllByBundleid(bundleid) );
         model.addAttribute("songs", songRepository.findAllByBundleid(bundleid));
         return "song-list";
     }

@@ -26,10 +26,12 @@
     </div>      
     <p><a href="@{/add}">Add a new bundle</a></p>
 </div>
+
+
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content" th:each="bundle : ${bundles}">
-    <a href="#" th:id="${bundle.id}"><input type="text"  th:value="${bundle.name}"></a>    
+    <a href="#" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
   </div>
 </div>
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>

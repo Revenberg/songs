@@ -32,7 +32,7 @@
 -->
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
-  <button class="dropbtn" id="myButton">Dropdown</button>
+  <button class="dropbtn" id="dropbtn">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
             <a th:onclick="|javascript:myFunction(\'dropbtn\',${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>

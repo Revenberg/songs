@@ -21,7 +21,7 @@
   <button class="dropbtn" id="bundledropbtn">Dropdown Bundel</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a th:href="@{/bundleid=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a th:href="@{/song(bundleid=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>

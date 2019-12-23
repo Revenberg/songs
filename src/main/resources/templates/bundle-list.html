@@ -33,7 +33,7 @@
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a href="javascript:myFunction('dropbtn', getElementById('dropbtn').innerHTML)" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a href="javascript:myFunction(this)" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>

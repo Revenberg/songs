@@ -1,6 +1,6 @@
-function myFunction(id, text) {
-    var btn = document.getElementById(id);
+function myFunction(p) {
+    var btn =  document.getElementById(p.id);
 
-    btn.innerHTML = text;    
+    btn.innerHTML = p.innerHTML;    
 
 }

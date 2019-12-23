@@ -3,6 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all"  
       href="../../css/main.css" th:href="@{/css/main.css}" />
+    <script type="text/javascript" src="@{/javascript/dropdown.js}"></script>
 </head>
 
 <div th:switch="${bundles}">
@@ -27,13 +28,16 @@
     <p><a href="@{/add}">Add a new bundle</a></p>
 </div>
 
+<input type="button" value="Open Curtain" onclick="return change(this);" />
 
+<a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a href="#" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a th:href="@{edit/{id}(id=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>
-<a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
+
+

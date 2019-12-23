@@ -6,37 +6,14 @@
     <script type="text/javascript" src="/js/dropdown.js"></script>
 </head>
 
-<!--
-<div th:switch="${bundles}">
-    <h2 th:case="null">No bundles yet!</h2>
-        <div th:case="*">
-            <h2>Bundles</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Edit</th>                        
-                    </tr>
-                </thead>
-                <tbody>
-                <tr th:each="bundle : ${bundles}">
-                    <td th:text="${bundle.name}"></td>
-                    <td><a th:href="@{edit/{id}(id=${bundle.id})}">Edit</a></td>                    
-                </tr>
-            </tbody>
-        </table>
-    </div>      
-    <p><a href="@{/add}">Add a new bundle</a></p>
-</div>
-
--->
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
-  <button class="dropbtn" id="dropbtn">Dropdown</button>
+  <button class="bundledropbtn" id="bundledropbtn">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a th:onclick="|javascript:myFunctionDropbtn(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a th:onclick="|javascript:myFunctionBundleDropbtn(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>
+<button class="songsdropbtn" id="songsdropbtn">GetSongs</button>
 

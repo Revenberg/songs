@@ -1,5 +1,5 @@
-function myFunctionDropbtn(p) {
-    var btn =  document.getElementById('dropbtn');
+function myFunctionBundleDropbtn(p) {
+    var btn =  document.getElementById('bundledropbtn');
     btn.innerHTML = document.getElementById(p).innerHTML;
 
 }

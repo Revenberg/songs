@@ -3,6 +3,8 @@ package info.revenberg.song.dao.jpa;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Song;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -25,4 +27,7 @@ public interface SongRepository extends JpaRepository<Song, Long>, PagingAndSort
 
 	@Query(value = "SELECT * FROM song s, bundle b where b.bundleid=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
     Page<Song> findAllOfBundle(Pageable pageable, @Param("bundleid") long bundleid);
+
+	@Query(value = "SELECT * FROM song s, bundle b where b.bundleid=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
+    List<Song> findAllByBundleid(@Param("bundleid") long bundleid);
 }

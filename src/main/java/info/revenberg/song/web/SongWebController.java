@@ -32,6 +32,14 @@ public class SongWebController {
         model.addAttribute("songs", songRepository.findAll());
         return "song-list";
     }
+    
+    @GetMapping("{bundleid}")
+    public String getSongsOfBundle(
+        @ApiParam(value = "The BundleId of the bundle.", required = true) @PathVariable("bundleid") Long bundleid,
+        Model model) {
+        model.addAttribute("songs", songRepository.findAllByBundleid(bundleid));
+        return "song-list";
+    }
 
     @GetMapping("/edit/{id}")
     public String showSignUpForm(

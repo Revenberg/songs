@@ -9,7 +9,7 @@
 <div th:switch="${bundles}">
     <h2 th:case="null">No bundles yet!</h2>
         <div th:case="*">
-            <h2>bundles</h2>
+            <h2>Bundles</h2>
             <table>
                 <thead>
                     <tr>
@@ -33,7 +33,7 @@
   <button class="dropbtn">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
-            <a href="javascript:myFunction(this)" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+            <a href="javascript:myFunction('dropbtn', this)" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>

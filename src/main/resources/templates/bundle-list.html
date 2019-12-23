@@ -6,6 +6,7 @@
     <script type="text/javascript" src="/js/dropdown.js"></script>
 </head>
 
+<!--
 <div th:switch="${bundles}">
     <h2 th:case="null">No bundles yet!</h2>
         <div th:case="*">
@@ -28,17 +29,14 @@
     <p><a href="@{/add}">Add a new bundle</a></p>
 </div>
 
+-->
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
+  <button class="dropbtn" id="myButton">Dropdown</button>
   <div class="dropdown-content" >
         <div th:each="bundle : ${bundles}">
             <a href="javascript:myFunction('dropbtn', this)" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>
 </div>
-
-<a href="javascript:myFunction('myButton', '1');" >text</a>
-<button onclick="myFunction('myButton', getElementById('myButton').innerHTML + '1')" id="myButton" value="Open Curtain">Open Curtain</button>
-
 

@@ -1,4 +1,10 @@
-<link href="/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+<head>
+    <title>Bundle list</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"  
+      href="../../css/main.css" th:href="@{/css/main.css}" />
+</head>
+
 <div th:switch="${bundles}">
     <h2 th:case="null">No bundles yet!</h2>
         <div th:case="*">

@@ -28,10 +28,8 @@
 </div>
 <div class="dropdown">
   <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <div class="dropdown-content" th:each="bundle : ${bundles}">
+    <a href="#">th:text="${bundle.name}"</a>    
   </div>
 </div>
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>

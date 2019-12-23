@@ -28,6 +28,6 @@ public interface SongRepository extends JpaRepository<Song, Long>, PagingAndSort
 	@Query(value = "SELECT * FROM song s, bundle b where b.bundleid=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
     Page<Song> findAllOfBundle(Pageable pageable, @Param("bundleid") long bundleid);
 
-	@Query(value = "SELECT * FROM song s, bundle b where b.bundleid=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
+	@Query(value = "SELECT * FROM song s, bundle b where b.id=:bundleid AND b.bundleid=s.fk_bundle ", nativeQuery = true)
     List<Song> findAllByBundleid(@Param("bundleid") long bundleid);
 }

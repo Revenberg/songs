@@ -9,8 +9,8 @@
 <a href="http://40.122.30.210:8090/swagger-ui.html">swagger-ui</a>
 <div class="dropdown">
   <button class="dropbtn" id="bundledropbtn">Dropdown</button>
-  <div class="dropdown-content" th:each="bundle : ${bundles}">
-        <div>
+  <div class="dropdown-content" >
+        <div th:each="bundle : ${bundles}">
             <a th:onclick="|javascript:myFunctionBundleDropbtn(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
         </div>
     </div>

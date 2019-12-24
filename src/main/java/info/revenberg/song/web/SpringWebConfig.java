@@ -38,7 +38,7 @@ import info.revenberg.song.web.conversion.DateFormatter;
 import info.revenberg.song.web.conversion.VarietyFormatter;
 
 @Configuration
-@EnableWebMvc
+//@EnableWebMvc
 @ComponentScan
 public class SpringWebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
@@ -60,6 +60,7 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter implements Applicat
     /*
      * Dispatcher configuration for serving static resources
      */
+    /*
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         // super.addResourceHandlers(registry);
@@ -76,7 +77,7 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter implements Applicat
             registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
         }
         */
-    }
+    //}
 
     /*
      * Message externalization/internationalization

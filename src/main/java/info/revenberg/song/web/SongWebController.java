@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import info.revenberg.song.dao.jpa.BundleRepository;
 import info.revenberg.song.dao.jpa.SongRepository;
 import info.revenberg.song.domain.Song;
 import info.revenberg.song.service.SongService;
@@ -21,6 +22,9 @@ import java.util.Optional;
 @RequestMapping(value = "song")
 public class SongWebController {
  
+    @Autowired
+    private BundleRepository bundleRepository;
+    
     @Autowired
     private SongRepository songRepository;
     
@@ -37,6 +41,7 @@ public class SongWebController {
     public String getSongsOfBundle(
         @ApiParam(value = "The BundleId of the bundle.", required = true) @PathVariable("bundleid") Long bundleid,
         Model model) {
+        model.addAttribute("bundle", bundleRepository.getOne(bundleid));
         model.addAttribute("songs", songRepository.findAllByBundleid(bundleid));
         return "song-list";
     }

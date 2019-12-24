@@ -6,8 +6,12 @@
     <script type="text/javascript" src="/js/dropdown.js"></script>
 </head>
 
+<div class="details">
+    <div><span th:text="${bundle.name}"></span></div>
+</div>
+
 <div class="dropdown">
-    <button class="dropbtn" id="songdropbtn">Dropdown Bundel</button>
+    <button class="dropbtn" id="songdropbtn">Dropdown Songs</button>
     <div class="dropdown-content" >
           <div th:each="song : ${songs}">
               <a th:onclick="|javascript:myFunctionSongDropbtn(${song.id})|" th:id="${song.id}"><span th:text="${song.name}"></span></a>

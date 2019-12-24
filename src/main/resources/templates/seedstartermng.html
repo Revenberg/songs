@@ -55,7 +55,28 @@
       
     </div>
 
+    <div>
+    
+      <h2 th:text="#{title.new}">Add new Song</h2>
 
+      <form action="#" th:action="@{/seedstartermng}" th:object="${seedStarter}" method="post">
+        <fieldset>
+          <legend th:text="#{seedstarter.data}">Seed Starter Data</legend>
+          <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
+          </ul>
+          
+          <div>
+            <label for="datePlanted">
+              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
+              (<span th:text="#{date.format}">YYYY/MM/DD</span>)
+            </label>
+            <input type="text" th:field="*{datePlanted}" th:errorclass="fieldError" />
+          </div>
+          
+        </fieldset>
+      </form>
+    </div>
     <div>
     
       <h2 th:text="#{title.new}">Add new Seed Starter</h2>

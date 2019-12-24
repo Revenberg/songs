@@ -23,10 +23,10 @@ package info.revenberg.song.business.entities;
 public enum Type {
     
     PLASTIC("PLASTIC"), 
-    WOOD("WOOD");
+    WOOD("WOOD"),
+    METAL("METAL");
     
-    
-    public static final Type[] ALL = { PLASTIC, WOOD };
+    public static final Type[] ALL = { PLASTIC, WOOD, METAL };
     
     
     private final String name;
@@ -40,6 +40,8 @@ public enum Type {
             return PLASTIC;
         } else if (name.toUpperCase().equals("WOOD")) {
             return WOOD;
+        } else if (name.toUpperCase().equals("METAL")) {
+            return METAL;
         }
         throw new IllegalArgumentException("Name \"" + name + "\" does not correspond to any Type");
     }

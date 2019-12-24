@@ -31,6 +31,8 @@
         </thead>
         <tbody>
           <tr th:each="sb : ${allSeedStarters}">
+            <td th:text="${{sb.id}}">1</td>
+            <!--
             <td th:text="${{sb.datePlanted}}">13/01/2011</td>
             <td th:text="#{|bool.${sb.covered}|}">yes</td>
             <td th:text="#{|seedstarter.type.${sb.type}|}">Wireframe</td>
@@ -49,6 +51,7 @@
                 </tbody>
               </table>
             </td>
+          -->
           </tr>
         </tbody>
       </table>

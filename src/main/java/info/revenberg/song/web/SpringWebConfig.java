@@ -40,42 +40,46 @@ import info.revenberg.song.web.conversion.VarietyFormatter;
 @Configuration
 @EnableWebMvc
 @ComponentScan
-public class SpringWebConfig
-        extends WebMvcConfigurerAdapter implements ApplicationContextAware {
+public class SpringWebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
-
 
     public SpringWebConfig() {
         super();
     }
 
-
-    public void setApplicationContext(final ApplicationContext applicationContext)
-            throws BeansException {
+    public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
 
-
-
     /* ******************************************************************* */
-    /*  GENERAL CONFIGURATION ARTIFACTS                                    */
-    /*  Static Resources, i18n Messages, Formatters (Conversion Service)   */
+    /* GENERAL CONFIGURATION ARTIFACTS */
+    /* Static Resources, i18n Messages, Formatters (Conversion Service) */
     /* ******************************************************************* */
 
     /*
-     *  Dispatcher configuration for serving static resources
+     * Dispatcher configuration for serving static resources
      */
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        super.addResourceHandlers(registry);
-        registry.addResourceHandler("/images/**").addResourceLocations("/images/");
-        registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-        registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+        // super.addResourceHandlers(registry);
+        if (!registry.hasMappingForPattern("/static/**")) {
+            registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        }
+/*        if (!registry.hasMappingForPattern("/images/**")) {
+            registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/");
+        }
+        if (!registry.hasMappingForPattern("/css/**")) {
+            registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
+        }
+        if (!registry.hasMappingForPattern("/js/**")) {
+            registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
+        }
+        */
     }
 
     /*
-     *  Message externalization/internationalization
+     * Message externalization/internationalization
      */
     @Bean
     public ResourceBundleMessageSource messageSource() {
@@ -105,49 +109,37 @@ public class SpringWebConfig
         return new DateFormatter();
     }
 
-
-
     /* **************************************************************** */
-    /*  THYMELEAF-SPECIFIC ARTIFACTS                                    */
-    /*  TemplateResolver <- TemplateEngine <- ViewResolver              */
+    /* THYMELEAF-SPECIFIC ARTIFACTS */
+    /* TemplateResolver <- TemplateEngine <- ViewResolver */
     /* **************************************************************** */
-/*
-    @Bean
-    public SpringResourceTemplateResolver templateResolver(){
-        // SpringResourceTemplateResolver automatically integrates with Spring's own
-        // resource resolution infrastructure, which is highly recommended.
-        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-        templateResolver.setApplicationContext(this.applicationContext);
-        templateResolver.setPrefix("/WEB-INF/templates/");
-        templateResolver.setSuffix(".html");
-        // HTML is the default value, added here for the sake of clarity.
-        templateResolver.setTemplateMode(TemplateMode.HTML);
-        // Template cache is true by default. Set to false if you want
-        // templates to be automatically updated when modified.
-        templateResolver.setCacheable(true);
-        return templateResolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine(){
-        // SpringTemplateEngine automatically applies SpringStandardDialect and
-        // enables Spring's own MessageSource message resolution mechanisms.
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        // Enabling the SpringEL compiler with Spring 4.2.4 or newer can
-        // speed up execution in most scenarios, but might be incompatible
-        // with specific cases when expressions in one template are reused
-        // across different data types, so this flag is "false" by default
-        // for safer backwards compatibility.
-        templateEngine.setEnableSpringELCompiler(true);
-        return templateEngine;
-    }
-
-    @Bean
-    public ThymeleafViewResolver viewResolver(){
-        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-        viewResolver.setTemplateEngine(templateEngine());
-        return viewResolver;
-    }
-*/
+    /*
+     * @Bean public SpringResourceTemplateResolver templateResolver(){ //
+     * SpringResourceTemplateResolver automatically integrates with Spring's own //
+     * resource resolution infrastructure, which is highly recommended.
+     * SpringResourceTemplateResolver templateResolver = new
+     * SpringResourceTemplateResolver();
+     * templateResolver.setApplicationContext(this.applicationContext);
+     * templateResolver.setPrefix("/WEB-INF/templates/");
+     * templateResolver.setSuffix(".html"); // HTML is the default value, added here
+     * for the sake of clarity. templateResolver.setTemplateMode(TemplateMode.HTML);
+     * // Template cache is true by default. Set to false if you want // templates
+     * to be automatically updated when modified.
+     * templateResolver.setCacheable(true); return templateResolver; }
+     * 
+     * @Bean public SpringTemplateEngine templateEngine(){ // SpringTemplateEngine
+     * automatically applies SpringStandardDialect and // enables Spring's own
+     * MessageSource message resolution mechanisms. SpringTemplateEngine
+     * templateEngine = new SpringTemplateEngine();
+     * templateEngine.setTemplateResolver(templateResolver()); // Enabling the
+     * SpringEL compiler with Spring 4.2.4 or newer can // speed up execution in
+     * most scenarios, but might be incompatible // with specific cases when
+     * expressions in one template are reused // across different data types, so
+     * this flag is "false" by default // for safer backwards compatibility.
+     * templateEngine.setEnableSpringELCompiler(true); return templateEngine; }
+     * 
+     * @Bean public ThymeleafViewResolver viewResolver(){ ThymeleafViewResolver
+     * viewResolver = new ThymeleafViewResolver();
+     * viewResolver.setTemplateEngine(templateEngine()); return viewResolver; }
+     */
 }

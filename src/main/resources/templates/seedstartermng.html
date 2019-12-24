@@ -67,6 +67,7 @@
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
           
+          <!--
           <div>
             <label for="datePlanted">
               <span th:text="#{seedstarter.datePlanted}">Date planted</span>
@@ -74,10 +75,10 @@
             </label>
             <input type="text" th:field="*{datePlanted}" th:errorclass="fieldError" />
           </div>
+-->
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
             <select th:field="*{type}">
-<!--              <option th:each="type : ${allTypes1}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>-->
               <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>

@@ -60,7 +60,6 @@ public class SeedStarterMngController {
     
     @ModelAttribute("allTypes1")
     public List<Bundle> populateTypes() {
-//        return Arrays.asList(Type.ALL);
         return this.seedStarterService.findAllBundle();
     }
     

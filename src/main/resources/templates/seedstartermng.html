@@ -55,7 +55,7 @@
       
     </div>
 
-    // new mijn test gedeelte
+    // begin new mijn test gedeelte
     <div>
     
       <h2 th:text="#{title.new}">Add new Song</h2>
@@ -67,15 +67,6 @@
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
           
-          <!--
-          <div>
-            <label for="datePlanted">
-              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
-              (<span th:text="#{date.format}">YYYY/MM/DD</span>)
-            </label>
-            <input type="text" th:field="*{datePlanted}" th:errorclass="fieldError" />
-          </div>
--->
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
             <select th:field="*{type}">
@@ -83,10 +74,18 @@
             </select>
           </div>
 
+          <div>
+            <label for="datePlanted">
+              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
+             (<span th:text="#{date.format}">YYYY/MM/DD</span>)
+            </label>
+            <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
+          </div>
+          
         </fieldset>
       </form>
     </div>
-    // new mijn test gedeelte
+    // new mijn test gedeelte end
 
     <div>
     

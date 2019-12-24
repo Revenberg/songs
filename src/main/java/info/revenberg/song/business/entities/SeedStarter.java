@@ -28,6 +28,7 @@ public class SeedStarter {
 
     private Integer id = null;
     private Date datePlanted = null;
+    private Date datePlanted1 = null;
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
     private Feature[] features = null;
@@ -59,6 +60,14 @@ public class SeedStarter {
         this.datePlanted = datePlanted;
     }
 
+    public Date getDatePlanted1() {
+        return this.datePlanted1;
+    }
+
+
+    public void setDatePlanted1(final Date datePlanted1) {
+        this.datePlanted1 = datePlanted1;
+    }
 
     public Boolean getCovered() {
         return this.covered;
@@ -98,6 +107,7 @@ public class SeedStarter {
     @Override
     public String toString() {
         return "SeedStarter [id=" + this.id + ", datePlanted=" + this.datePlanted
+                + ", datePlanted1=" + this.datePlanted1
                 + ", covered=" + this.covered + ", type=" + this.type + ", features="
                 + Arrays.toString(this.features) + ", rows=" + this.rows + "]";
     }

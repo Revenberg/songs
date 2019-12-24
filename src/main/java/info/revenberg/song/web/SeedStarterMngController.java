@@ -75,7 +75,7 @@ public class SeedStarterMngController {
     }
     
     @ModelAttribute("allSeedStarters")
-    public List<Bundle> populateSeedStarters() {
+    public List<SeedStarter> populateSeedStarters() {
         return this.seedStarterService.findAll();
     }
     

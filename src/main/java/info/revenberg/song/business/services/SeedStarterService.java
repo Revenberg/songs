@@ -25,22 +25,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.repositories.SeedStarterRepository;
+import info.revenberg.song.dao.jpa.BundleRepository;
+import info.revenberg.song.domain.Bundle;
 
 @Service
 public class SeedStarterService {
-    
+
     @Autowired
-    private SeedStarterRepository seedstarterRepository; 
-    
-    
+    private BundleRepository bundleRepository;
+
+    @Autowired
+    private SeedStarterRepository seedstarterRepository;
+
     public SeedStarterService() {
         super();
     }
-    
-    
-    
-    public List<SeedStarter> findAll() {
-        return this.seedstarterRepository.findAll();
+
+    public List<Bundle> findAll() {
+        return this.bundleRepository.findAll();
+//        return this.seedstarterRepository.findAll();
     }
 
     public void add(final SeedStarter seedStarter) {

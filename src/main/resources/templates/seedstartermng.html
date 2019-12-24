@@ -31,13 +31,15 @@
         </thead>
         <tbody>
           <tr th:each="sb : ${allSeedStarters}">
-            <td th:text="${{sb.datePlanted}}">13/01/2011</td>
+            <td th:text="#{|seedstarter.name|}">Wireframe</td>
+<!--            <td th:text="${{sb.datePlanted}}">13/01/2011</td>
             <td th:text="#{|bool.${sb.covered}|}">yes</td>
             <td th:text="#{|seedstarter.type.${sb.type}|}">Wireframe</td>
             <td th:text="${#strings.arrayJoin(
                              #messages.arrayMsg(
                                #strings.arrayPrepend(sb.features,'seedstarter.feature.')),
                              ', ')}">Electric Heating, Turf</td>
+-->
             <td>
               <table>
                 <tbody>
@@ -80,7 +82,7 @@
               <option th:each="type : ${allTypes}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
             </select>
           </div>
-          
+
         </fieldset>
       </form>
     </div>

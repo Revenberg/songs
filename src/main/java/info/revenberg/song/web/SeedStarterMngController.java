@@ -38,6 +38,7 @@ import info.revenberg.song.business.entities.Type;
 import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
+import info.revenberg.song.domain.Bundle;
 
 
 @Controller
@@ -74,7 +75,7 @@ public class SeedStarterMngController {
     }
     
     @ModelAttribute("allSeedStarters")
-    public List<SeedStarter> populateSeedStarters() {
+    public List<Bundle> populateSeedStarters() {
         return this.seedStarterService.findAll();
     }
     

@@ -41,11 +41,13 @@ public class SeedStarterService {
         super();
     }
 
-    public List<Bundle> findAll() {
+    public List<Bundle> findAllBundle() {
         return this.bundleRepository.findAll();
-  //      return this.seedstarterRepository.findAll();
     }
 
+    public List<SeedStarter> findAll() {
+        return this.seedstarterRepository.findAll();
+    }
     public void add(final SeedStarter seedStarter) {
         this.seedstarterRepository.add(seedStarter);
     }

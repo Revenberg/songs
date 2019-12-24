@@ -58,10 +58,10 @@ public class SeedStarterMngController {
     }
 
     
-    
-    @ModelAttribute("allTypes")
-    public List<Type> populateTypes() {
-        return Arrays.asList(Type.ALL);
+    @ModelAttribute("allTypes1")
+    public List<Bundle> populateTypes() {
+//        return Arrays.asList(Type.ALL);
+        return this.seedStarterService.findAllBundle();
     }
     
     @ModelAttribute("allFeatures")
@@ -75,7 +75,7 @@ public class SeedStarterMngController {
     }
     
     @ModelAttribute("allSeedStarters")
-    public List<Bundle> populateSeedStarters() {
+    public List<SeedStarter> populateSeedStarters() {
         return this.seedStarterService.findAll();
     }
     

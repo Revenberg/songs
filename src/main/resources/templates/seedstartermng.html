@@ -31,8 +31,6 @@
         </thead>
         <tbody>
           <tr th:each="sb : ${allSeedStarters}">
-            <td th:text="${{sb.id}}">1</td>
-            <!--
             <td th:text="${{sb.datePlanted}}">13/01/2011</td>
             <td th:text="#{|bool.${sb.covered}|}">yes</td>
             <td th:text="#{|seedstarter.type.${sb.type}|}">Wireframe</td>
@@ -51,7 +49,6 @@
                 </tbody>
               </table>
             </td>
-          -->
           </tr>
         </tbody>
       </table>
@@ -80,7 +77,8 @@
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
             <select th:field="*{type}">
-              <option th:each="type : ${allTypes}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
+<!--              <option th:each="type : ${allTypes1}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>-->
+              <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>
 

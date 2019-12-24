@@ -66,7 +66,6 @@ public class SpringWebConfig
     /*
      *  Dispatcher configuration for serving static resources
      */
-    /*
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         super.addResourceHandlers(registry);
@@ -74,7 +73,7 @@ public class SpringWebConfig
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
     }
-*/
+
     /*
      *  Message externalization/internationalization
      */

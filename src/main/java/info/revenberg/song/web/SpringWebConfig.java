@@ -127,7 +127,7 @@ public class SpringWebConfig
         templateResolver.setCacheable(true);
         return templateResolver;
     }
-*/
+
     @Bean
     public SpringTemplateEngine templateEngine(){
         // SpringTemplateEngine automatically applies SpringStandardDialect and
@@ -149,5 +149,5 @@ public class SpringWebConfig
         viewResolver.setTemplateEngine(templateEngine());
         return viewResolver;
     }
-
+*/
 }

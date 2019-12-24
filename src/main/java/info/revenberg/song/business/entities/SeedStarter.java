@@ -28,7 +28,7 @@ public class SeedStarter {
 
     private Integer id = null;
     private Date datePlanted = null;
-    private Date datePlanted1 = null;
+    private String datePlanted1 = null;
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
     private Feature[] features = null;
@@ -60,12 +60,12 @@ public class SeedStarter {
         this.datePlanted = datePlanted;
     }
 
-    public Date getDatePlanted1() {
+    public String getDatePlanted1() {
         return this.datePlanted1;
     }
 
 
-    public void setDatePlanted1(final Date datePlanted1) {
+    public void setDatePlanted1(final String datePlanted1) {
         this.datePlanted1 = datePlanted1;
     }
 

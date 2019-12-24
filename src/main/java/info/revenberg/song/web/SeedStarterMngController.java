@@ -31,13 +31,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import thymeleafexamples.stsm.business.entities.Feature;
-import thymeleafexamples.stsm.business.entities.Row;
-import thymeleafexamples.stsm.business.entities.SeedStarter;
-import thymeleafexamples.stsm.business.entities.Type;
-import thymeleafexamples.stsm.business.entities.Variety;
-import thymeleafexamples.stsm.business.services.SeedStarterService;
-import thymeleafexamples.stsm.business.services.VarietyService;
+import info.revenberg.song.business.entities.Feature;
+import info.revenberg.song.business.entities.Row;
+import info.revenberg.song.business.entities.SeedStarter;
+import info.revenberg.song.business.entities.Type;
+import info.revenberg.song.business.entities.Variety;
+import info.revenberg.song.business.services.SeedStarterService;
+import info.revenberg.song.business.services.VarietyService;
 
 
 @Controller

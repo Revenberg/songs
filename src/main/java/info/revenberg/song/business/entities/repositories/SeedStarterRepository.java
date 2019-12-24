@@ -17,45 +17,37 @@
  * 
  * =============================================================================
  */
-package thymeleafexamples.stsm.business.entities;
+package info.revenberg.song.business.entities.repositories;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+import info.revenberg.song.business.entities.SeedStarter;
 
 
+@Repository
+public class SeedStarterRepository {
 
-public class Row {
-
-    private Variety variety = null;
-    private Integer seedsPerCell = null;
+    private final List<SeedStarter> seedStarters = new ArrayList<SeedStarter>();
     
     
     
-    
-    public Row() {
+    public SeedStarterRepository() {
         super();
     }
-
-
-    public Variety getVariety() {
-        return this.variety;
+    
+    
+    
+    public List<SeedStarter> findAll() {
+        return new ArrayList<SeedStarter>(this.seedStarters);
     }
 
-
-    public void setVariety(final Variety variety) {
-        this.variety = variety;
+    
+    public void add(final SeedStarter seedStarter) {
+        this.seedStarters.add(seedStarter);
     }
-
-    public Integer getSeedsPerCell() {
-        return this.seedsPerCell;
-    }
-
-    public void setSeedsPerCell(final Integer seedsPerCell) {
-        this.seedsPerCell = seedsPerCell;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Row [variety=" + this.variety + ", seedsPerCell=" + this.seedsPerCell + "]";
-    }
-
+    
+    
     
 }

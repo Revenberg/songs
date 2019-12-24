@@ -17,7 +17,7 @@
  * 
  * =============================================================================
  */
-package thymeleafexamples.stsm.business.entities;
+package info.revenberg.song.business.entities;
 
 
 

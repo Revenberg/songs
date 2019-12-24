@@ -17,34 +17,45 @@
  * 
  * =============================================================================
  */
-package thymeleafexamples.stsm.business.services;
+package info.revenberg.song.business.entities;
 
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import thymeleafexamples.stsm.business.entities.Variety;
-import thymeleafexamples.stsm.business.entities.repositories.VarietyRepository;
 
-@Service
-public class VarietyService {
-    
-    @Autowired
-    private VarietyRepository varietyRepository; 
+public class Row {
+
+    private Variety variety = null;
+    private Integer seedsPerCell = null;
     
     
-    public VarietyService() {
+    
+    
+    public Row() {
         super();
     }
-    
-    
-    
-    public List<Variety> findAll() {
-        return this.varietyRepository.findAll();
+
+
+    public Variety getVariety() {
+        return this.variety;
     }
 
-    public Variety findById(final Integer id) {
-        return this.varietyRepository.findById(id);
+
+    public void setVariety(final Variety variety) {
+        this.variety = variety;
     }
+
+    public Integer getSeedsPerCell() {
+        return this.seedsPerCell;
+    }
+
+    public void setSeedsPerCell(final Integer seedsPerCell) {
+        this.seedsPerCell = seedsPerCell;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Row [variety=" + this.variety + ", seedsPerCell=" + this.seedsPerCell + "]";
+    }
+
     
 }

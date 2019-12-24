@@ -17,34 +17,34 @@
  * 
  * =============================================================================
  */
-package thymeleafexamples.stsm.business.services;
+package info.revenberg.song.business.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import thymeleafexamples.stsm.business.entities.SeedStarter;
-import thymeleafexamples.stsm.business.entities.repositories.SeedStarterRepository;
+import info.revenberg.song.business.entities.Variety;
+import info.revenberg.song.business.entities.repositories.VarietyRepository;
 
 @Service
-public class SeedStarterService {
+public class VarietyService {
     
     @Autowired
-    private SeedStarterRepository seedstarterRepository; 
+    private VarietyRepository varietyRepository; 
     
     
-    public SeedStarterService() {
+    public VarietyService() {
         super();
     }
     
     
     
-    public List<SeedStarter> findAll() {
-        return this.seedstarterRepository.findAll();
+    public List<Variety> findAll() {
+        return this.varietyRepository.findAll();
     }
 
-    public void add(final SeedStarter seedStarter) {
-        this.seedstarterRepository.add(seedStarter);
+    public Variety findById(final Integer id) {
+        return this.varietyRepository.findById(id);
     }
     
 }

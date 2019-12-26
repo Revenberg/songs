@@ -9,7 +9,11 @@
     <script type="text/javascript" src="/js/search.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  
+
+    <link rel="stylesheet" type="text/css" media="all"  href="../../css/main.css" th:href="@{/css/main.css}" />
+    <script type="text/javascript" src="/js/dropdown.js"></script>
+
+
   </head>
 
   <body>
@@ -77,6 +81,20 @@
               <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>
+
+
+          <div class="dropdown">
+            <button class="dropbtn" id="bundledropbtn1">Dropdown Bundel</button>
+            <div class="dropdown-content" >
+                  <div th:each="bundle : ${bundles}">
+                      <a th:href="@{/song(bundleid=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+                  </div>
+              </div>
+          </div>
+
+          
+
+          
 
           <div>
             <label for="datePlanted">

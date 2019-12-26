@@ -117,17 +117,13 @@
               <th th:text="#{results.bundle.country}">Country</th>
               -->
               <th >Id</th>
-              <th >Surname</th>
               <th >Name</th>
-              <th >Country</th>
           </tr>
       </thead>
       <tbody>
           <tr th:each="bundle : ${bundles}">
               <td th:text="${bundle.id}">id</td>
-              <td th:text="${bundle.surname}">surname</td>
-              <td th:text="${bundle.name}">name</td>
-              <td th:text="${bundle.country}">country</td>
+              <td th:text="${bundle.name}">surname</td>
           </tr>
       </tbody>
   </table>

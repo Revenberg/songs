@@ -1,10 +1,10 @@
 function retrieveBundles() {
-    window.alert("sometext");
+    window.alert("searchBundle");
     var url = '/bundles';
     
-    window.alert($('#bundlename').val());
-    if ($('#bundlename').val() != '') {
-        url = url + '/' + $('#bundlename').val();
+    window.alert($('#searchBundle'));
+    if ($('#searchBundle').val() != '') {
+        url = url + '/' + $('#searchBundle').val();
     }
     window.alert(url);
     $("#resultsBlock").load(url);

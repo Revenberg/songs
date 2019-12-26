@@ -1,19 +1,11 @@
 function retrieveBundles(p) {
-    var url = '/bundles/';
-    window.alert(p);
-    
-    // +  document.getElementById(p).innerHTML;
-    if ($('#bundledropbtn').val() != '') {
-        url = url + '/' + $('#bundledropbtn').val();
-    }
+    var url = '/bundles/' + p;
+    $("#resultsBlock").load(url);
+}
 
-    if ($('#bundledropbtn1').val() != '') {
-        url = url + '/' + $('#bundledropbtn1').val();
-    }
-
+function retrieveBundles1() {
     if ($('#searchBundle').val() != '') {
         url = url + '/' + $('#searchBundle').val();
     }
-    window.alert(url);
     $("#resultsBlock").load(url);
 }

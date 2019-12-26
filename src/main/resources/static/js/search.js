@@ -8,5 +8,6 @@ function retrieveBundles() {
     if ($('#searchBundle').val() != '') {
         url = url + '/' + $('#searchBundle').val();
     }
+    window.alert(url);
     $("#resultsBlock").load(url);
 }

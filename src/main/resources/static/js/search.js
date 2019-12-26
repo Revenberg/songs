@@ -1,6 +1,5 @@
-function retrieveBundles() {
-    var url = '/bundles';
-    
+function retrieveBundles(p) {
+    var url = '/bundles/' +  document.getElementById(p).innerHTML;
     if ($('#bundledropbtn').val() != '') {
         url = url + '/' + $('#bundledropbtn').val();
     }

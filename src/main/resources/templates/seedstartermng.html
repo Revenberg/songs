@@ -99,6 +99,13 @@
                   th:text="#{search.button}">Search button</button>
       </div>
       
+      <div>
+        <label for="type" th:text="#{seedstarter.type}">Type</label>
+        <select th:field="*{type}" onchange="retrieveBundles()">/select>>
+          <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
+        </select>
+      </div>
+
       <!-- Results block -->
       <div id="resultsBlock">
       

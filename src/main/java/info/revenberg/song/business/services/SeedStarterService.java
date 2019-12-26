@@ -26,6 +26,7 @@ import org.springframework.stereotype.Service;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.repositories.SeedStarterRepository;
 import info.revenberg.song.dao.jpa.BundleRepository;
+import info.revenberg.song.dao.jpa.SongRepository;
 import info.revenberg.song.domain.Bundle;
 
 @Service
@@ -33,6 +34,10 @@ public class SeedStarterService {
 
     @Autowired
     private BundleRepository bundleRepository;
+
+    @Autowired
+    private SongRepository songRepository;
+
 
     @Autowired
     private SeedStarterRepository seedstarterRepository;
@@ -51,5 +56,14 @@ public class SeedStarterService {
     public void add(final SeedStarter seedStarter) {
         this.seedstarterRepository.add(seedStarter);
     }
+
+	public Object findAllSongs() {
+		return this.songRepository.findAll();
+	}
+
+	public Object findAllSongs(String bundlename) {
+        List<Bundle> bundles = this.bundleRepository.findBundleAllByName(bundlename);
+		return this.songRepository.findAllByBundleid(bundles.get(0).getBundleid());
+	}
     
 }

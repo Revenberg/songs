@@ -81,11 +81,14 @@
             </label>
             <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
           </div>
+          <div>
+            <label for="datePlanted">
+              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
+             (<span th:text="#{date.format}">YYYY/MM/DD</span>)
+            </label>
+            <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
+          </div>
           
-        </fieldset>
-      </form>
-    </div>
-
     <div th:fragment="resultsList" th:unless="${#lists.isEmpty(bundles)}" class="results-block">
       <table>
           <thead>
@@ -112,7 +115,11 @@
           </tbody>
       </table>
   </div>
-  
+
+</fieldset>
+</form>
+</div>
+
     // new mijn test gedeelte end
 
     <div>

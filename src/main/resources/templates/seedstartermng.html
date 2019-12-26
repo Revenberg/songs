@@ -6,6 +6,7 @@
     <title>Spring Thyme Seed Starter Manager</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/css/stsm.css}"/>
+    <script type="text/javascript" src="/js/search.js"></script>
   </head>
 
   <body>
@@ -81,43 +82,57 @@
             </label>
             <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
           </div>
-          <div>
-            <label for="datePlanted">
-              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
-             (<span th:text="#{date.format}">YYYY/MM/DD</span>)
-            </label>
-            <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
-          </div>
           
-    <div th:fragment="resultsList" th:unless="${#lists.isEmpty(bundles)}" class="results-block">
-      <table>
-          <thead>
-              <tr>
-                <!--
-                  <th th:text="#{results.bundle.id}">Id</th>
-                  <th th:text="#{results.bundle.surname}">Surname</th>
-                  <th th:text="#{results.bundle.name}">Name</th>
-                  <th th:text="#{results.bundle.country}">Country</th>
-                  -->
-                  <th >Id</th>
-                  <th >Surname</th>
-                  <th >Name</th>
-                  <th >Country</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr th:each="bundle : ${bundles}">
-                  <td th:text="${bundle.id}">id</td>
-                  <td th:text="${bundle.surname}">surname</td>
-                  <td th:text="${bundle.name}">name</td>
-                  <td th:text="${bundle.country}">country</td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
-
 </fieldset>
 </form>
+
+<form>
+  <fieldset>
+  <span class="subtitle">Bundle list form</span>
+  <div class="listBlock">
+      <div class="search-block">
+          <input type="text" id="searchBundle" name="searchBundle"/>
+          <br />
+          <label for="searchBundle" th:text="#{search.label}">Search label:</label>
+          <button id="searchButton" name="searchButton" onclick="retrieveBundles()" type="button" 
+                  th:text="#{search.button}">Search button</button>
+      </div>
+      
+      <!-- Results block -->
+      <div id="resultsBlock">
+      
+      </div>
+  </div>
+</form>
+
+<div th:fragment="resultsList" th:unless="${#lists.isEmpty(bundles)}" class="results-block">
+  <table>
+      <thead>
+          <tr>
+            <!--
+              <th th:text="#{results.bundle.id}">Id</th>
+              <th th:text="#{results.bundle.surname}">Surname</th>
+              <th th:text="#{results.bundle.name}">Name</th>
+              <th th:text="#{results.bundle.country}">Country</th>
+              -->
+              <th >Id</th>
+              <th >Surname</th>
+              <th >Name</th>
+              <th >Country</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr th:each="bundle : ${bundles}">
+              <td th:text="${bundle.id}">id</td>
+              <td th:text="${bundle.surname}">surname</td>
+              <td th:text="${bundle.name}">name</td>
+              <td th:text="${bundle.country}">country</td>
+          </tr>
+      </tbody>
+  </table>
+</fieldset>
+</div>
+
 </div>
 
     // new mijn test gedeelte end

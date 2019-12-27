@@ -99,9 +99,17 @@
       
       </div>
   </div>
+
+  <span class="subtitle">Verses list form</span>
+  <div class="listBlockVerses">
+      <!-- Results block -->
+      <div id="Verses">
+      
+      </div>
+  </div>
 </form>
 
-<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block">
+<div th:fragment="resultsListSongs" th:unless="${#lists.isEmpty(songs)}" class="results-block-songs">
   <table>
       <thead>
           <tr>

@@ -18,7 +18,5 @@ function retrieveVerses(p) {
     window.alert(p);
 
     var btn =  document.getElementById('songdropbtn');
-    btn.innerHTML = document.getElementById("song" + p).innerHTML;
+    btn.innerHTML = document.getElementById("song_" + p).innerHTML;
 }
-
-

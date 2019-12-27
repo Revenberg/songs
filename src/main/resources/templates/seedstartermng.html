@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" type="text/css" media="all"  href="../../css/main.css" th:href="@{/css/main.css}" />
     <script type="text/javascript" src="/js/dropdown.js"></script>
-    <script type="text/javascript" src="/js/dropdown1.js"></script>
+    <script type="text/javascript" src="/js/dropdown2.js"></script>
 
   </head>
 
@@ -84,7 +84,7 @@
 
 
           <div class="dropdown">
-            <button class="dropbtn" id="bundledropbtn" onclick="">Dropdown Bundel</button>
+            <button class="dropbtn" id="bundledropbtn" onclick="getData()">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content">
                   <div th:each="bundle : ${allTypes1}">
 <!--

@@ -5,3 +5,7 @@ function getNewVal(item)
     var btn =  document.getElementById('bundledropbtn');
     btn.innerHTML = document.getElementById(p).innerHTML;
 }
+
+function getData() {
+    return false;
+}

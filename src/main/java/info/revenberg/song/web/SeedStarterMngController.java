@@ -63,16 +63,16 @@ public class SeedStarterMngController {
         return new Guest();
     }
 
-    @RequestMapping(value = "/bundles/{bundleid}", method = RequestMethod.GET)
+    @RequestMapping(value = "/songs/{bundleid}", method = RequestMethod.GET)
     public String showGuestList(Model model, @PathVariable("bundleid") long bundleid) {
-        model.addAttribute("bundles", this.seedStarterService.findAllSongs(bundleid));
+        model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));
 
         return "seedstartermng :: resultsList";
     }
 
-    @RequestMapping(value = "/bundles", method = RequestMethod.GET)
+    @RequestMapping(value = "/songs", method = RequestMethod.GET)
     public String showGuestList(Model model) {
-        model.addAttribute("bundles", this.seedStarterService.findAllSongs());
+        model.addAttribute("songs", this.seedStarterService.findAllSongs());
 
         return "seedstartermng :: resultsList";
     }

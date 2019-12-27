@@ -82,7 +82,6 @@
             </select>
           </div>
 
-
           <div class="dropdown">
             <button class="dropbtn" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content">
@@ -101,7 +100,7 @@
   </div>
 </form>
 
-<div th:fragment="resultsList" th:unless="${#lists.isEmpty(bundles)}" class="results-block">
+<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block">
   <table>
       <thead>
           <tr>
@@ -110,7 +109,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr th:each="bundle : ${bundles}">
+          <tr th:each="bundle : ${songs}">
               <td th:text="${bundle.id}">id</td>
               <td th:text="${bundle.name}">surname</td>
           </tr>

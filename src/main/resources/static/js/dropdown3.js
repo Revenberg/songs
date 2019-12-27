@@ -8,7 +8,10 @@ function myFunctionSongDropbtn(p) {
     btn.innerHTML = document.getElementById(p).innerHTML;
 }
 
-function getNewVal(item)
+function getSongs(item)
 {
-    alert(item.value);
+    var url = '/bundles/' + item.value;
+    $("#resultsBlockSongs").load(url);
+    var btn =  document.getElementById('bundledropbtn');
+    btn.innerHTML = document.getElementById(p).innerHTML;
 }

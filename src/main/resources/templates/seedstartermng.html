@@ -6,13 +6,12 @@
     <title>Spring Thyme Seed Starter Manager</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/css/stsm.css}"/>
-    <script type="text/javascript" src="/js/search.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <link rel="stylesheet" type="text/css" media="all"  href="../../css/main.css" th:href="@{/css/main.css}" />
-    <script type="text/javascript" src="/js/dropdown.js"></script>
-    <script type="text/javascript" src="/js/dropdown2.js"></script>
+    <script type="text/javascript" src="/js/search3.js"></script>
+    <script type="text/javascript" src="/js/dropdown3.js"></script>    
 
   </head>
 
@@ -77,7 +76,7 @@
           
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}" onchange="getNewVal(this);">
+            <select th:field="*{type}" onchange="getSongs(this);">
               <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>
@@ -109,7 +108,7 @@
   </div>
 </form>
 
-<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block-songs">
+<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block">
   <table>
       <thead>
           <tr>

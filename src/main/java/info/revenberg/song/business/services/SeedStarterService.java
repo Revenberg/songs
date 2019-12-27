@@ -27,8 +27,10 @@ import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.repositories.SeedStarterRepository;
 import info.revenberg.song.dao.jpa.BundleRepository;
 import info.revenberg.song.dao.jpa.SongRepository;
+import info.revenberg.song.dao.jpa.VersRepository;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Song;
+import info.revenberg.song.domain.Vers;
 
 @Service
 public class SeedStarterService {
@@ -39,6 +41,8 @@ public class SeedStarterService {
     @Autowired
     private SongRepository songRepository;
 
+    @Autowired
+    private VersRepository versRepository;
 
     @Autowired
     private SeedStarterRepository seedstarterRepository;
@@ -58,11 +62,12 @@ public class SeedStarterService {
         this.seedstarterRepository.add(seedStarter);
     }
 
-	public List<Song> findAllSongs() {
-		return this.songRepository.findAll();
-	}
 
 	public List<Song> findAllSongs(long bundleid) {
 		return this.songRepository.findAllByBundleid(bundleid);
+	}
+
+	public List<Vers> findAllVerses(long songid) {
+		return this.versRepository.findAllByVersid(songid);
 	}        
 }

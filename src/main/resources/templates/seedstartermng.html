@@ -143,7 +143,22 @@
 </fieldset>
 </div>
 
-</div>
+<div th:fragment="resultsList" th:unless="${#lists.isEmpty(verses)}" class="results-block">
+  <table>
+        <thead>
+            <tr>
+                <th th:text="#{results.vers.id}">Id</th>
+                <th th:text="#{results.vers.name}">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vers : ${verses}">
+                <td th:text="${vers.id}">id</td>
+                <td th:text="${vers.name}">surname</td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
 
     // new mijn test gedeelte end
 

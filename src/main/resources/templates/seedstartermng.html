@@ -77,7 +77,7 @@
           
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}" onchange="getval(this);">
+            <select th:field="*{type}" onchange="javascript:getval(this);">
               <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>

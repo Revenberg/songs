@@ -6,6 +6,3 @@ function getNewVal(item)
     btn.innerHTML = document.getElementById(p).innerHTML;
 }
 
-function getData() {
-    return false;
-}

@@ -1,6 +1,7 @@
 function retrieveSongs(p) {
     var url = '/songs/' + p;
     $("#resultsBlockSongs").load(url);
+    
     var btn =  document.getElementById('bundledropbtn');
     btn.innerHTML = document.getElementById(p).innerHTML;
 }

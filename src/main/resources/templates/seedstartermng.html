@@ -160,7 +160,7 @@
                 <td th:text="${vers.name}">title</td>
                 <td th:text="${vers.title}">title</td>
                 <td th:text="${vers.location}">surname</td>
-                <td><img th:src="@{/rest/v1/vers/{vers.id}/scalledimage?size=400}"></td>  
+                <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  
 <!--
                   <td th:text="${/rest/v1/vers/{vers.id}/scalledimage?size=400"></td> 
 -->            </tr>

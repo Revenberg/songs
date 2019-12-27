@@ -11,3 +11,8 @@ function retrieveBundles1() {
     }
     $("#resultsBlock").load(url);
 }
+
+function getval(sel)
+{
+    alert(sel.value);
+}

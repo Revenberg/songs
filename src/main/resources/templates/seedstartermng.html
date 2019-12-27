@@ -77,7 +77,7 @@
           
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}">
+            <select th:field="*{type}" onchange="getval(this);"></select>
               <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>
@@ -94,33 +94,7 @@
                   </div>
               </div>
           </div>
-
-          
-
-
-
-          <div>
-            <label for="datePlanted">
-              <span th:text="#{seedstarter.datePlanted}">Date planted</span>
-             (<span th:text="#{date.format}">YYYY/MM/DD</span>)
-            </label>
-            <input type="text" th:field="*{datePlanted1}" th:errorclass="fieldError" />
-          </div>
-          
-  <span class="subtitle">Bundle list form</span>
-  <div class="listBlock">
-      <div class="search-block">
-          <input type="text" id="searchBundle" name="searchBundle"/>
-          <br />
-          <label for="searchBundle" th:text="#{search.label}">Search label:</label>
-          <button id="searchButton" name="searchButton" onclick="retrieveBundles()" type="button" 
-                  th:text="#{search.button}">Search button</button>
-      </div>
-      <!-- Results block -->
-      <div id="resultsBlock">
-      
-      </div>
-  </div>
+  
 </form>
 
 <div th:fragment="resultsList" th:unless="${#lists.isEmpty(bundles)}" class="results-block">

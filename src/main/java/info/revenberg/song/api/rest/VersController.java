@@ -8,11 +8,16 @@ import info.revenberg.song.domain.Vers;
 import info.revenberg.song.exception.DataFormatException;
 import info.revenberg.song.service.VersService;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
@@ -89,4 +94,20 @@ public class VersController extends AbstractRestHandler {
                 checkResourceFound(this.versService.getVers(id));
                 this.versService.deleteVers(id);
         }
+
+        @RequestMapping(value = "/{id}/image", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+        @ResponseStatus(HttpStatus.OK)
+        @ApiOperation(value = "Get image")
+        public @ResponseBody byte[] getImage(
+                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id)
+                        throws SQLException, IOException {
+                checkResourceFound(this.versService.getVers(id));
+                Optional<Vers> vers = this.versService.getVers(id);
+
+                String loc = vers.get().getLocation();
+                log.info(loc);
+                InputStream in = getClass().getResourceAsStream(loc);
+                return IOUtils.toByteArray(in);
+        }
+
 }

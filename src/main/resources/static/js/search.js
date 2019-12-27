@@ -1,6 +1,6 @@
 function retrieveSongs(p) {
     var url = '/songs/' + p;
-    $("#resultsBlock").load(url);
+    $("#resultsBlockSongs").load(url);
     var btn =  document.getElementById('bundledropbtn');
     btn.innerHTML = document.getElementById(p).innerHTML;
 }
@@ -9,5 +9,5 @@ function retrieveBundles1() {
     if ($('#searchBundle').val() != '') {
         url = url + '/' + $('#searchBundle').val();
     }
-    $("#resultsBlock").load(url);
+    $("#resultsBlockSongs").load(url);
 }

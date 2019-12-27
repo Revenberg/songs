@@ -2,27 +2,27 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
 
-  <head>
-    <title>Spring Thyme Seed Starter Manager</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/css/stsm.css}"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<head>
+  <title>Spring Thyme Seed Starter Manager</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/css/stsm.css}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" media="all"  href="../../css/main.css" th:href="@{/css/main.css}" />
-    <script type="text/javascript" src="/js/search8.js"></script>
-    <script type="text/javascript" src="/js/dropdown8.js"></script>    
+  <link rel="stylesheet" type="text/css" media="all" href="../../css/main.css" th:href="@{/css/main.css}" />
+  <script type="text/javascript" src="/js/search8.js"></script>
+  <script type="text/javascript" src="/js/dropdown8.js"></script>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div>
-      <img src="../../images/stsmlogo.png" alt="STSM logo" title="STSM logo" 
-           th:src="@{/images/stsmlogo.png}" th:alt-title="#{title.application}"/>
-    </div>
-    
-    <div class="seedstarterlist" th:unless="${#lists.isEmpty(allSeedStarters)}">
+  <div>
+    <img src="../../images/stsmlogo.png" alt="STSM logo" title="STSM logo" th:src="@{/images/stsmlogo.png}"
+      th:alt-title="#{title.application}" />
+  </div>
+
+  <div class="seedstarterlist" th:unless="${#lists.isEmpty(allSeedStarters)}">
     
       <h2 th:text="#{title.list}">List of Seed Starters</h2>
       
@@ -149,16 +149,21 @@
             <tr>
                 <th th:text="#{results.vers.title}">Title</th>
                 <th th:text="#{results.vers.image}">Image</th>
-            </tr>
+          </tr>
         </thead>
         <tbody>
             <tr th:each="vers : ${verses}">
-                <td><input type="checkbox" th:name="${vers.title}" th:value="${vers.id}"></td>
+                <td><input type="checkbox" th:name="${vers.title}" th:value="${vers.id}" checked>
+                  <span th:text="${vers.title}"></span>
+                </td>
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  
             </tr>
         </tbody>
     </table>
-</div>    
+    <div class="submit">
+      <button type="submit" name="save" th:text="#{seedstarter.create}">Add Seed Starter</button>    
+    </div>
+  </div>    
 
     // new mijn test gedeelte end
 

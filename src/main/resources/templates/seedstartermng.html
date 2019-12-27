@@ -87,9 +87,6 @@
             <button class="dropbtn" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content">
                   <div th:each="bundle : ${allTypes1}">
-<!--
-                        <a th:href="@{/song(bundleid=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
--->
                         <a th:href="|javascript:retrieveBundles(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
                   </div>
               </div>
@@ -109,13 +106,6 @@
           
   <span class="subtitle">Bundle list form</span>
   <div class="listBlock">
-      <div class="search-block">
-          <input type="text" id="searchBundle" name="searchBundle"/>
-          <br />
-          <label for="searchBundle" th:text="#{search.label}">Search label:</label>
-          <button id="searchButton" name="searchButton" onclick="retrieveBundles()" type="button" 
-                  th:text="#{search.button}">Search button</button>
-      </div>
       <!-- Results block -->
       <div id="resultsBlock">
       

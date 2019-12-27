@@ -107,7 +107,7 @@ public class SeedStarter {
     public String toString() {
         return "SeedStarter [id=" + this.id + ", datePlanted=" + this.datePlanted
                 + ", datePlanted1=" + this.datePlanted1
-                + ", covered=" + this.covered + ", type=" + this.type + ", features="
+                + ", covered=" + this.covered + ", features="
                 + Arrays.toString(this.features) + ", rows=" + this.rows + "]";
     }
     

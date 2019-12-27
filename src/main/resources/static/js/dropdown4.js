@@ -10,7 +10,7 @@ function myFunctionSongDropbtn(p) {
 
 function getSongs(item)
 {
-    var url = '/bundles/' + item.value;
+    var url = '/songs/' + item.value;
     $("#resultsBlockSongs").load(url);
     var btn =  document.getElementById('bundledropbtn');
     btn.innerHTML = document.getElementById(p).innerHTML;

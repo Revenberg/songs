@@ -93,7 +93,7 @@
           </div>
          
   <span class="subtitle">Song list form</span>
-  <div class="listBlockSongs">
+  <div class="listBlock">
       <!-- Results block -->
       <div id="Songs">
       
@@ -101,7 +101,7 @@
   </div>
 
   <span class="subtitle">Verses list form</span>
-  <div class="listBlockVerses">
+  <div class="listBlock">
       <!-- Results block -->
       <div id="Verses">
       
@@ -109,7 +109,7 @@
   </div>
 </form>
 
-<div th:fragment="resultsListSongs" th:unless="${#lists.isEmpty(songs)}" class="results-block-songs">
+<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block-songs">
   <table>
       <thead>
           <tr>

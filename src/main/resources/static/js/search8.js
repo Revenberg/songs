@@ -1,4 +1,6 @@
 function retrieveSongs(p) {
+    window.alert("retrieveSongs");
+
     var url = '/songs/' + p;
     $("#resultsBlockSongs").load(url);
 
@@ -7,6 +9,8 @@ function retrieveSongs(p) {
 }
 
 function retrieveVerses(p) {
+    window.alert("retrieveVerses");
+
     var url = '/verses/' + p;
     $("#resultsBlockVerses").load(url);
 

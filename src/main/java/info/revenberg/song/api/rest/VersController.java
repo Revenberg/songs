@@ -1,5 +1,6 @@
 package info.revenberg.song.api.rest;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import io.swagger.annotations.Api;
@@ -23,6 +24,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Optional;
+
+import java.awt.Transparency;
+import java.awt.RenderingHints;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -115,6 +119,53 @@ public class VersController extends AbstractRestHandler {
                 BufferedImage bufferimage = ImageIO.read(file);
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
                 ImageIO.write(bufferimage, "jpg", output);
+                return output.toByteArray();
+        }
+
+        /**
+        * Takes a BufferedImage and resizes it according to the provided targetSize
+        *
+        * @param src the source BufferedImage
+        * @param targetSize maximum height (if portrait) or width (if landscape)
+        * @return a resized version of the provided BufferedImage
+        */
+       private static BufferedImage resize(BufferedImage src, int targetSize) {
+           if (targetSize <= 0) {
+               return src; //this can't be resized
+           }
+           int targetWidth = targetSize;
+           int targetHeight = targetSize;
+           float ratio = ((float) src.getHeight() / (float) src.getWidth());
+           if (ratio <= 1) { //square or landscape-oriented image
+               targetHeight = (int) Math.ceil((float) targetWidth * ratio);
+           } else { //portrait image
+               targetWidth = Math.round((float) targetHeight / ratio);
+           }
+           BufferedImage bi = new BufferedImage(targetWidth, targetHeight, src.getTransparency() == Transparency.OPAQUE ? BufferedImage.TYPE_INT_RGB : BufferedImage.TYPE_INT_ARGB);
+           Graphics2D g2d = bi.createGraphics();
+           g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR); //produces a balanced resizing (fast and decent quality)
+           g2d.drawImage(src, 0, 0, targetWidth, targetHeight, null);
+           g2d.dispose();
+           return bi;
+       }
+
+        @RequestMapping(value = "/{id}/scalledimage", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+        @ResponseStatus(HttpStatus.OK)
+        @ApiOperation(value = "Get scalled image")
+        public @ResponseBody byte[] getScalledImage(
+                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id)
+                        throws SQLException, IOException {
+                checkResourceFound(this.versService.getVers(id));
+                Optional<Vers> vers = this.versService.getVers(id);
+
+                String loc = vers.get().getLocation();
+                log.info(loc);
+                File file = new File(loc);
+                BufferedImage bufferimage = ImageIO.read(file);
+                BufferedImage img = resize(bufferimage, 50);
+                
+                ByteArrayOutputStream output = new ByteArrayOutputStream();
+                ImageIO.write(img, "jpg", output);
                 return output.toByteArray();
         }
 

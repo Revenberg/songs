@@ -5,7 +5,8 @@ function retrieveSongs(p) {
     $("#resultsBlockSongs").load(url);
 
     var btn =  document.getElementById('bundledropbtn');
-    btn.innerHTML = document.getElementById(p).innerHTML;
+    window.alert(p);
+    btn.innerHTML = document.getElementById("bundle_" + p).innerHTML;
 }
 
 function retrieveVerses(p) {
@@ -14,7 +15,9 @@ function retrieveVerses(p) {
     var url = '/verses/' + p;
     $("#resultsBlockVerses").load(url);
 
+    window.alert(p);
+
     var btn =  document.getElementById('songdropbtn');
-    btn.innerHTML = document.getElementById(p).innerHTML;
+    btn.innerHTML = document.getElementById("song" + p).innerHTML;
 }
 

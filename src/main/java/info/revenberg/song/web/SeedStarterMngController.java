@@ -113,7 +113,7 @@ public class SeedStarterMngController {
             return "seedstartermng";
         }
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        System.out.println(bindingResult.toString());
+        System.out.println(seedStarter.toString());
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         this.seedStarterService.add(seedStarter);
         model.clear();

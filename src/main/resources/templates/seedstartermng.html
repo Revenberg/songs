@@ -123,8 +123,23 @@
           </tr>
       </tbody>
   </table>
+---------------------------------------
+  <div>
+    <label for="songs" th:text="#{seedstarter.songs}">Songs</label>
+    <select th:field="*{songs}" onchange="getVerses(this);">
+      <option th:each="song : ${song}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
+    </select>
+  </div>
 
-  
+  <div class="dropdown">
+    <button class="dropbtn" id="songdropbtn" onclick="return false;">Dropdown Bundel</button>
+    <div class="dropdown-content" id="dropdown-content">
+          <div th:each="song : ${songs}">
+                <a th:href="|javascript:retrieveVerses(${song.id})|" th:id="${song.id}"><span th:text="${song.name}"></span></a>
+          </div>
+      </div>
+  </div>
+
 </fieldset>
 </div>
 

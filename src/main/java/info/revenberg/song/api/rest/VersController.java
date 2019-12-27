@@ -153,7 +153,8 @@ public class VersController extends AbstractRestHandler {
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get scalled image")
         public @ResponseBody byte[] getScalledImage(
-                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id)
+                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id,
+                        @ApiParam(value = "The new  size", required = true) @RequestParam(value = "size", required = true) Integer  size)
                         throws SQLException, IOException {
                 checkResourceFound(this.versService.getVers(id));
                 Optional<Vers> vers = this.versService.getVers(id);
@@ -162,7 +163,7 @@ public class VersController extends AbstractRestHandler {
                 log.info(loc);
                 File file = new File(loc);
                 BufferedImage bufferimage = ImageIO.read(file);
-                BufferedImage img = resize(bufferimage, 50);
+                BufferedImage img = resize(bufferimage, size);
                 
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
                 ImageIO.write(img, "jpg", output);

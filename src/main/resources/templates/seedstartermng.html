@@ -86,12 +86,12 @@
             <button class="dropbtn" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content">
                   <div th:each="bundle : ${allTypes1}">
-                        <a th:href="|javascript:retrieveBundles(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
+                        <a th:href="|javascript:retrieveSongs(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
                   </div>
               </div>
           </div>
           
-  <span class="subtitle">Bundle list form</span>
+  <span class="subtitle">song list form</span>
   <div class="listBlock">
       <!-- Results block -->
       <div id="resultsBlock">
@@ -104,14 +104,14 @@
   <table>
       <thead>
           <tr>
-              <th th:text="#{results.bundle.id}">Id</th>
-              <th th:text="#{results.bundle.name}">Name</th>
+              <th th:text="#{results.song.id}">Id</th>
+              <th th:text="#{results.song.name}">Name</th>
           </tr>
       </thead>
       <tbody>
-          <tr th:each="bundle : ${songs}">
-              <td th:text="${bundle.id}">id</td>
-              <td th:text="${bundle.name}">surname</td>
+          <tr th:each="song : ${songs}">
+              <td th:text="${song.id}">id</td>
+              <td th:text="${song.name}">surname</td>
           </tr>
       </tbody>
   </table>

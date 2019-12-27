@@ -84,7 +84,7 @@
 
           <div class="dropdown">
             <button class="dropbtn" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
-            <div class="dropdown-content" id="dropdown-content">
+            <div class="dropdown-content" id="dropdown-content-bundle">
                   <div th:each="bundle : ${allTypes1}">
                         <a th:href="|javascript:retrieveSongs(${bundle.id})|" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
                   </div>
@@ -133,7 +133,7 @@
 
   <div class="dropdown">
     <button cslsass="dropbtn" id="songdropbtn" onclick="return false;">Dropdown Songs</button>
-    <div class="dropdown-content" id="dropdown-content">
+    <div class="dropdown-content" id="dropdown-content-song">
           <div th:each="song : ${songs}">
                 <a th:href="|javascript:retrieveVerses(${song.id})|" th:id="${song.id}"><span th:text="${song.name}"></span></a>
           </div>

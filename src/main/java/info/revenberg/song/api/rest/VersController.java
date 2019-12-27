@@ -1,5 +1,7 @@
 package info.revenberg.song.api.rest;
 
+import java.awt.image.BufferedImage;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -15,11 +17,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -106,8 +111,11 @@ public class VersController extends AbstractRestHandler {
 
                 String loc = vers.get().getLocation();
                 log.info(loc);
-                InputStream in = getClass().getResourceAsStream(loc);
-                return IOUtils.toByteArray(in);
+                File file = new File(loc);
+                BufferedImage bufferimage = ImageIO.read(file);
+                ByteArrayOutputStream output = new ByteArrayOutputStream();
+                ImageIO.write(bufferimage, "jpg", output);
+                return output.toByteArray();
         }
 
 }

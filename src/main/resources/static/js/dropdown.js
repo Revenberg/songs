@@ -8,7 +8,7 @@ function myFunctionSongDropbtn(p) {
     btn.innerHTML = document.getElementById(p).innerHTML;
 }
 
-function getval(sel)
+function getNewVal(item)
 {
-    alert(sel.value);
+    alert(item.value);
 }

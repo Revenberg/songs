@@ -84,8 +84,8 @@
 
 
           <div class="dropdown">
-            <button class="dropbtn" id="bundledropbtn1">Dropdown Bundel</button>
-            <div class="dropdown-content" >
+            <button class="dropbtn" id="bundledropbtn">Dropdown Bundel</button>
+            <div class="dropdown-content" id="dropdown-content">
                   <div th:each="bundle : ${allTypes1}">
 <!--
                         <a th:href="@{/song(bundleid=${bundle.id})}" th:id="${bundle.id}"><span th:text="${bundle.name}"></span></a>
@@ -173,7 +173,7 @@
           </div>
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}">
+            <select th:field="*{type}" size="10">
               <option th:each="type : ${allTypes}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
             </select>
           </div>

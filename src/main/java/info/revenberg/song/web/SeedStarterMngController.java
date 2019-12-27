@@ -67,14 +67,14 @@ public class SeedStarterMngController {
     public String showGuestList(Model model, @PathVariable("bundleid") long bundleid) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));
 
-        return "seedstartermng :: resultsListSongs";
+        return "seedstartermng :: resultsList";
     }
 
     @RequestMapping(value = "/songs", method = RequestMethod.GET)
     public String showGuestList(Model model) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs());
 
-        return "seedstartermng :: resultsListSongs";
+        return "seedstartermng :: resultsList";
     }
 
     @ModelAttribute("allTypes1")

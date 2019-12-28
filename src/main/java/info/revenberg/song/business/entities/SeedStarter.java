@@ -27,6 +27,8 @@ import java.util.List;
 public class SeedStarter {
 
     private Integer id = null;
+    private Long bundleid = null;
+    private Long songid;
     private Date datePlanted = null;
     private String datePlanted1 = null;
     private Boolean covered = null;
@@ -37,7 +39,7 @@ public class SeedStarter {
     private Feature[] features = null;
     
     private List<Row> rows = new ArrayList<Row>();
-    
+        
     public SeedStarter() {
         super();
     }
@@ -52,6 +54,21 @@ public class SeedStarter {
         this.id = id;
     }
 
+    public Long getBundleId() {
+        return this.bundleid;
+    }
+
+    public void setBundleId(final Long bundleid) {
+        this.bundleid = bundleid;
+    }
+
+    public Long getSongId() {
+        return this.songid;
+    }
+
+    public void setSongId(final Long songid) {
+        this.songid = songid;
+    }
 
     public Date getDatePlanted() {
         return this.datePlanted;

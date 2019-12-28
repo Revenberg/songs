@@ -75,9 +75,9 @@
           </ul>
           
           <div>
-            <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}" onchange="getSongs(this);">
-              <option th:each="type : ${allBundles}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
+            <label for="bundle" th:text="#{seedstarter.bundle}">Type</label>
+            <select th:field="*{bundle}" onchange="getSongs(this);">
+              <option th:each="bundle : ${allBundles}" th:value="${bundle.id}" th:text="${bundle.name}">bundle</option>
             </select>
           </div>
 

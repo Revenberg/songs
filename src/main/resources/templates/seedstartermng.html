@@ -155,7 +155,7 @@
         </thead>
         <tbody>
             <tr th:each="vers : ${verses}">
-                <td><input type="checkbox"  th:name="${vers.title}" th:value="${vers.id}" checked>
+                <td><input type="checkbox" th:field="*{verslist}" th:name="${vers.title}" th:value="${vers.id}" checked>
                   <span th:text="${vers.title}"></span>
                 </td>
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  

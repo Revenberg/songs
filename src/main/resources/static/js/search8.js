@@ -1,8 +1,5 @@
 function retrieveSongs(p) {
-    window.alert("retrieveSongs");
-    window.alert(p);
-    var bbtn =  document.getElementById('bundleid');
-    window.alert(bbtn.value);
+    var bbtn =  document.getElementById('bundleid');    
     bbtn.value = p;
 
     var url = '/songs/' + p;

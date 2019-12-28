@@ -43,6 +43,8 @@ import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Guest;
+import info.revenberg.song.domain.Song;
+import info.revenberg.song.domain.Vers;
 
 @Controller
 public class SeedStarterMngController {
@@ -78,8 +80,18 @@ public class SeedStarterMngController {
 
 
     @ModelAttribute("allBundles")
-    public List<Bundle> populateTypes() {
+    public List<Bundle> allBundles() {
         return this.seedStarterService.findAllBundle();
+    }
+
+    @ModelAttribute("allSongs")
+    public List<Song> allSongs() {
+        return this.seedStarterService.findAllSongs(6);
+    }
+
+    @ModelAttribute("allVerses")
+    public List<Vers> allVerses() {
+        return this.seedStarterService.findAllVerses(6);
     }
 
     @ModelAttribute("allFeatures")

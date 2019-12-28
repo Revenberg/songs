@@ -83,6 +83,16 @@
             </select>
           </div>
 
+          <div>
+            <label th:text="#{seedstarter.verslist}">verslist</label>
+            <ul>
+              <li th:each="feat : ${allBundles}">
+                <input type="checkbox" th:field="*{verslist}" th:value="${feat}" />
+                <label th:for="${#ids.prev('verslist')}" th:text="#{${'seedstarter.verslist.' + feat}}">Electric Heating</label>
+              </li>
+            </ul>
+          </div>
+
 
           <div class="dropdown">
             <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>

@@ -141,10 +141,10 @@ public class SeedStarter {
         return this.verslist;
     }
 
-    public void setVerslist(final Vers[] verslist) {
+/*    public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    
-
+*/
     public List<Row> getRows() {
         return this.rows;
     }

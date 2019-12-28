@@ -77,7 +77,7 @@
           <div>
             <label for="type" th:text="#{seedstarter.type}">Type</label>
             <select th:field="*{type}" onchange="getSongs(this);">
-              <option th:each="type : ${allTypes1}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
+              <option th:each="type : ${allBundles}" th:value="${type.id}" th:text="${type.name}">Wireframe</option>
             </select>
           </div>
 
@@ -85,7 +85,7 @@
           <div class="dropdown">
             <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content-bundle">
-                  <div th:each="bundle : ${allTypes1}">
+                  <div th:each="bundle : ${allBundles}">
                         <a th:href="|javascript:retrieveSongs(${bundle.id})|" th:id="|bundle_${bundle.id}|"><span th:text="${bundle.name}"></span></a>
                   </div>
               </div>

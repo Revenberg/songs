@@ -80,7 +80,7 @@ public class SeedStarterMngController {
     }
 
 
-    @ModelAttribute("allTypes1")
+    @ModelAttribute("allBundles")
     public List<Bundle> populateTypes() {
         return this.seedStarterService.findAllBundle();
     }

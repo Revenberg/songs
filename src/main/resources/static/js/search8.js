@@ -1,4 +1,7 @@
 function retrieveSongs(p) {
+    var bbtn =  document.getElementById('bundle');
+    bbtn.innerHTML = item.value;
+
     var url = '/songs/' + p;
     $("#resultsBlockSongs").load(url);
 
@@ -7,6 +10,9 @@ function retrieveSongs(p) {
 }
 
 function retrieveVerses(p) {
+    var sbtn =  document.getElementById('song');
+    sbtn.innerHTML = item.value;
+
     var url = '/verses/' + p;
     $("#resultsBlockVerses").load(url);
 

@@ -67,6 +67,8 @@
 
       <form action="#" th:action="@{/seedstartermng}" th:object="${seedStarter}" method="post">
         <fieldset>
+          <p>Id: <input type="text" th:field="*{id}" /></p>
+
           <legend th:text="#{seedstarter.data}">Seed Starter Data</legend>
           <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>

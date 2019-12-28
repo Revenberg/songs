@@ -33,7 +33,7 @@ public class SeedStarter {
     private Type type = Type.PLASTIC;
     private String bundle = null;
     private String song = null;
-
+    
     private Feature[] features = null;
     
     private List<Row> rows = new ArrayList<Row>();

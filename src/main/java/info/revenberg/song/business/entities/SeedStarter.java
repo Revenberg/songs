@@ -136,16 +136,15 @@ public class SeedStarter {
     public void setFeatures(final Feature[] features) {
         this.features = features;
     }
-/*
+
     public Vers[] getVerslist() {
         return this.verslist;
     }
 
-
     public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    
-*/
+
     public List<Row> getRows() {
         return this.rows;
     }

@@ -92,6 +92,17 @@
               </div>
           </div>
          
+          <div>
+            <ul>
+              <li th:each="feat : ${allBundles}">
+                <input type="checkbox" th:field="*{features}" th:value="${feat}" />
+                <label th:for="${#ids.prev('features')}" th:text="#{${'seedstarter.features.' + feat}}">Electric Heating</label>
+              </li>
+            </ul>
+          </div>
+  
+
+          
   <span class="subtitle">Song list form</span>
   <div class="listBlock">
       <!-- Results block -->
@@ -161,20 +172,6 @@
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  
             </tr>
         </tbody>
-
-
-
-
-        <div>
-          <ul>
-            <li th:each="feat : ${allBundles}">
-              <input type="checkbox" th:field="*{features}" th:value="${feat}" />
-              <label th:for="${#ids.prev('features')}" th:text="#{${'seedstarter.features.' + feat}}">Electric Heating</label>
-            </li>
-          </ul>
-        </div>
-
-
 
 
     </table>

@@ -10,7 +10,7 @@ function myFunctionSongDropbtn(p) {
 
 function getSongs(item)
 {
-    var btn =  document.getElementById('bundle');
+    var btn =  document.getElementById('bundleid');
     btn.innerHTML = item.value;
 
     var url = '/songs/' + item.value;
@@ -19,9 +19,9 @@ function getSongs(item)
 }
 function getVerses(item)
 {
-    var btn =  document.getElementById('song');
+    var btn =  document.getElementById('songid');
     btn.innerHTML = item.value;
-    
+
     var url = '/verses/' + item.value;
     $("#resultsBlockVerses").load(url); 
 }

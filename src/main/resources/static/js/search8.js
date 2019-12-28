@@ -1,5 +1,5 @@
 function retrieveSongs(p) {
-    var bbtn =  document.getElementById('bundle');
+    var bbtn =  document.getElementById('bundleid');
     bbtn.innerHTML = item.value;
 
     var url = '/songs/' + p;
@@ -10,7 +10,7 @@ function retrieveSongs(p) {
 }
 
 function retrieveVerses(p) {
-    var sbtn =  document.getElementById('song');
+    var sbtn =  document.getElementById('songid');
     sbtn.innerHTML = item.value;
 
     var url = '/verses/' + p;

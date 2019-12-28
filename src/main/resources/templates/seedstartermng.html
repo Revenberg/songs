@@ -96,7 +96,8 @@
             <ul>
               <li th:each="feat : ${allBundles}">
                 <input type="checkbox" th:field="*{features}" th:value="${feat}" />
-                <label th:for="${#ids.prev('features')}" th:text="#{${'seedstarter.feature.' + feat}}">Electric Heating</label>
+<!--                <label th:for="${#ids.prev('features')}" th:text="#{${'seedstarter.feature.' + feat}}">Electric Heating</label>
+-->
               </li>
             </ul>
           </div>

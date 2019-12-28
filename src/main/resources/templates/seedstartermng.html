@@ -121,17 +121,18 @@
   </table>
 ---------------------------------------
 -->
+<!-- th:field="*{song}" -->
   <div>    
-    <select th:field="*{song}" onchange="getVerses(this);">
-      <option th:each="song2 : ${songs}" th:value="${song2.id}" th:text="${song2.name}">Wireframe</option>
+    <select  onchange="getVerses(this);">
+      <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
     </select>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn" id="songdropbtn" onclick="return false;">Dropdown Songs</button>
     <div class="dropdown-content" id="dropdown-content-song">
-          <div th:each="song3 : ${songs}">
-                <a th:href="|javascript:retrieveVerses(${song3.id})|" th:id="|song_${song3.id}|"><span th:text="${song3.name}"></span></a>
+          <div th:each="song : ${songs}">
+                <a th:href="|javascript:retrieveVerses(${song.id})|" th:id="|song_${song.id}|"><span th:text="${song.name}"></span></a>
           </div>
       </div>
   </div>

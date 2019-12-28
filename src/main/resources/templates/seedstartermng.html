@@ -70,9 +70,10 @@
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
           
+          <!-- th:field="*{bundle}" -->
           <div>
             <label for="bundle" th:text="#{seedstarter.bundle}">Type</label>
-            <select th:field="*{bundle}" onchange="getSongs(this);">
+            <select onchange="getSongs(this);">              
               <option th:each="bundle : ${allBundles}" th:value="${bundle.id}" th:text="${bundle.name}">bundle</option>
             </select>
           </div>
@@ -121,8 +122,9 @@
   </table>
 ---------------------------------------
 -->
+<!-- th:field="*{song}" -->
   <div>    
-    <select th:field="*{song}" onchange="getVerses(this);">
+    <select onchange="getVerses(this);">
       <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
     </select>
   </div>

@@ -158,7 +158,7 @@ public class SeedStarter {
                 + ", covered=" + this.covered 
                 + ", features="
                 + Arrays.toString(this.features) 
- //               + Arrays.toString(this.verslist) 
+                + Arrays.toString(this.verslist) 
                 + ", rows=" + this.rows + "]";
     }
     

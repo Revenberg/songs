@@ -83,17 +83,6 @@
             </select>
           </div>
 
-          <div>
-            <label th:text="#{seedstarter.verslist}">verslist</label>
-            <ul>
-              <li th:each="feat : ${allBundles}">
-                <input type="checkbox" th:field="*{verslist}" th:value="${feat}" />
-                <label th:for="${#ids.prev('verslist')}" th:text="#{${'seedstarter.verslist.' + feat}}">Electric Heating</label>
-              </li>
-            </ul>
-          </div>
-
-
           <div class="dropdown">
             <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content-bundle">
@@ -172,6 +161,23 @@
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  
             </tr>
         </tbody>
+
+
+        <div>
+          <label th:text="#{seedstarter.verslist}">verslist</label>
+          <ul>
+            <li th:each="feat : ${verses}">
+              <input type="checkbox" th:field="*{verslist}" th:value="${feat}" />
+              <label th:for="${#ids.prev('verslist')}" th:text="#{${'seedstarter.verslist.' + feat}}">Electric Heating</label>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+
+
     </table>
   <fieldset>
   <div class="submit">

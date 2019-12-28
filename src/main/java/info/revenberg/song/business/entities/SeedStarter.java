@@ -54,19 +54,19 @@ public class SeedStarter {
         this.id = id;
     }
 
-    public Long getBundleId() {
+    public Long getBundleid() {
         return this.bundleid;
     }
 
-    public void setBundleId(final Long bundleid) {
+    public void setBundleid(final Long bundleid) {
         this.bundleid = bundleid;
     }
 
-    public Long getSongId() {
+    public Long getSongid() {
         return this.songid;
     }
 
-    public void setSongId(final Long songid) {
+    public void setSongid(final Long songid) {
         this.songid = songid;
     }
 

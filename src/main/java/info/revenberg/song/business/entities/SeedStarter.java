@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Vers;
 
 public class SeedStarter {
@@ -40,7 +41,7 @@ public class SeedStarter {
     private String bundle = null;
     private String song = null;
     
-    private Feature[] features = null;
+    private Bundle[] features = null;
     
     
     private List<Row> rows = new ArrayList<Row>();
@@ -128,12 +129,12 @@ public class SeedStarter {
     }
 
 
-    public Feature[] getFeatures() {
+    public Bundle[] getFeatures() {
         return this.features;
     }
 
 
-    public void setFeatures(final Feature[] features) {
+    public void setFeatures(final Bundle[] features) {
         this.features = features;
     }
 

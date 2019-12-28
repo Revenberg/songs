@@ -104,7 +104,7 @@
   </div>
 </form>
 
-<div th:fragment="resultsList" th:unless="${#lists.isEmpty(songs)}" class="results-block">
+<div th:fragment="resultsListSongs" th:unless="${#lists.isEmpty(songs)}" class="results-block">
 <!--  <table>
       <thead>
           <tr>
@@ -139,7 +139,7 @@
 </fieldset>
 </div>
 
-<div th:fragment="resultsList" th:unless="${#lists.isEmpty(verses)}" class="results-block">
+<div th:fragment="resultsListVerses" th:unless="${#lists.isEmpty(verses)}" class="results-block">
   <table>
         <thead>
             <tr>

@@ -31,7 +31,7 @@ public class SeedStarter {
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
-//    private Vers[] verslist = null;
+    private Vers[] verslist = null;
 
     private Date datePlanted = null;
     private String datePlanted1 = null;

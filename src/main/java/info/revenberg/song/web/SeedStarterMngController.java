@@ -35,17 +35,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ch.qos.logback.classic.Logger;
 import info.revenberg.song.business.entities.Feature;
 import info.revenberg.song.business.entities.Row;
 import info.revenberg.song.business.entities.SeedStarter;
-import info.revenberg.song.business.entities.Type;
 import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Guest;
-import java.util.logging.Level;
 
 @Controller
 public class SeedStarterMngController {

@@ -94,8 +94,8 @@
 
           <div>
             <ul>
-              <li th:each="feat : ${allBundles}">
-                <input type="checkbox" th:value="${feat.id}" /><span th:text="${bundle.name}"></span>
+              <li th:each="bundle : ${allBundles}">
+                <input type="checkbox" th:value="${bundle.id}" /><span th:text="${bundle.name}"></span>
                 <!--
                   <input type="checkbox" th:field="*{features}" th:value="${feat}" />
 -->

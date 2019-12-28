@@ -24,11 +24,15 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import info.revenberg.song.domain.Vers;
+
 public class SeedStarter {
 
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
+    private Vers[] verses = null;
+
     private Date datePlanted = null;
     private String datePlanted1 = null;
     private Boolean covered = null;
@@ -37,6 +41,7 @@ public class SeedStarter {
     private String song = null;
     
     private Feature[] features = null;
+    
     
     private List<Row> rows = new ArrayList<Row>();
         
@@ -132,6 +137,14 @@ public class SeedStarter {
         this.features = features;
     }
 
+    public Vers[] getVerses() {
+        return this.verses;
+    }
+
+
+    public void setVerses(final Vers[] verses) {
+        this.verses = verses;
+    }    
 
     public List<Row> getRows() {
         return this.rows;
@@ -146,6 +159,7 @@ public class SeedStarter {
                 + ", covered=" + this.covered 
                 + ", features="
                 + Arrays.toString(this.features) 
+                + Arrays.toString(this.verses) 
                 + ", rows=" + this.rows + "]";
     }
     

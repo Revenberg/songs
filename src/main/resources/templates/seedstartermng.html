@@ -168,7 +168,7 @@
           <ul>
             <li th:each="feat : ${verses}">
               <input type="checkbox" th:field="*{verslist}" th:value="${feat}" />
-              <label th:for="${#ids.prev('verslist')}" th:text="#{${'seedstarter.verslist.' + feat}}">Electric Heating</label>
+              <label th:for="${#ids.prev('verses')}" th:text="#{${'seedstarter.verses.' + feat}}">Electric Heating</label>
             </li>
           </ul>
         </div>

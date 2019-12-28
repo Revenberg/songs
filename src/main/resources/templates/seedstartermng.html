@@ -70,9 +70,8 @@
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
           
-          <!-- th:field="*{bundle}" -->
           <div>
-            <label for="bundle" th:text="#{seedstarter.bundle}">Type</label>
+            <label for="bundle" th:field="*{bundle}" th:text="#{seedstarter.bundle}">Type</label>
             <select onchange="getSongs(this);">              
               <option th:each="bundle : ${allBundles}" th:value="${bundle.id}" th:text="${bundle.name}">bundle</option>
             </select>
@@ -80,7 +79,7 @@
 
 
           <div class="dropdown">
-            <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
+            <button class="dropbtn" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content-bundle">
                   <div th:each="bundle : ${allBundles}">
                         <a th:href="|javascript:retrieveSongs(${bundle.id})|" th:id="|bundle_${bundle.id}|"><span th:text="${bundle.name}"></span></a>
@@ -122,15 +121,14 @@
   </table>
 ---------------------------------------
 -->
-<!-- th:field="*{song}" -->
   <div>    
-    <select onchange="getVerses(this);">
+    <select th:field="*{song}" onchange="getVerses(this);">
       <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
     </select>
   </div>
 
   <div class="dropdown">
-    <button class="dropbtn" th:field="*{song}" id="songdropbtn" onclick="return false;">Dropdown Songs</button>
+    <button class="dropbtn" id="songdropbtn" onclick="return false;">Dropdown Songs</button>
     <div class="dropdown-content" id="dropdown-content-song">
           <div th:each="song : ${songs}">
                 <a th:href="|javascript:retrieveVerses(${song.id})|" th:id="|song_${song.id}|"><span th:text="${song.name}"></span></a>

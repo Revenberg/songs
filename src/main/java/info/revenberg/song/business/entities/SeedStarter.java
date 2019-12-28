@@ -31,7 +31,7 @@ public class SeedStarter {
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
-    private Vers[] verslist = null;
+//    private Vers[] verslist = null;
 
     private Date datePlanted = null;
     private String datePlanted1 = null;
@@ -136,7 +136,7 @@ public class SeedStarter {
     public void setFeatures(final Feature[] features) {
         this.features = features;
     }
-
+/*
     public Vers[] getVerslist() {
         return this.verslist;
     }
@@ -145,7 +145,7 @@ public class SeedStarter {
     public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    
-
+*/
     public List<Row> getRows() {
         return this.rows;
     }
@@ -159,7 +159,7 @@ public class SeedStarter {
                 + ", covered=" + this.covered 
                 + ", features="
                 + Arrays.toString(this.features) 
-                + Arrays.toString(this.verslist) 
+ //               + Arrays.toString(this.verslist) 
                 + ", rows=" + this.rows + "]";
     }
     

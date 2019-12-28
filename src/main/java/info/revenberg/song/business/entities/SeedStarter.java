@@ -141,8 +141,8 @@ public class SeedStarter {
     @Override
     public String toString() {
         return "SeedStarter [id=" + this.id + ", datePlanted=" + this.datePlanted
-                + ", bundle=" + this.bundle
-                + ", song=" + this.song
+                + ", bundleid=" + Long.toString(this.bundleid)
+                + ", songid=" + Long.toString(this.songid)
                 + ", covered=" + this.covered + ", features="
                 + Arrays.toString(this.features) + ", rows=" + this.rows + "]";
     }

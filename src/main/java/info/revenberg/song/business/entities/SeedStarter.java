@@ -137,11 +137,11 @@ public class SeedStarter {
         this.features = features;
     }
 
-    public Vers[] getVerslist() {
+/*    public Vers[] getVerslist() {
         return this.verslist;
     }
 
-/*    public void setVerslist(final Vers[] verslist) {
+    public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    
 */

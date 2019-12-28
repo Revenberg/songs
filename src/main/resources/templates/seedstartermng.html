@@ -195,13 +195,7 @@
           <div>
             <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>
             <input type="checkbox" th:field="*{covered}" />
-          </div>
-          <div>
-            <label for="type" th:text="#{seedstarter.type}">Type</label>
-            <select th:field="*{type}" size="10">
-              <option th:each="type : ${allTypes}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
-            </select>
-          </div>
+          </div>         
           <div>
             <label th:text="#{seedstarter.features}">Features</label>
             <ul>

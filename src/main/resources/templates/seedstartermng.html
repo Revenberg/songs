@@ -122,7 +122,7 @@
 ---------------------------------------
 -->
   <div>    
-    <select th:field="*{songs}" onchange="getVerses(this);">
+    <select th:field="*{song}" onchange="getVerses(this);">
       <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
     </select>
   </div>

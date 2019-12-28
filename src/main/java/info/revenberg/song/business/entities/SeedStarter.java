@@ -32,6 +32,7 @@ public class SeedStarter {
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
     private String bundle = null;
+    private String song = null;
 
     private Feature[] features = null;
     
@@ -73,9 +74,16 @@ public class SeedStarter {
         return this.bundle;
     }
     
-
     public void setBundle(final String bundle) {
         this.bundle = bundle;
+    }
+
+    public void setSong(final String song) {
+        this.song = song;
+    }
+
+    public String getSong() {
+        return this.song;
     }
 
     public Boolean getCovered() {
@@ -116,7 +124,8 @@ public class SeedStarter {
     @Override
     public String toString() {
         return "SeedStarter [id=" + this.id + ", datePlanted=" + this.datePlanted
-                + ", datePlanted1=" + this.datePlanted1
+                + ", bundle=" + this.bundle
+                + ", song=" + this.song
                 + ", covered=" + this.covered + ", features="
                 + Arrays.toString(this.features) + ", rows=" + this.rows + "]";
     }

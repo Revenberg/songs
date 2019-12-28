@@ -31,6 +31,8 @@ public class SeedStarter {
     private String datePlanted1 = null;
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
+    private String bundle = null;
+
     private Feature[] features = null;
     
     private List<Row> rows = new ArrayList<Row>();
@@ -63,9 +65,17 @@ public class SeedStarter {
         return this.datePlanted1;
     }
 
+    public void setDatePlanted(final String bundle) {
+        this.datePlanted = datePlanted1;
+    }
 
-    public void setDatePlanted1(final String datePlanted1) {
-        this.datePlanted1 = datePlanted1;
+    public String getBundle() {
+        return this.bundle;
+    }
+    
+
+    public void setBundle(final String bundle) {
+        this.bundle = bundle;
     }
 
     public Boolean getCovered() {

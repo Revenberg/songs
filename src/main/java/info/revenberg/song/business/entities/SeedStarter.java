@@ -65,8 +65,8 @@ public class SeedStarter {
         return this.datePlanted1;
     }
 
-    public void setDatePlanted(final String bundle) {
-        this.datePlanted = datePlanted1;
+    public void setDatePlanted1(final String datePlanted1) {
+        this.datePlanted1 = datePlanted1;
     }
 
     public String getBundle() {

@@ -83,7 +83,7 @@
 
 
           <div class="dropdown">
-            <button class="dropbtn" th:field="*{bundle1}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
+            <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content-bundle">
                   <div th:each="bundle : ${allBundles}">
                         <a th:href="|javascript:retrieveSongs(${bundle.id})|" th:id="|bundle_${bundle.id}|"><span th:text="${bundle.name}"></span></a>

@@ -40,7 +40,7 @@ public class SeedStarter {
     private String song = null;
 
     private Vers[] versesValue;
-    
+
     //private Vers[] features = null;
     
     
@@ -130,10 +130,11 @@ public class SeedStarter {
     public Vers[] getVersesValue() {
         return this.versesValue;
     }
+*/
     public void setVersesValue(final Vers[] versesValue) {
         this.versesValue = versesValue;
     }    
-*/
+
     public List<Row> getRows() {
         return this.rows;
     }

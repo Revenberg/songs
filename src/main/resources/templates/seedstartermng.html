@@ -92,10 +92,16 @@
               </div>
           </div>
 
+<!-- th:field="*{versesValue}" -->
+          <div th:each="vers : ${allVerses}">
+            <input type="checkbox" th:field="*{vers}" th:value="${vers.id}" />
+            <label th:for="${#ids.prev('vers')}" th:text="${vers.name}">Europe</label>
+         </div>
+
           <div>
             <ul>
               <li th:each="vers : ${allVerses}">
-                <input type="checkbox" th:field="*{versesValue}" th:value="${vers.id}" /><span th:text="${vers.name}"></span>
+                <input type="checkbox" th:value="${vers.id}" /><span th:text="${vers.name}"></span>
               </li>
             </ul>
           </div>

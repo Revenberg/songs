@@ -127,7 +127,7 @@ public class SeedStarter {
         this.type = type;
     }
 
-
+/* 2
     public Vers[] getFeatures() {
         return this.features;
     }

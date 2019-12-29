@@ -177,7 +177,7 @@
         </thead>
         <tbody>
             <tr th:each="vers : ${verses}">
-                <td><input type="checkbox" th:name="${vers.title}" th:value="${vers.id}" checked>
+                <td><input type="checkbox" th:field="*{verses}" th:name="${vers.title}" th:value="${vers.id}" checked>
                   <span th:text="${vers.title}"></span>
                 </td>
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  
@@ -222,19 +222,7 @@
             <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>
             <input type="checkbox" th:field="*{covered}" />
           </div>         
-<!--          <div>
-            <label th:text="#{seedstarter.features}">Features</label>
-            <ul>
-              <li th:each="feat : ${allFeatures}">
-                <input type="checkbox" th:field="*{features}" th:value="${feat}" />
-                <label th:for="${#ids.prev('features')}" th:text="#{${'seedstarter.feature.' + feat}}">Electric Heating</label>
-              </li>
-              <li th:remove="all">
-                <input id="removed1" type="checkbox" /> <label for="removed1">Turf</label>
-              </li>
-            </ul>
-          </div>
--->    
+
           <div>
             <label th:text="#{seedstarter.rows}">Rows</label>
             <table>

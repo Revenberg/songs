@@ -127,16 +127,6 @@ public class SeedStarter {
         this.type = type;
     }
 
-/* 2
-    public Vers[] getFeatures() {
-        return this.features;
-    }
-
-
-    public void setFeatures(final Vers[] features) {
-        this.features = features;
-    }
-*/
 
 /*
     public Vers[] getVerslist() {
@@ -157,7 +147,6 @@ public class SeedStarter {
                 + ", bundleid=" + this.bundleid
                 + ", songid=" + this.songid
                 + ", covered=" + this.covered 
-                //+ ", features=" + Arrays.toString(this.features) 
                 + ", verslist="+ Arrays.toString(this.verslist) 
                 + ", rows=" + this.rows + "]";
     }

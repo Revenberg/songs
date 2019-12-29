@@ -35,8 +35,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import info.revenberg.song.business.entities.Feature;
-import info.revenberg.song.business.entities.Row;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
@@ -133,7 +131,7 @@ public class SeedStarterMngController {
 
     @RequestMapping(value = "/seedstartermng", params = { "addRow" })
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
-        seedStarter.getRows().add(new Row());
+        //seedStarter.getRows().add(new Row());
         return "seedstartermng";
     }
 

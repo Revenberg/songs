@@ -93,7 +93,14 @@
           </div>
 
 
-              
+          <div>
+            <ul>
+              <li th:each="vers : ${allVerses}">
+                  <input type="checkbox" th:field="*{vers}" th:value="${vers}" />                
+</li>
+            </ul>
+          </div>
+              <!--
           <div>
             <ul>
               <li th:each="vers : ${allVerses}">
@@ -103,7 +110,7 @@
 </li>
             </ul>
           </div>
-          
+          -->
   
 
           

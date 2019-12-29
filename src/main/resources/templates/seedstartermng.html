@@ -75,14 +75,14 @@
           <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
-          
+<!-- 2          
           <div>
             <label for="bundle" th:field="*{bundle}" th:text="#{seedstarter.bundle}">Type</label>
             <select onchange="getSongs(this);">              
               <option th:each="bundle : ${allBundles}" th:value="${bundle.id}" th:text="${bundle.name}">bundle</option>
             </select>
           </div>
-<!-- 2
+
           <div class="dropdown">
             <button class="dropbtn" th:field="*{bundle}" id="bundledropbtn" onclick="return false;">Dropdown Bundel</button>
             <div class="dropdown-content" id="dropdown-content-bundle">

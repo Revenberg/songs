@@ -31,7 +31,6 @@ public class SeedStarter {
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
-    private Vers[] versesValue; 
 
     private Date datePlanted = null;
     private String datePlanted1 = null;
@@ -39,6 +38,8 @@ public class SeedStarter {
     private Type type = Type.PLASTIC;
     private String bundle = null;
     private String song = null;
+
+    private Vers[] versesValue;
     
     //private Vers[] features = null;
     

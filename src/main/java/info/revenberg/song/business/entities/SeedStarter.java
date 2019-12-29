@@ -138,10 +138,10 @@ public class SeedStarter {
     }
 */
 
+/*
     public Vers[] getVerslist() {
         return this.verslist;
     }
-/*
     public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    

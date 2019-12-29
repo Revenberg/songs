@@ -90,7 +90,7 @@ public class SeedStarterMngController {
     public List<Vers> allVerses() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
         System.out.println(this.seedStarterService.findAllVerses(2));
-        System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");        
         return this.seedStarterService.findAllVerses(2);
     }
 

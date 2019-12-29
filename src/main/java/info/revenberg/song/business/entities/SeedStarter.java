@@ -31,7 +31,7 @@ public class SeedStarter {
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
-    private Vers[] versesValue = null;
+    private Vers[] versesValue; 
 
     private Date datePlanted = null;
     private String datePlanted1 = null;
@@ -125,14 +125,14 @@ public class SeedStarter {
     public void setType(final Type type) {
         this.type = type;
     }
-
+/*
     public Vers[] getVersesValue() {
         return this.versesValue;
     }
     public void setVersesValue(final Vers[] versesValue) {
         this.versesValue = versesValue;
     }    
-
+*/
     public List<Row> getRows() {
         return this.rows;
     }

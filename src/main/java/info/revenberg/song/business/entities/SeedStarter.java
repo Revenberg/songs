@@ -41,11 +41,10 @@ public class SeedStarter {
 
     private List<String> versesValue = new ArrayList<String>();
 
-    //private Vers[] features = null;
-    
-    
+    // private Vers[] features = null;
+
     private List<Row> rows = new ArrayList<Row>();
-        
+
     public SeedStarter() {
         super();
     }
@@ -53,7 +52,6 @@ public class SeedStarter {
     public Integer getId() {
         return this.id;
     }
-
 
     public void setId(final Integer id) {
         this.id = id;
@@ -79,7 +77,6 @@ public class SeedStarter {
         return this.datePlanted;
     }
 
-
     public void setDatePlanted(final Date datePlanted) {
         this.datePlanted = datePlanted;
     }
@@ -95,7 +92,7 @@ public class SeedStarter {
     public String getBundle() {
         return this.bundle;
     }
-    
+
     public void setBundle(final String bundle) {
         this.bundle = bundle;
     }
@@ -112,16 +109,13 @@ public class SeedStarter {
         return this.covered;
     }
 
-
     public void setCovered(final Boolean covered) {
         this.covered = covered;
     }
 
-
     public Type getType() {
         return this.type;
     }
-
 
     public void setType(final Type type) {
         this.type = type;
@@ -133,21 +127,26 @@ public class SeedStarter {
 
     public void setVersesValue(final List<String> versesValue) {
         this.versesValue = versesValue;
-    }    
+    }
 
     public List<Row> getRows() {
         return this.rows;
     }
 
-
     @Override
     public String toString() {
-        return "SeedStarter [id=" + this.id
-                + ", bundleid=" + this.bundleid
-                + ", songid=" + this.songid
-                + ", covered=" + this.covered 
-                + ", versesValue="+ Arrays.toString(this.versesValue) 
+
+        String sb = "";
+
+        for (String s : this.versesValue) {
+            sb += s + ",";
+        }
+
+        return "SeedStarter [id=" + this.id 
+                + ", bundleid=" + this.bundleid 
+                + ", songid=" + this.songid 
+                + ", covered=" + this.covered + ", versesValue=(" + sb + ")" 
                 + ", rows=" + this.rows + "]";
     }
-    
+
 }

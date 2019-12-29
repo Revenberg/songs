@@ -137,6 +137,7 @@ public class SeedStarter {
         this.features = features;
     }
 */
+/*
     public Vers[] getVerslist() {
         return this.verslist;
     }
@@ -148,7 +149,7 @@ public class SeedStarter {
     public List<Row> getRows() {
         return this.rows;
     }
-
+*/
 
     @Override
     public String toString() {

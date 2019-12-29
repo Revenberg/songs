@@ -75,7 +75,7 @@
           <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Input is incorrect</li>
           </ul>
-<!-- 2          
+
           <div>
             <label for="bundle" th:field="*{bundle}" th:text="#{seedstarter.bundle}">Type</label>
             <select onchange="getSongs(this);">              
@@ -91,9 +91,10 @@
                   </div>
               </div>
           </div>
--->
+
+
           <!-- 1
-                
+               
           <div>
             <ul>
               <li th:each="vers : ${allVerses}">

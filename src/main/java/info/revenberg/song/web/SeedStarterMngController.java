@@ -85,12 +85,13 @@ public class SeedStarterMngController {
 
     @ModelAttribute("allSongs")
     public List<Song> allSongs() {
-        return this.seedStarterService.findAllSongs(6);
+        return this.seedStarterService.findAllSongs(2);
     }
 
     @ModelAttribute("allVerses")
     public List<Vers> allVerses() {
-        return this.seedStarterService.findAllVerses(6);
+        System.out.println(this.seedStarterService.findAllVerses(2));
+        return this.seedStarterService.findAllVerses(2);
     }
 
     @ModelAttribute("allFeatures")

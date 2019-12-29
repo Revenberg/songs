@@ -94,8 +94,8 @@
 
           <div>
             <ul>
-              <li th:each="vers1 : ${allVerses}">
-                <label th:text="${vers1}">Electric Heating</label>
+              <li th:each="vers : ${allVerses}">
+                <input type="checkbox" th:value="${vers.id}" /><span th:text="${vers.name}"></span>
               </li>
             </ul>
           </div>

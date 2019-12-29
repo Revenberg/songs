@@ -123,7 +123,7 @@ public class SeedStarterMngController {
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println(seedStarter.toString());
         System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        this.seedStarterService.add(seedStarter);
+        //this.seedStarterService.add(seedStarter);
         model.clear();
         return "redirect:/seedstartermng";
     }

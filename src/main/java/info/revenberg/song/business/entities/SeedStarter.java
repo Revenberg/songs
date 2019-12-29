@@ -141,7 +141,7 @@ public class SeedStarter {
     public Vers[] getVerslist() {
         return this.verslist;
     }
-
+*/
     public void setVerslist(final Vers[] verslist) {
         this.verslist = verslist;
     }    
@@ -149,7 +149,7 @@ public class SeedStarter {
     public List<Row> getRows() {
         return this.rows;
     }
-*/
+
 
     @Override
     public String toString() {

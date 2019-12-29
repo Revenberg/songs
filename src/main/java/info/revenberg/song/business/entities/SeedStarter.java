@@ -40,7 +40,7 @@ public class SeedStarter {
     private String bundle = null;
     private String song = null;
     
-    private Vers[] features = null;
+    //private Vers[] features = null;
     
     
     private List<Row> rows = new ArrayList<Row>();
@@ -156,7 +156,7 @@ public class SeedStarter {
                 + ", bundleid=" + this.bundleid
                 + ", songid=" + this.songid
                 + ", covered=" + this.covered 
-                + ", features=" + Arrays.toString(this.features) 
+                //+ ", features=" + Arrays.toString(this.features) 
                 + ", verslist="+ Arrays.toString(this.verslist) 
                 + ", rows=" + this.rows + "]";
     }

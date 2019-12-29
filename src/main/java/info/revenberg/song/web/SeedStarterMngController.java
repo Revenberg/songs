@@ -96,11 +96,11 @@ public class SeedStarterMngController {
         return this.seedStarterService.findAllVerses(2);
     }
 
-    @ModelAttribute("allFeatures")
+    /*@ModelAttribute("allFeatures")
     public List<Feature> populateFeatures() {
         return Arrays.asList(Feature.ALL);
     }
-
+*/
     @ModelAttribute("allVarieties")
     public List<Variety> populateVarieties() {
         return this.varietyService.findAll();

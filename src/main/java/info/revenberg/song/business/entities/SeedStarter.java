@@ -126,11 +126,11 @@ public class SeedStarter {
     public void setType(final Type type) {
         this.type = type;
     }
-/*
+
     public Vers[] getVersesValue() {
         return this.versesValue;
     }
-*/
+
     public void setVersesValue(final Vers[] versesValue) {
         this.versesValue = versesValue;
     }    

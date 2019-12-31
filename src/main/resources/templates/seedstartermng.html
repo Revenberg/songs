@@ -98,6 +98,7 @@
             <label th:for="${#ids.prev('vers1')}" th:text="${vers1.name}">Europe</label>
          </div>
 -->
+<!--
           <div>
             <ul>
               <li th:each="vers2 : ${allVerses}">
@@ -105,7 +106,7 @@
               </li>
             </ul>
           </div>
-
+-->
           <!--
           <div>
             <ul>
@@ -183,7 +184,8 @@
         </thead>
         <tbody>
             <tr th:each="vers : ${verses}">
-                <td><input type="checkbox" th:name="${vers.title}" th:value="${vers.id}" checked>
+                <td>
+                  <input type="checkbox" th:field="*{versesValue}" th:value="${vers.id}"  th:name="${vers.title}" th:value="${vers.id}" checked>
                   <span th:text="${vers.title}"></span>
                 </td>
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers.id})}"></td>  

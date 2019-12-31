@@ -65,6 +65,8 @@ public class SeedStarterMngController {
     @RequestMapping(value = "/songs/{bundleid}", method = RequestMethod.GET)
     public String showSongsList(Model model, @PathVariable("bundleid") long bundleid) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));
+        model.addAttribute("versesValue", "");
+        
         return "seedstartermng :: resultsListSongs";
     }
 

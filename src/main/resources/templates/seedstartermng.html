@@ -183,7 +183,16 @@
           </tr>
         </thead>
         <tbody>
-            <tr th:each="vers : ${verses}">
+          
+<!--
+          <ul>
+            <li th:each="vers2 : ${allVerses}">
+              <input type="checkbox" th:field="*{versesValue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
+            </li>
+          </ul>
+            -->
+
+            <tr th:each="vers : ${allVerses}">
                 <td>
                   <input type="checkbox" th:field="*{versesValue}" th:value="${vers.id}"  th:name="${vers.title}" th:value="${vers.id}" checked>
                   <span th:text="${vers.title}"></span>

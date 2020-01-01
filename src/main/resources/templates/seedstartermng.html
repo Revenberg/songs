@@ -232,7 +232,7 @@
             <input type="text" th:field="*{datePlanted}" th:errorclass="fieldError" />
           </div>
           <div>
-            <label th:for="${#ids.next('covered')}" th:text="#{seedstarter.covered}">Covered</label>
+            <label th:for="${#ids.next('covered')}" checked th:text="#{seedstarter.covered}">Covered</label>
             <input type="checkbox" th:field="*{covered}" />
           </div>         
 

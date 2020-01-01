@@ -98,6 +98,7 @@
             <label th:for="${#ids.prev('vers1')}" th:text="${vers1.name}">Europe</label>
          </div>
 -->
+<!--
           <div>
             <ul>
               <li th:each="vers2 : ${allVerses}">
@@ -105,6 +106,7 @@
               </li>
             </ul>
           </div>
+-->
           <!--
           <div>
             <ul>
@@ -175,7 +177,7 @@
 <div th:fragment="resultsListVerses" th:unless="${#lists.isEmpty(verses)}" class="results-block">
   <div>
     <ul>
-      <li th:each="vers2 : ${allVerses}">
+      <li th:each="vers2, itemStat : ${allVerses}">
         <input type="checkbox" th:field="*{versesvalue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
       </li>
     </ul>

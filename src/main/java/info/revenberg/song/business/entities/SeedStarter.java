@@ -20,11 +20,9 @@
 package info.revenberg.song.business.entities;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import info.revenberg.song.domain.Vers;
 
 public class SeedStarter {
 
@@ -40,8 +38,6 @@ public class SeedStarter {
     private String song = null;
 
     private List<String> versesValue = new ArrayList<String>();
-
-    // private Vers[] features = null;
 
     private List<Row> rows = new ArrayList<Row>();
 
@@ -125,7 +121,7 @@ public class SeedStarter {
         return this.versesValue;
     }
 
-    public void setVersesValue(final List<String> versesValue) {
+    public void setVersesValue(List<String> versesValue) {
         this.versesValue = versesValue;
     }
 

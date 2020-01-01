@@ -178,11 +178,15 @@
   <div>
     <ul>
       <li th:each="vers2, itemStat : ${allVerses}">
-        <input type="checkbox" th:field="*{versesvalue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
+        <input type="checkbox" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
       </li>
     </ul>
   </div>
 <!--
+  th:field="*{versesvalue}"
+
+
+  
   <table>
         <thead>
             <tr>

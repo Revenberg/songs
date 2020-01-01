@@ -111,7 +111,7 @@ public class SeedStarterMngController {
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());        
-        seedStarter.setVersesvalue(new ArrayList<String>());   
+   //     seedStarter.setVersesvalue(new ArrayList<String>());   
         return "seedstartermng";
     }
 

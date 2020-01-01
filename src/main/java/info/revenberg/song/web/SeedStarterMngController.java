@@ -92,13 +92,16 @@ public class SeedStarterMngController {
         System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");        
         return this.seedStarterService.findAllVerses(2);
     }
-/*
+
     @ModelAttribute("versesvalue")
-    public List<String> versesvalue() {
+    public List<String> versesvalue(List<String> parm) {
         System.out.println("?????????????????????????????????????????????");        
-        return new ArrayList<String>();
+        if (parm == null) {
+            return new ArrayList<String>();
+        } 
+        return parm;
     }
-*/
+
     @ModelAttribute("allVarieties")
     public List<Variety> populateVarieties() {
         return this.varietyService.findAll();

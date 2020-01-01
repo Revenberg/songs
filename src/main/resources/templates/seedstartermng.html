@@ -196,6 +196,7 @@
               <tr th:each="vers2 : ${verses}">
                 <td><input type="checkbox" checked th:field="*{versesvalue}" th:value="${vers2.id}" /><span th:text="${vers2.title}"></span></td>
 <!-- 
+
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers2.id})}"></td>  
             -->
           </tr>

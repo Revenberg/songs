@@ -71,7 +71,7 @@ public class SeedStarterMngController {
     @RequestMapping(value = "/verses/{songid}", method = RequestMethod.GET)
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-
+        model.addAttribute("versesvalue", "");
         return "seedstartermng :: resultsListVerses";
     }
 

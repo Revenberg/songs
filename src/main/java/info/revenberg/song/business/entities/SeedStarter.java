@@ -37,7 +37,7 @@ public class SeedStarter {
     private String bundle = null;
     private String song = null;
 
-    private List<String> versesValue = new ArrayList<String>();
+    private List<String> versesvalue = new ArrayList<String>();
 
     private List<Row> rows = new ArrayList<Row>();
 
@@ -117,12 +117,12 @@ public class SeedStarter {
         this.type = type;
     }
 
-    public List<String> getVersesValue() {
-        return this.versesValue;
+    public List<String> getVersesvalue() {
+        return this.versesvalue;
     }
 
-    public void setVersesValue(List<String> versesValue) {
-        this.versesValue = versesValue;
+    public void setVersesvalue(List<String> versesvalue) {
+        this.versesvalue = versesvalue;
     }
 
     public List<Row> getRows() {
@@ -134,14 +134,14 @@ public class SeedStarter {
 
         String sb = "";
 
-        for (String s : this.versesValue) {
+        for (String s : this.versesvalue) {
             sb += s + ",";
         }
 
         return "SeedStarter [id=" + this.id 
                 + ", bundleid=" + this.bundleid 
                 + ", songid=" + this.songid 
-                + ", covered=" + this.covered + ", versesValue=(" + sb + ")" 
+                + ", covered=" + this.covered + ", versesvalue=(" + sb + ")" 
                 + ", rows=" + this.rows + "]";
     }
 

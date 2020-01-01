@@ -175,6 +175,14 @@
 </div>
 
 <div th:fragment="resultsListVerses" th:unless="${#lists.isEmpty(allVerses)}" class="results-block">
+  <div>
+    <ul>
+      <li th:each="vers2 : ${allVerses}">
+        <input type="checkbox" th:field="*{versesValue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
+      </li>
+    </ul>
+  </div>
+
   <table>
         <thead>
             <tr>
@@ -184,15 +192,10 @@
         </thead>
         <tbody>
           
-              <ul>
-                <li th:each="vers2 : ${allVerses}">
-                  <input type="checkbox" th:field="*{versesValue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
-                </li>
-              </ul>
 
               <tr th:each="vers2 : ${verses}">
-                <td><input type="checkbox" th:field="*{versesValue}" th:value="${vers2.id}" /><span th:text="${vers2.title}"></span></td>
-<!--
+                <td><input type="checkbox"  th:value="${vers2.id}" /><span th:text="${vers2.title}"></span></td>
+<!-- th:field="*{versesValue}"
                 <td><img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers2.id})}"></td>  
             -->
           </tr>

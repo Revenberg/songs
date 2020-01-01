@@ -64,9 +64,7 @@ public class SeedStarterMngController {
 
     @RequestMapping(value = "/songs/{bundleid}", method = RequestMethod.GET)
     public String showSongsList(Model model, @PathVariable("bundleid") long bundleid) {
-        model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));
-        model.addAttribute("versesValue", "");
-        
+        model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));        
         return "seedstartermng :: resultsListSongs";
     }
 
@@ -113,7 +111,7 @@ public class SeedStarterMngController {
 
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters(final SeedStarter seedStarter) {
-        seedStarter.setDatePlanted(Calendar.getInstance().getTime());
+        seedStarter.setDatePlanted(Calendar.getInstance().getTime());        
         return "seedstartermng";
     }
 

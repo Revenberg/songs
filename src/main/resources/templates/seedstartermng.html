@@ -175,14 +175,14 @@
 </div>
 
 <div th:fragment="resultsListVerses" th:unless="${#lists.isEmpty(verses)}" class="results-block">
-<!--  <div>
+  <div>
     <ul>
       <li th:each="vers2 : ${allVerses}">
         <input type="checkbox" th:field="*{versesvalue}" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
       </li>
     </ul>
   </div>
--->
+<!--
   <table>
         <thead>
             <tr>
@@ -192,7 +192,7 @@
         </thead>
         <tbody>
           
-
+-->
               <tr th:each="vers2 : ${verses}">
                 <td><input type="checkbox" checked th:field="*{versesvalue}" th:value="${vers2.id}" /><span th:text="${vers2.title}"></span></td>
 <!-- 

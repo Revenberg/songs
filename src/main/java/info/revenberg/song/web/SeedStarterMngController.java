@@ -19,6 +19,7 @@
  */
 package info.revenberg.song.web;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -71,10 +72,8 @@ public class SeedStarterMngController {
     @RequestMapping(value = "/verses/{songid}", method = RequestMethod.GET)
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("versesvalue", "");
         return "seedstartermng :: resultsListVerses";
     }
-
 
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
@@ -94,11 +93,11 @@ public class SeedStarterMngController {
         return this.seedStarterService.findAllVerses(2);
     }
 
-    /*@ModelAttribute("allFeatures")
-    public List<Feature> populateFeatures() {
-        return Arrays.asList(Feature.ALL);
+    @ModelAttribute("versesvalue")
+    public List<Vers> versesvalue() {
+        return this.seedStarterService.findAllVerses(2);
     }
-*/
+
     @ModelAttribute("allVarieties")
     public List<Variety> populateVarieties() {
         return this.varietyService.findAll();
@@ -112,6 +111,7 @@ public class SeedStarterMngController {
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters(final SeedStarter seedStarter) {
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());        
+        seedStarter.setVersesvalue(new ArrayList<String>());   
         return "seedstartermng";
     }
 

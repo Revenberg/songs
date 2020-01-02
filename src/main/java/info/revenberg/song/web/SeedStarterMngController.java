@@ -111,7 +111,7 @@ public class SeedStarterMngController {
 
     
     @RequestMapping({ "/", "/seedstartermng" })
-    public String showSeedstarters0(ModelMap model) {
+    public String showSeedstarters0(final SeedStarter seedStarter, ModelMap model) {
         System.out.println("00000000000000000000000000000000");
         model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng";

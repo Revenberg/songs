@@ -136,7 +136,6 @@
       
       </div>
   </div>
-</form>
 
 <div th:fragment="resultsListSongs" th:unless="${#lists.isEmpty(songs)}" class="results-block">
 <!--  <table>
@@ -179,7 +178,7 @@
     <div>
     <ul>
       <li th:each="vers2 : ${allVerses}">
-        <input type="checkbox" th:value="${vers2.id}" /><span th:text="${vers2.name}"></span>
+        <input type="checkbox" th:id="${vers2.id}" checked/><span th:text="${vers2.name}"></span>
       </li>
     </ul>
   </div>
@@ -212,6 +211,8 @@
   </fieldset>
     
   </div>    
+
+</form>
 
     // new mijn test gedeelte end
 

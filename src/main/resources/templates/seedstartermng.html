@@ -175,6 +175,7 @@
 </div>
 
 <div th:fragment="resultsListVerses" th:unless="${#lists.isEmpty(allVerses)}" class="results-block">
+  <fieldset>
     <div>
     <ul>
       <li th:each="vers2 : ${allVerses}">
@@ -204,9 +205,8 @@
       -->
 
 
-    </table>
-  <fieldset>
-  <div class="submit">
+    </table>  
+    <div class="submit" th:unless="${#lists.isEmpty(allVerses)}">
       <button type="submit" name="save" th:text="#{seedstarter.create1}">Add Seed Starter</button>    
     </div>
   </fieldset>

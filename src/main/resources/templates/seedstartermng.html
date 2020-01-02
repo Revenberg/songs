@@ -178,7 +178,8 @@
     <div>
     <ul>
       <li th:each="vers2 : ${allVerses}">
-        <input type="checkbox" th:field="*{versesvalue}" th:id="${vers2.id}" checked/><span th:text="${vers2.name}"></span>
+        <input type="checkbox" th:field="*{allVerses}" th:value="${vers2.name}" checked />
+        <span th:text="${vers2.name}"></span>
       </li>
     </ul>
   </div>

@@ -73,6 +73,10 @@ public class SeedStarterMngController {
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
+/*        ArrayList<String> l = new ArrayList<String>();
+        
+        model.addAttribute("versesvalue", l);
+  */      
         model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng :: resultsListVerses";
     }
@@ -111,20 +115,21 @@ public class SeedStarterMngController {
         return this.seedStarterService.findAll();
     }
 
+/*
     
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters0(final SeedStarter seedStarter, ModelMap model) {
         System.out.println("00000000000000000000000000000000");
         return "seedstartermng";
     }
-/*
+*/
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters(final SeedStarter seedStarter) {
         System.out.println("111111111111111111111111111111111111111111111111111111");
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());                        
         return "seedstartermng";
     }
-*/
+
     @RequestMapping(value = "/seedstartermng", params = { "save" })
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult,
             final ModelMap model) {

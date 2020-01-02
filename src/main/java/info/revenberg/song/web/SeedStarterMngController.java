@@ -94,12 +94,9 @@ public class SeedStarterMngController {
     }
 
     @ModelAttribute("versesvalue")
-    public List<String> versesvalue(List<String> parm) {
+    public List<String> versesvalue() {
         System.out.println("?????????????????????????????????????????????");        
-        if (parm == null) {
-            return new ArrayList<String>();
-        } 
-        return parm;
+        return new ArrayList<String>();        
     }
 
     @ModelAttribute("allVarieties")

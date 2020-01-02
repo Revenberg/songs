@@ -77,7 +77,13 @@ public class SeedStarterMngController {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         this.songid = songid;
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
+        
+        ArrayList<String> l = new ArrayList<String>();
+        l.add("checked");
+        l.add("checked");
+        l.add("checked");
+        l.add("checked");
+        model.addAttribute("versesvalue", l);
         return "seedstartermng :: resultsListVerses";
     }
 
@@ -94,9 +100,7 @@ public class SeedStarterMngController {
     @ModelAttribute("allVerses")
     public List<Vers> allVerses() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
-        System.out.println(this.seedStarterService.findAllVerses(this.songid));
-        System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");        
-        return this.seedStarterService.findAllVerses(2);
+        return this.seedStarterService.findAllVerses(this.songid);
     }
 /*
     @ModelAttribute("versesvalue")

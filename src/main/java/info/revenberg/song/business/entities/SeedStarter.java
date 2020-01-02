@@ -134,14 +134,17 @@ public class SeedStarter {
 
         String sb = "";
 
-        for (String s : this.versesvalue) {
-            sb += s + ",";
+        if (this.versesvalue.length > 0) {
+            for (String s : this.versesvalue) {
+                sb += s + ",";
+            }
         }
 
         return "SeedStarter [id=" + this.id 
                 + ", bundleid=" + this.bundleid 
                 + ", songid=" + this.songid 
-                + ", covered=" + this.covered + ", versesvalue=(" + sb + ")" 
+                + ", covered=" + this.covered 
+                + ", versesvalue=(" + sb + ")" 
                 + ", rows=" + this.rows + "]";
     }
 

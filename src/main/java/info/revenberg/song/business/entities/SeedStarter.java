@@ -37,7 +37,7 @@ public class SeedStarter {
     private String bundle = null;
     private String song = null;
 
-    private String[] versesvalue;
+    private ArrayList<String> versesvalue;
     
     private List<Row> rows = new ArrayList<Row>();
 
@@ -117,11 +117,11 @@ public class SeedStarter {
         this.type = type;
     }
 
-    public String[] getVersesvalue() {
+    public ArrayList<String> getVersesvalue() {
         return this.versesvalue;
     }
 
-    public void setVersesvalue(String[] versesvalue) {
+    public void setVersesvalue(ArrayList<String> versesvalue) {
         this.versesvalue = versesvalue;
     }
 

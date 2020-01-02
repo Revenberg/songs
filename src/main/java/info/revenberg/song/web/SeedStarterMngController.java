@@ -71,7 +71,9 @@ public class SeedStarterMngController {
 
     @RequestMapping(value = "/verses/{songid}", method = RequestMethod.GET)
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
+        System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
+        model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng :: resultsListVerses";
     }
 
@@ -113,7 +115,6 @@ public class SeedStarterMngController {
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters0(final SeedStarter seedStarter, ModelMap model) {
         System.out.println("00000000000000000000000000000000");
-        model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng";
     }
 /*

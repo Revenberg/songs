@@ -77,7 +77,13 @@ public class SeedStarterMngController {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         this.songid = songid;
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("versesvalue", new ArrayList<String>());
+        ArrayList<String> versesvalue = new ArrayList<String>();
+        versesvalue.add("1");
+        versesvalue.add("2");
+        versesvalue.add("3");
+        versesvalue.add("4");
+        
+        model.addAttribute("versesvalue", versesvalue);
         return "seedstartermng :: resultsListVerses";
     }
 

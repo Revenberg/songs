@@ -89,11 +89,13 @@ public class SeedStarterMngController {
 
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
+        System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllBundle();
     }
 
     @ModelAttribute("allSongs")
     public List<Song> allSongs() {
+        System.out.println("!!!!!!!!!!!!! allSongs !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllSongs(this.songid);
     }
 

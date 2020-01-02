@@ -134,7 +134,7 @@ public class SeedStarter {
 
         String sb = "";
 
-        if (this.versesvalue.length > 0) {
+        if (this.versesvalue != null) {
             for (String s : this.versesvalue) {
                 sb += s + ",";
             }

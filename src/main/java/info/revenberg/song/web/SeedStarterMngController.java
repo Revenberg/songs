@@ -54,6 +54,8 @@ public class SeedStarterMngController {
     @Autowired
     private SeedStarterService seedStarterService;
 
+    private long songid;
+
     public SeedStarterMngController() {
         super();
     }
@@ -73,6 +75,7 @@ public class SeedStarterMngController {
     @RequestMapping(value = "/verses/{songid}", method = RequestMethod.GET)
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
+        this.songid = songid;
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
         model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
         return "seedstartermng :: resultsListVerses";
@@ -91,7 +94,7 @@ public class SeedStarterMngController {
     @ModelAttribute("allVerses")
     public List<Vers> allVerses() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
-        System.out.println(this.seedStarterService.findAllVerses(2));
+        System.out.println(this.seedStarterService.findAllVerses(this.songid));
         System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");        
         return this.seedStarterService.findAllVerses(2);
     }

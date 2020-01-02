@@ -74,13 +74,7 @@ public class SeedStarterMngController {
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-        ArrayList<String> l = new ArrayList<String>();
-        l.add("1");
-        l.add("2");
-        l.add("3");
-        model.addAttribute("versesvalue", l);
-
-        //model.addAttribute("versesvalue", new ArrayList<String>());
+        model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
         return "seedstartermng :: resultsListVerses";
     }
 

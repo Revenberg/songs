@@ -88,7 +88,7 @@ public class SeedStarterMngController {
 
     @ModelAttribute("allSongs")
     public List<Song> allSongs() {
-        return this.seedStarterService.findAllSongs(2);
+        return this.seedStarterService.findAllSongs(this.songid);
     }
 
     @ModelAttribute("allVerses")

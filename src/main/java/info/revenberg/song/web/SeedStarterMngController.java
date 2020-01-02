@@ -92,7 +92,7 @@ public class SeedStarterMngController {
         System.out.println("!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!!!");        
         return this.seedStarterService.findAllVerses(2);
     }
-
+/*
     @ModelAttribute("versesvalue")
     public List<String> versesvalue(List<String> parm) {
         System.out.println("?????????????????????????????????????????????");        
@@ -101,7 +101,7 @@ public class SeedStarterMngController {
         } 
         return parm;
     }
-
+*/
     @ModelAttribute("allVarieties")
     public List<Variety> populateVarieties() {
         return this.varietyService.findAll();

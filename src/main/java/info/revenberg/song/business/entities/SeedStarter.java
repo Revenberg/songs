@@ -132,20 +132,20 @@ public class SeedStarter {
     @Override
     public String toString() {
 
-        String sb = "";
-
-        if (this.versesvalue != null) {
-            for (String s : this.versesvalue) {
-                sb += s + ",";
-            }
-        }
-
-        return "SeedStarter [id=" + this.id 
+        String rc;
+        if (versesvalue == null) {
+            rc = "SeedStarter [id=" + this.id 
                 + ", bundleid=" + this.bundleid 
                 + ", songid=" + this.songid 
-                + ", covered=" + this.covered 
-                + ", versesvalue=(" + sb + ")" 
                 + ", rows=" + this.rows + "]";
+        } else {
+            rc = "SeedStarter [id=" + this.id 
+                + ", bundleid=" + this.bundleid 
+                + ", songid=" + this.songid 
+                + ", versesvalue=(" + this.versesvalue + ")" 
+                + ", rows=" + this.rows + "]";
+        }
+        return rc;
     }
 
 }

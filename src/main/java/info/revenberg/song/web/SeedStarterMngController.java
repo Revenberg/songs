@@ -116,14 +116,14 @@ public class SeedStarterMngController {
         model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng";
     }
-
+/*
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters(final SeedStarter seedStarter) {
         System.out.println("111111111111111111111111111111111111111111111111111111");
         seedStarter.setDatePlanted(Calendar.getInstance().getTime());                        
         return "seedstartermng";
     }
-
+*/
     @RequestMapping(value = "/seedstartermng", params = { "save" })
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult,
             final ModelMap model) {

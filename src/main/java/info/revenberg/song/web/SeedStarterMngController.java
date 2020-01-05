@@ -78,6 +78,8 @@ public class SeedStarterMngController {
         this.songid = songid;
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
         model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
+        model.addAttribute("allSongs", this.seedStarterService.findAllSongs(this.songid));
+
         return "seedstartermng :: resultsListVerses";
     }
 
@@ -91,13 +93,13 @@ public class SeedStarterMngController {
         System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllBundle();
     }
-
+/*
     @ModelAttribute("allSongs")
     public List<Song> allSongs() {
         System.out.println("!!!!!!!!!!!!! allSongs !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllSongs(this.songid);
     }
-
+*/
     @ModelAttribute("allVerses")
     public List<Vers> allVerses() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");

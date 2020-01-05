@@ -42,6 +42,7 @@ import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Guest;
+import info.revenberg.song.domain.Vers;
 
 @Controller
 public class SeedStarterMngController {
@@ -106,13 +107,13 @@ public String[] getMultiCheckboxAllValues() {
         return this.seedStarterService.findAllSongs(this.songid);
     }
 */
-/*
+
     @ModelAttribute("allVerses")
     public List<Vers> allVerses() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllVerses(this.songid);
     }
-*/
+
     @ModelAttribute("allVarieties")
     public List<Variety> populateVarieties() {
         return this.varietyService.findAll();

@@ -43,8 +43,8 @@ public class SeedStarter {
     
     private List<Row> rows = new ArrayList<Row>();
 
-    String[] multiCheckboxSelectedValues;
-    
+//    String[] multiCheckboxSelectedValues;
+
     public SeedStarter() {
         super();
     }

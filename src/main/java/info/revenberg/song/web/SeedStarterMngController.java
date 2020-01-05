@@ -57,7 +57,7 @@ public class SeedStarterMngController {
     public SeedStarterMngController() {
         super();
     }
-
+/*
     @ModelAttribute("multiCheckboxAllValues")
 public String[] getMultiCheckboxAllValues() {
     return new String[] {
@@ -65,7 +65,7 @@ public String[] getMultiCheckboxAllValues() {
         "Friday", "Saturday", "Sunday"
     };
 }
-
+*/
     @ModelAttribute("guest")
     public Guest prepareGuestModel() {
         return new Guest();

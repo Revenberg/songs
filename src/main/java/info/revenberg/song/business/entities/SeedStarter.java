@@ -35,7 +35,7 @@ public class SeedStarter {
     private Date datePlanted = null;
     private String datePlanted1 = null;
     private Boolean covered = null;
-    private MyType type = MyType.PLASTIC;
+//    private MyType type = MyType.PLASTIC;
     private String bundle = null;
     private String song = null;
 
@@ -113,13 +113,13 @@ public class SeedStarter {
         this.covered = covered;
     }
 
-    public MyType getType() {
-        return this.type;
-    }
+//    public MyType getType() {
+//        return this.type;
+//    }
 
-    public void setType(final MyType type) {
-        this.type = type;
-    }
+//    public void setType(final MyType type) {
+//        this.type = type;
+//    }
 
     public ArrayList<Vers> getVersesvalue() {
         System.out.println("???????????????????? getVersesvalue ????????????????????????????????????????????");

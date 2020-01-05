@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import info.revenberg.song.business.entities.MyType;
+//import info.revenberg.song.business.entities.MyType;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
@@ -89,10 +89,10 @@ public String[] getMultiCheckboxAllValues() {
         return "seedstartermng :: resultsListVerses";
     }
 
-    @ModelAttribute("allTypes")
-    public List<MyType> populateTypes() {
-        return Arrays.asList(MyType.ALL);
-    }
+//    @ModelAttribute("allTypes")
+//    public List<MyType> populateTypes() {
+//        return Arrays.asList(MyType.ALL);
+//    }
 
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {

@@ -178,8 +178,11 @@
 </div>
 -->
 
+</fieldset>
+</div>
+
 <!-- th:unless="${#lists.isEmpty(allVerses)}" -->
-<div th:fragment="resultsListVerses"  class="results-block">
+<div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
   <fieldset>
     <div>
     <ul>
@@ -189,9 +192,6 @@
       </li>
     </ul>
   </div>
-
-</fieldset>
-</div>
 
 <!--
   th:field="*{versesvalue}"

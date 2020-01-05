@@ -1,3 +1,4 @@
+package info.revenberg.song.business.entities;
 /*
  * =============================================================================
  * 
@@ -17,8 +18,6 @@
  * 
  * =============================================================================
  */
-package info.revenberg.song.business.entities;
-
 
 public enum Type {
     

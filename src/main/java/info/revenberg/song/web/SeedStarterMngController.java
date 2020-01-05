@@ -81,6 +81,11 @@ public class SeedStarterMngController {
         return "seedstartermng :: resultsListVerses";
     }
 
+    @ModelAttribute("allTypes")
+    public List<Type> populateTypes() {
+        return Arrays.asList(Type.ALL);
+    }
+
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
         System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");

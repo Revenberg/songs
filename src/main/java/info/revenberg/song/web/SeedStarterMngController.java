@@ -42,8 +42,6 @@ import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
 import info.revenberg.song.domain.Guest;
-import info.revenberg.song.domain.Song;
-import info.revenberg.song.domain.Vers;
 
 @Controller
 public class SeedStarterMngController {

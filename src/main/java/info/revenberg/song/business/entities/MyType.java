@@ -19,18 +19,18 @@ package info.revenberg.song.business.entities;
  * =============================================================================
  */
 
-public enum Type {
+public enum MyType {
     
     PLASTIC("PLASTIC"), 
     WOOD("WOOD");
     
-    public static final Type[] ALL = { PLASTIC, WOOD };
+    public static final MyType[] ALL = { PLASTIC, WOOD };
     
     
     private final String name;
 
     
-    public static Type forName(final String name) {
+    public static MyType forName(final String name) {
         if (name == null) {
             throw new IllegalArgumentException("Name cannot be null for type");
         }
@@ -43,7 +43,7 @@ public enum Type {
     }
     
     
-    private Type(final String name) {
+    private MyType(final String name) {
         this.name = name;
     }
     

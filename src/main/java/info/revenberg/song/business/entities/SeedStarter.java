@@ -33,7 +33,7 @@ public class SeedStarter {
     private Date datePlanted = null;
     private String datePlanted1 = null;
     private Boolean covered = null;
-    private Type type = Type.PLASTIC;
+    private MyType type = MyType.PLASTIC;
     private String bundle = null;
     private String song = null;
 
@@ -109,11 +109,11 @@ public class SeedStarter {
         this.covered = covered;
     }
 
-    public Type getType() {
+    public MyType getType() {
         return this.type;
     }
 
-    public void setType(final Type type) {
+    public void setType(final MyType type) {
         this.type = type;
     }
 

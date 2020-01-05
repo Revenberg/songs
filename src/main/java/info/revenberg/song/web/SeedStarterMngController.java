@@ -21,7 +21,6 @@ package info.revenberg.song.web;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,6 +35,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import info.revenberg.song.business.entities.MyType;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
@@ -82,8 +82,8 @@ public class SeedStarterMngController {
     }
 
     @ModelAttribute("allTypes")
-    public List<Type> populateTypes() {
-        return Arrays.asList(Type.ALL);
+    public List<MyType> populateTypes() {
+        return Arrays.asList(MyType.ALL);
     }
 
     @ModelAttribute("allBundles")

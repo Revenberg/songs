@@ -58,6 +58,14 @@ public class SeedStarterMngController {
         super();
     }
 
+    @ModelAttribute("multiCheckboxAllValues")
+public String[] getMultiCheckboxAllValues() {
+    return new String[] {
+        "Monday", "Tuesday", "Wednesday", "Thursday", 
+        "Friday", "Saturday", "Sunday"
+    };
+}
+
     @ModelAttribute("guest")
     public Guest prepareGuestModel() {
         return new Guest();
@@ -136,11 +144,14 @@ public class SeedStarterMngController {
             final ModelMap model) {
                 System.out.println("222222222222222222222222222222222");
         if (bindingResult.hasErrors()) {
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!! 0 !!!!!!!!!!!!!!!!!!");
             return "seedstartermng";
         }
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!! 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println(model);
+        System.out.println("!!!!!!!!!!!!! 2 !!!!!!!!!!!!!!!!!!!!!!!!!!!");
         System.out.println(seedStarter.toString());
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!!!!!!! 3 !!!!!!!!!!!!!!!!!!!!!!!!");
         //this.seedStarterService.add(seedStarter);
         model.clear();
         return "redirect:/seedstartermng";

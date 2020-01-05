@@ -193,6 +193,17 @@
     </ul>
   </div>
 
+  <ul>
+    <li th:each="checkboxValue: ${multiCheckboxAllValues}">
+      <input type="checkbox" 
+          th:field="*{multiCheckboxSelectedValues}"
+          th:value="${checkboxValue}" />
+      <label 
+          th:for="${#ids.prev('multiCheckboxSelectedValues')}"
+          th:text="${checkboxValue}"></label>
+    </li>
+  </ul>
+  
 <!--
   th:field="*{versesvalue}"
 

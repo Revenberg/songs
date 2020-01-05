@@ -78,7 +78,7 @@ public class SeedStarterMngController {
         this.songid = songid;
         model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
         model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("allSongs", this.seedStarterService.findAllSongs(this.songid));
+        model.addAttribute("allSongs", this.seedStarterService.findAllSongs(songid));
 
         return "seedstartermng :: resultsListVerses";
     }

@@ -1,5 +1,5 @@
 
-function checkpoint(this)
+function checkbox(this)
 {
     window.alert("!!!!!!!!!!!!");
 

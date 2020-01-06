@@ -1,7 +1,7 @@
 $('#checkboxID').click(function () {
     if ($(this).attr('checked')) {
-        alert('is checked');
+        window.alert('is checked');
     } else {
-        alert('is not checked');
+        window.alert('is not checked');
     }
 })

@@ -75,6 +75,7 @@ public class SeedStarterMngController {
         if (model.containsAttribute("versesvalue")) {
             System.out.println("@@@@@@@@@@@@@@@@@@@@@");
         } else {
+            System.out.println(".......................");
             model.addAttribute("versesvalue", rc);
         }
         System.out.println(rc);

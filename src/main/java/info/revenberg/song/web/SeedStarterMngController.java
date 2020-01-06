@@ -19,7 +19,6 @@
  */
 package info.revenberg.song.web;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -67,7 +66,7 @@ public class SeedStarterMngController {
         model.addAttribute("verses", verses);
         model.addAttribute("allVerses", verses);
         
-        String rc = "";
+        String rc = "!!!!!!!!!!!!!";
 
         for (Vers s : verses) {
           rc = rc + " " + s.getVersid();

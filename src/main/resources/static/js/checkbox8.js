@@ -6,9 +6,9 @@ function checkbox(item)
     window.alert(item.checked);
     if (item.checked) {
         var btn =  document.getElementById('versesvalue');
-        btn.value = btn.value + "+" + item.value;
+        btn.value = btn.value + " " + item.id.replace("vers-", "");
     } else {
         var btn =  document.getElementById('versesvalue');
-        btn.value = btn.value + "-" + item.value;
+        btn.value = btn.value.replace( item.id.replace("vers-", ""), "");
     }
 }

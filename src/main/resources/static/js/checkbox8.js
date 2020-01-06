@@ -1,6 +1,6 @@
 
 function checkbox(id)
 {
-    window.alert(id);
+    window.alert(item.value);
 
 }

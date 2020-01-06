@@ -66,12 +66,14 @@ public class SeedStarterMngController {
         model.addAttribute("verses", verses);
         model.addAttribute("allVerses", verses);
         
-        String rc = "!!!!!!!!!!!!!";
+        System.out.println(verses.size());
+        String rc = "";
 
         for (Vers s : verses) {
           rc = rc + " " + s.getVersid();
         }
         model.addAttribute("versesvalue", rc);
+        System.out.println(rc);
         return "seedstartermng :: resultsListVerses";
     }
 

@@ -70,7 +70,7 @@
           <p>Id: <input type="text" th:field="*{id}" /></p>
           <p>Bundleid: <input type="text" th:field="*{bundleid}" id="bundleid" /></p>
           <p>Songid: <input type="text" th:field="*{songid}" id="songid" /></p>
-          <p>Verses: <input type="text" th:value="${versesvalue != null} ? ${versesvalue} : " th:field="*{versesvalue}" id="versesvalue" /></p>
+          <p>Verses: <input type="text" th:value="${versesvalue != null} ? ${versesvalue} " th:field="*{versesvalue}" id="versesvalue" /></p>
 
           <legend th:text="#{seedstarter.data}">Seed Starter Data</legend>
           <ul th:if="${#fields.hasErrors('*')}" class="errorlist">

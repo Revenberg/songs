@@ -34,12 +34,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-//import info.revenberg.song.business.entities.MyType;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.services.SeedStarterService;
-import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
-import info.revenberg.song.domain.Guest;
 import info.revenberg.song.domain.Song;
 import info.revenberg.song.domain.Vers;
 
@@ -58,7 +55,7 @@ public class SeedStarterMngController {
     @RequestMapping(value = "/songs/{bundleid}", method = RequestMethod.GET)
     public String showSongsList(Model model, @PathVariable("bundleid") long bundleid) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));        
-        model.addAttribute("versesvalue", new ArrayList<String>());
+        model.addAttribute("versesvalue", "");
         return "seedstartermng :: resultsListSongs";
     }
 
@@ -66,10 +63,17 @@ public class SeedStarterMngController {
     public String showVersesList(Model model, @PathVariable("songid") long songid) {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         this.songid = songid;
-        model.addAttribute("verses", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("versesvalue", this.seedStarterService.findAllVerses(songid));
-        model.addAttribute("allVerses", this.seedStarterService.findAllVerses(this.songid));
-      
+        List<Vers> verses = this.seedStarterService.findAllVerses(songid);
+        model.addAttribute("verses", verses);
+        model.addAttribute("versesvalue", verses);
+        model.addAttribute("allVerses", verses);
+        
+        String rc = "";
+
+        for (Vers s : verses) {
+          rc = rc + " " + s.getVersid();
+        }
+        model.addAttribute("versesvalue", rc);
         return "seedstartermng :: resultsListVerses";
     }
 

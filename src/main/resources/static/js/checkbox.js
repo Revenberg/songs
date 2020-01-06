@@ -1,6 +1,6 @@
 
-function checkbox(this)
+function checkbox(id)
 {
-    window.alert("!!!!!!!!!!!!");
+    window.alert(id);
 
 }

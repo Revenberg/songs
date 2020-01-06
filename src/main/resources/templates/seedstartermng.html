@@ -186,8 +186,8 @@
   <fieldset>
     <div>
     <ul>
-      <li th:each="vers2 : ${allVerses}">
-        <input type="checkbox" th:value="${vers2.id}" checked />
+      <li th:each="vers2 : ${allVerses}">troep
+        <input type="checkbox" th:value="${vers2.id}" th:onclick="|javascript:checkbox(${vers2.id})|" checked />
         <span th:text="${vers2.title}"></span>
       </li>
     </ul>

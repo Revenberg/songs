@@ -1,7 +1,9 @@
-$('#checkboxID').click(function () {
-    if ($(this).attr('checked')) {
-        window.alert('is checked');
-    } else {
-        window.alert('is not checked');
-    }
+$(document).ready(function () {
+    $("input[type='checkbox']").click(function (e) {
+        if ($(this).is(':checked')) {
+            window.alert("true");
+        } else {
+            window.alert("false");
+        }
+    });
 })

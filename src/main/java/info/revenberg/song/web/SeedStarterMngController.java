@@ -20,7 +20,6 @@
 package info.revenberg.song.web;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,7 +36,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 //import info.revenberg.song.business.entities.MyType;
 import info.revenberg.song.business.entities.SeedStarter;
-import info.revenberg.song.business.entities.Variety;
 import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.business.services.VarietyService;
 import info.revenberg.song.domain.Bundle;
@@ -49,28 +47,12 @@ import info.revenberg.song.domain.Vers;
 public class SeedStarterMngController {
     
     @Autowired
-    private VarietyService varietyService;
-
-    @Autowired
     private SeedStarterService seedStarterService;
 
     private long songid;
 
     public SeedStarterMngController() {
         super();
-    }
-/*
-    @ModelAttribute("multiCheckboxAllValues")
-public String[] getMultiCheckboxAllValues() {
-    return new String[] {
-        "Monday", "Tuesday", "Wednesday", "Thursday", 
-        "Friday", "Saturday", "Sunday"
-    };
-}
-*/
-    @ModelAttribute("guest")
-    public Guest prepareGuestModel() {
-        return new Guest();
     }
 
     @RequestMapping(value = "/songs/{bundleid}", method = RequestMethod.GET)
@@ -91,11 +73,6 @@ public String[] getMultiCheckboxAllValues() {
         return "seedstartermng :: resultsListVerses";
     }
 
-//    @ModelAttribute("allTypes")
-//    public List<MyType> populateTypes() {
-//        return Arrays.asList(MyType.ALL);
-//    }
-
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
         System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");
@@ -114,18 +91,6 @@ public String[] getMultiCheckboxAllValues() {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
         return this.seedStarterService.findAllVerses(this.songid);
     }
-
-    @ModelAttribute("allVarieties")
-    public List<Variety> populateVarieties() {
-        return this.varietyService.findAll();
-    }
-
-    @ModelAttribute("allSeedStarters")
-    public List<SeedStarter> populateSeedStarters() {
-        return this.seedStarterService.findAll();
-    }
-
-
     
     @RequestMapping({ "/", "/seedstartermng" })
     public String showSeedstarters0(final SeedStarter seedStarter, ModelMap model) {
@@ -133,14 +98,7 @@ public String[] getMultiCheckboxAllValues() {
         model.addAttribute("versesvalue", new ArrayList<String>());
         return "seedstartermng";
     }
-/*
-    @RequestMapping({ "/", "/seedstartermng" })
-    public String showSeedstarters(final SeedStarter seedStarter) {
-        System.out.println("111111111111111111111111111111111111111111111111111111");
-        seedStarter.setDatePlanted(Calendar.getInstance().getTime());                        
-        return "seedstartermng";
-    }
-*/
+
     @RequestMapping(value = "/seedstartermng", params = { "save" })
     public String saveSeedstarter(final SeedStarter seedStarter, final BindingResult bindingResult,
             final ModelMap model) {

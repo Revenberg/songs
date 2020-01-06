@@ -25,19 +25,19 @@
   <div class="seedstarterlist" th:unless="${#lists.isEmpty(allSeedStarters)}">
     
       <h2 th:text="#{title.list}">List of Seed Starters</h2>
-      
+      <!---
       <table>
         <thead>
           <tr>
             <th th:text="#{seedstarter.covered}">Covered</th>
-            <!--<th th:text="#{seedstarter.features}">Features</th> -->
             <th th:text="#{seedstarter.rows}">Rows</th>
           </tr>
         </thead>
         <tbody>
           <tr th:each="sb : ${allSeedStarters}">
-            <td th:text="#{|bool.${sb.covered}|}">yes</td>
-<!--            <td th:text="${#strings.arrayJoin(
+-->
+<!--            <td th:text="#{|bool.${sb.covered}|}">yes</td>
+                <td th:text="${#strings.arrayJoin(
                              #messages.arrayMsg(
                                #strings.arrayPrepend(sb.features,'seedstarter.feature.')),
                              ', ')}">Electric Heating, Turf</td>
@@ -50,6 +50,7 @@
 <!--                    <td th:text="${row.variety.name}">Thymus Thymi</td>
                     <td th:text="${row.seedsPerCell}">12</td>
                     -->
+                    <!--
                   </tr>
                 </tbody>
               </table>
@@ -57,7 +58,7 @@
           </tr>
         </tbody>
       </table>
-      
+      -->
     </div>
 
     // begin new mijn test gedeelte

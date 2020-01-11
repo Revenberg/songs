@@ -72,12 +72,7 @@ public class SeedStarterMngController {
         for (Vers s : verses) {
           rc = rc + " " + s.getId();
         }
-        if (model.containsAttribute("versesvalue")) {
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@");
-        } else {
-            System.out.println(".......................");
-            model.addAttribute("versesvalue", rc);
-        }
+        model.addAttribute("versesinit", rc);
         System.out.println(rc);
         return "seedstartermng :: resultsListVerses";
     }

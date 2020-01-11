@@ -74,7 +74,7 @@ public class SeedStarterMngController {
         }
         model.addAttribute("versesvalue", rc);
         model.addAttribute("versesinit", rc);
-        }
+        
         System.out.println(rc);
         return "seedstartermng :: resultsListVerses";
     }

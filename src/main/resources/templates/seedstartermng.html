@@ -183,12 +183,12 @@
 
 <!-- th:unless="${#lists.isEmpty(allVerses)}" -->
 <div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
-  <p>Verses: <input type="text" th:value="${versesvalue}" th:field="*{versesvalue}" id="versesvalue" /></p>
+  <p>Verses: <input type="text" th:field="*{versesvalue}" id="versesvalue" /></p>
   <fieldset>
     <div>
     <ul>
       <li th:each="vers2 : ${allVerses}">
-        <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" checked />
+        <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" onload="checkbox(this)" checked />
         <span th:text="${vers2.title}"></span>
       </li>
     </ul>

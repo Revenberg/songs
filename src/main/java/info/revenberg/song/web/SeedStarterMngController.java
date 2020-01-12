@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import info.revenberg.song.business.entities.Row;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.domain.Bundle;
@@ -92,9 +93,13 @@ public class SeedStarterMngController {
 
 
     @ModelAttribute("allVerses")
-    public List<Vers> allVerses() {
+    public List<Vers> allVerses(final SeedStarter seedStarter) {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
-        return this.seedStarterService.findAllVerses(this.songid);
+        List<Vers> verses = this.seedStarterService.findAllVerses(this.songid);
+        for (Vers vers : verses) {
+            seedStarter.getRows().add(new Row(vers));
+        }
+        return verses;
     }
     
     @RequestMapping({ "/", "/seedstartermng" })

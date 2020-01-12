@@ -19,20 +19,28 @@
  */
 package info.revenberg.song.business.entities;
 
+import info.revenberg.song.domain.Vers;
+
 public class Row {
 
-    private Integer versid = null;
+    private Long versid = null;
     private String  title = null;
     
     public Row() {
         super();
     }
 
-    public Integer getVersid() {
+    public Row(Vers vers) {
+        super();
+        setVersid(vers.getId());
+        setTitle(vers.getTitle());
+    }
+
+    public Long getVersid() {
         return this.versid;
     }
 
-    public void setVersid(Integer versid) {
+    public void setVersid(Long versid) {
         this.versid = versid;
     }
 

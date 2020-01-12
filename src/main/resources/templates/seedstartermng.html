@@ -183,9 +183,9 @@
 
 <!-- th:unless="${#lists.isEmpty(allVerses)}" -->
 <div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
-  <p>Verses: <input type="text" th:value="${#strings.listJoin(#messages.listMsg(versesvalue), ' ')}" 
+  <p>Verses: <input type="text" th:value="|${#strings.listJoin(#messages.listMsg(versesvalue), ' ')}|" 
     th:text="${#strings.listJoin(#messages.listMsg(versesvalue), ' ')}"
-    /></p>
+     id="versesvalue" /></p>
 
   <fieldset>
     <div>

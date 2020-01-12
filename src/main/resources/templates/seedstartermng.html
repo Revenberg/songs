@@ -183,7 +183,14 @@
 
 <!-- th:unless="${#lists.isEmpty(allVerses)}" -->
 <div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
-  <p>Verses: <input type="text" th:text="${#strings.listJoin(#messages.listMsg(allVerses), ' ')}" th:field="*{versesvalue}" id="versesvalue" /></p>
+  <p>Verses: <input type="text" th:value="${#strings.listJoin(#messages.listMsg(allVerses), ' ')}" th:field="*{versesvalue}" id="versesvalue" /></p>
+
+  <p>
+    <th:block th:each="ids, iter: ${allVerses.id}">
+      <label th:text="#{${'ids.' + ids}}">ids</label>
+      <th:block th:if="${!iter.last}">, </th:block>
+  </p>
+
   <fieldset>
     <div>
     <ul>

@@ -19,43 +19,37 @@
  */
 package info.revenberg.song.business.entities;
 
-
-
 public class Row {
 
-    private Variety variety = null;
-    private Integer seedsPerCell = null;
-    
-    
-    
+    private Integer versid = null;
+    private String  title = null;
     
     public Row() {
         super();
     }
 
-
-    public Variety getVariety() {
-        return this.variety;
+    public Integer getVersid() {
+        return this.versid;
     }
 
-
-    public void setVariety(final Variety variety) {
-        this.variety = variety;
+    public void setVersid(Integer versid) {
+        this.versid = versid;
     }
 
-    public Integer getSeedsPerCell() {
-        return this.seedsPerCell;
+    public String getTitle() {
+        return this.title;
     }
 
-    public void setSeedsPerCell(final Integer seedsPerCell) {
-        this.seedsPerCell = seedsPerCell;
+    public void setTitle(String title) {
+        this.title = title;
     }
-
 
     @Override
     public String toString() {
-        return "Row [variety=" + this.variety + ", seedsPerCell=" + this.seedsPerCell + "]";
+        return "{" +
+            " versid='" + getVersid() + "'" +
+            ", title='" + getTitle() + "'" +
+            "}";
     }
-
     
 }

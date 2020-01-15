@@ -187,7 +187,7 @@
   <fieldset>
     <div>
     <!-- select all boxes -->
-    <input type="checkbox" name="select-all" id="select-all" /> 
+    <input type="checkbox" onClick="toggle(this)" /> Toggle All<br/>
     <ul>
       <li th:each="vers2 : ${allVerses}">
         <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" onload="checkbox(this)"  />

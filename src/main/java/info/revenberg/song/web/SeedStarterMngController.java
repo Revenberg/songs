@@ -33,7 +33,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import info.revenberg.song.business.entities.Row;
 import info.revenberg.song.business.entities.SeedStarter;
 import info.revenberg.song.business.services.SeedStarterService;
 import info.revenberg.song.domain.Bundle;
@@ -56,6 +55,7 @@ public class SeedStarterMngController {
     public String showSongsList(Model model, @PathVariable("bundleid") long bundleid) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));        
         model.addAttribute("versesvalue", null);
+        this.songid = -1;
         return "seedstartermng :: resultsListSongs";
     }
 
@@ -71,7 +71,8 @@ public class SeedStarterMngController {
 
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
-        System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");        
+        System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");   
+        this.songid = -1;     
         return this.seedStarterService.findAllBundle();
     }
 

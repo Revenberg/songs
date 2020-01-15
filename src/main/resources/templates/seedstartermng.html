@@ -164,8 +164,6 @@
       <li th:each="vers2 : ${allVerses}">
         <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" onload="checkbox(this)" />
         <span th:text="${vers2.name}"></span>
-        <span th:text="${vers2.id}"></span>
-        <span th:text="${vers2.title}"></span>
         <img th:src="@{/rest/v1/vers/{image}/scalledimage?size=400(image=${vers2.id})}">
       </li>
     </ul>

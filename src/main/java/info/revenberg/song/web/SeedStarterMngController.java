@@ -55,7 +55,7 @@ public class SeedStarterMngController {
     public String showSongsList(Model model, @PathVariable("bundleid") long bundleid) {
         model.addAttribute("songs", this.seedStarterService.findAllSongs(bundleid));        
         model.addAttribute("versesvalue", null);
-        this.songid = -1;
+        this.songid = -1;        
         return "seedstartermng :: resultsListSongs";
     }
 

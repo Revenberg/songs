@@ -1,4 +1,7 @@
 function retrieveSongs(p) {
+    window.alert("retrieveSongs");
+    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
+
     var bbtn =  document.getElementById('bundleid');    
     bbtn.value = p;
 
@@ -9,7 +12,10 @@ function retrieveSongs(p) {
     btn.innerHTML = document.getElementById("bundle_" + p).innerHTML;
 }
 
-function retrieveVerses(p) {    
+function retrieveVerses(p) { 
+    window.alert("retrieveVerses");   
+    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
+
     var sbtn =  document.getElementById('songid');
     sbtn.value = p;
 

@@ -1,7 +1,7 @@
 package info.revenberg.song.service;
 
 import info.revenberg.song.domain.Line;
-import info.revenberg.song.dao.jpa.VersRepository;
+import info.revenberg.song.dao.jpa.LineRepository;
 
 import java.util.Optional;
 
@@ -13,26 +13,26 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
 
 @Service
-public class LineVersService {
+public class LineService {
     @Autowired
-    private LineVersService lineRepository;
+    private LineRepository lineRepository;
 
-    public LineVersService() {
+    public LineService() {
     }
 
-    public Line createVers(Line line) {
+    public Line createLine(Line line) {
         return lineRepository.save(line);
     }
 
-    public Optional<Line> getVers(long id) {
+    public Optional<Line> getLine(long id) {
         return lineRepository.findById(id);
     }
 
-    public void updateVers(Line line) {
+    public void updateLine(Line line) {
         lineRepository.save(line);
     }
 
-    public void deleteVers(Long id) {
+    public void deleteLine(Long id) {
         lineRepository.deleteById(id);
     }
     
@@ -40,11 +40,11 @@ public class LineVersService {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("name"));
 
-        Page<Line> pageOfVerses = lineRepository.findAll(pageable);
-        return pageOfVerses;
+        Page<Line> pageOflines = lineRepository.findAll(pageable);
+        return pageOflines;
     }
 
-	public Line findVersInSong(int rank, long songid) {
-		return lineRepository.findVersInSong(rank, songid);
+	public Line findLineInVers(int rank, long lineid) {
+		return lineRepository.findLineInVers(rank, lineid);
 	}
 }

@@ -7,9 +7,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
-import info.revenberg.song.domain.Vers;
+import info.revenberg.song.domain.Line;
 import info.revenberg.song.exception.DataFormatException;
-import info.revenberg.song.service.VersService;
+import info.revenberg.song.service.LineService;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -38,82 +37,82 @@ import javax.servlet.http.HttpServletResponse;
 public class LineController extends AbstractRestHandler {
 
         @Autowired
-        private VersService lineService;
+        private LineService lineService;
 
         @RequestMapping(value = "", method = RequestMethod.POST, consumes = { "application/json" }, produces = {
                         "application/json" })
         @ResponseStatus(HttpStatus.CREATED)
-        @ApiOperation(value = "Create a vers resource.", notes = "Returns the URL of the new resource in the Location header.")
-        public @ResponseBody Vers createVers(@RequestBody Vers vers, HttpServletRequest request,
+        @ApiOperation(value = "Create a line resource.", notes = "Returns the URL of the new resource in the Location header.")
+        public @ResponseBody Line createLine(@RequestBody Line line, HttpServletRequest request,
                         HttpServletResponse response) {
-                Vers createdVers = this.versService.createVers(vers);
+                Line createdLine = this.lineService.createLine(line);
                 response.setHeader("Location",
-                                request.getRequestURL().append("/").append(createdVers.getId()).toString());
-                return createdVers;
+                                request.getRequestURL().append("/").append(createdLine.getId()).toString());
+                return createdLine;
         }
 
         @RequestMapping(value = "", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
-        @ApiOperation(value = "Get a paginated list of all verses.", notes = "The list is paginated. You can provide a page number (default 0) and a page size (default 100)")
-        public @ResponseBody Page<Vers> getAllVers(
+        @ApiOperation(value = "Get a paginated list of all Lines.", notes = "The list is paginated. You can provide a page number (default 0) and a page size (default 100)")
+        public @ResponseBody Page<Line> getAllLine(
                         @ApiParam(value = "The page number (zero-based)", required = true) @RequestParam(value = "page", required = true, defaultValue = DEFAULT_PAGE_NUM) Integer page,
                         @ApiParam(value = "The page size", required = true) @RequestParam(value = "size", required = true, defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                         HttpServletRequest request, HttpServletResponse response) {
-                System.out.println("Page<Vers> getAllVers");
+                System.out.println("Page<Line> getAllLine");
                 System.out.println(page);
                 System.out.println(size);
-                Page<Vers> x = this.versService.getAllVerses(page, size);
+                Page<Line> x = this.lineService.getAllLines(page, size);
                 System.out.println(x.getTotalElements());
                 System.out.println(x.getContent().get(0));
 
-                return this.versService.getAllVerses(page, size);
+                return this.lineService.getAllLines(page, size);
         }
 
         @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = { "application/json" })
         @ResponseStatus(HttpStatus.OK)
-        @ApiOperation(value = "Get a single vers.", notes = "You have to provide a valid vers ID.")
-        public @ResponseBody Vers getVers(
-                        @ApiParam(value = "The ID of the vers.", required = true) @PathVariable("id") Long id,
+        @ApiOperation(value = "Get a single line.", notes = "You have to provide a valid line ID.")
+        public @ResponseBody Line getLine(
+                        @ApiParam(value = "The ID of the line.", required = true) @PathVariable("id") Long id,
                         HttpServletRequest request, HttpServletResponse response) throws Exception {
-                Optional<Vers> vers = this.versService.getVers(id);
-                checkResourceFound(vers);
-                return vers.get();
+                Optional<Line> line = this.lineService.getLine(id);
+                checkResourceFound(line);
+                return line.get();
         }
 
         @RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = { "application/json" }, produces = {
                         "application/json" })
         @ResponseStatus(HttpStatus.NO_CONTENT)
-        @ApiOperation(value = "Update a vers resource.", notes = "You have to provide a valid vers ID in the URL and in the payload. The ID attribute can not be updated.")
-        public void updateVers(
-                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") Long id,
-                        @RequestBody Vers vers, HttpServletRequest request, HttpServletResponse response) {
-                checkResourceFound(this.versService.getVers(id));
-                if (id != vers.getId())
+        @ApiOperation(value = "Update a line resource.", notes = "You have to provide a valid line ID in the URL and in the payload. The ID attribute can not be updated.")
+        public void updateLine(
+                        @ApiParam(value = "The ID of the existing line resource.", required = true) @PathVariable("id") Long id,
+                        @RequestBody Line line, HttpServletRequest request, HttpServletResponse response) {
+                checkResourceFound(this.lineService.getLine(id));
+                if (id != line.getId())
                         throw new DataFormatException("ID doesn't match!");
-                this.versService.updateVers(vers);
+                this.lineService.updateLine(line);
         }
 
         // todo: @ApiImplicitParams, @ApiResponses
         @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = { "application/json" })
         @ResponseStatus(HttpStatus.NO_CONTENT)
-        @ApiOperation(value = "Delete a vers resource.", notes = "You have to provide a valid vers ID in the URL. Once deleted the resource can not be recovered.")
-        public void deleteVers(
-                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") Long id,
+        @ApiOperation(value = "Delete a line resource.", notes = "You have to provide a valid line ID in the URL. Once deleted the resource can not be recovered.")
+        public void deleteLine(
+                        @ApiParam(value = "The ID of the existing line resource.", required = true) @PathVariable("id") Long id,
                         HttpServletRequest request, HttpServletResponse response) {
-                checkResourceFound(this.versService.getVers(id));
-                this.versService.deleteVers(id);
+                checkResourceFound(this.lineService.getLine(id));
+                this.lineService.deleteLine(id);
         }
 
         @RequestMapping(value = "/{id}/image", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get image")
         public @ResponseBody byte[] getImage(
-                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id)
+                        @ApiParam(value = "The ID of the existing line resource.", required = true) @PathVariable("id") int id)
                         throws SQLException, IOException {
-                checkResourceFound(this.versService.getVers(id));
-                Optional<Vers> vers = this.versService.getVers(id);
+                checkResourceFound(this.lineService.getLine(id));
+                Optional<Line> line = this.lineService.getLine(id);
 
-                String loc = vers.get().getLocation();
+                String loc = line.get().getLocation();
                 log.info(loc);
                 File file = new File(loc);
                 BufferedImage bufferimage = ImageIO.read(file);
@@ -153,13 +152,13 @@ public class LineController extends AbstractRestHandler {
         @ResponseStatus(HttpStatus.OK)
         @ApiOperation(value = "Get scalled image")
         public @ResponseBody byte[] getScalledImage(
-                        @ApiParam(value = "The ID of the existing vers resource.", required = true) @PathVariable("id") int id,
+                        @ApiParam(value = "The ID of the existing line resource.", required = true) @PathVariable("id") int id,
                         @ApiParam(value = "The new  size", required = true) @RequestParam(value = "size", required = true) Integer  size)
                         throws SQLException, IOException {
-                checkResourceFound(this.versService.getVers(id));
-                Optional<Vers> vers = this.versService.getVers(id);
+                checkResourceFound(this.lineService.getLine(id));
+                Optional<Line> line = this.lineService.getLine(id);
 
-                String loc = vers.get().getLocation();
+                String loc = line.get().getLocation();
                 log.info(loc);
                 File file = new File(loc);
                 BufferedImage bufferimage = ImageIO.read(file);

@@ -139,23 +139,6 @@
   </div>
 
 <div th:fragment="resultsListSongs" th:unless="${#lists.isEmpty(songs)}" class="results-block">
-<!--  <table>
-      <thead>
-          <tr>
-              <th th:text="#{results.song.id}">Id</th>
-              <th th:text="#{results.song.name}">Name</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr th:each="song : ${songs}">
-              <td th:text="${song.id}">id</td>
-              <td th:text="${song.name}">surname</td>
-          </tr>
-      </tbody>
-  </table>
----------------------------------------
--->
-<!-- th:field="*{song}" -->
   <div>    
     <select  onchange="getVerses(this);">
       <option th:each="song : ${songs}" th:value="${song.id}" th:text="${song.name}">Wireframe</option>
@@ -170,20 +153,9 @@
           </div>
       </div>
   </div>
-<!--
-<div>
-  <label for="type" th:text="#{seedstarter.type}">Type</label>
-  <select th:field="*{type}">
-    <option th:each="type : ${allTypes}" th:value="${type}" th:text="#{${'seedstarter.type.' + type}}">Wireframe</option>
-  </select>
-</div>
--->
+  
 
-</fieldset>
-</div>
-
-<!-- th:unless="${#lists.isEmpty(allVerses)}" -->
-<div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
+  <div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
   <fieldset>
     <div>
     <!-- select all boxes -->
@@ -195,7 +167,7 @@
       </li>
     </ul>
   </div>
-
+</div>
 
   <!---
   <ul>

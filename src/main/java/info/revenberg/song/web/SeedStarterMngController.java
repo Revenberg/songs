@@ -64,25 +64,14 @@ public class SeedStarterMngController {
         System.out.println("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
         this.songid = songid;
         List<Vers> verses = this.seedStarterService.findAllVerses(songid);
-        model.addAttribute("verses", verses);
         model.addAttribute("allVerses", verses);
         
-        System.out.println(verses.size());
-        String rc = "";
-
-        for (Vers s : verses) {
-          rc = rc + " " + s.getId();
-        }
-        model.addAttribute("versesvalue", rc);
-        
-        System.out.println(rc);
-
         return "seedstartermng :: resultsListVerses";
     }
 
     @ModelAttribute("allBundles")
     public List<Bundle> allBundles() {
-        System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!!!! allBundles !!!!!!!!!!!!!!!!!");        
         return this.seedStarterService.findAllBundle();
     }
 
@@ -96,11 +85,12 @@ public class SeedStarterMngController {
     @ModelAttribute("allVerses")
     public List<Vers> allVerses(final SeedStarter seedStarter) {
         System.out.println("!!!!!!!!!!!!! allVerses !!!!!!!!!!!!!!!!!");
-        List<Vers> verses = this.seedStarterService.findAllVerses(this.songid);
-        for (Vers vers : verses) {
-            seedStarter.getRows().add(new Row(vers));
-        }
-        return verses;
+//        List<Vers> verses = this.seedStarterService.findAllVerses(this.songid);
+  //      for (Vers vers : verses) {
+    //        seedStarter.getRows().add(new Row(vers));
+      //  }
+        //return verses;
+        return null;
     }
     
     @RequestMapping({ "/", "/seedstartermng" })
@@ -127,13 +117,14 @@ public class SeedStarterMngController {
         model.clear();
         return "redirect:/seedstartermng";
     }
-
+/*
     @RequestMapping(value = "/seedstartermng", params = { "addRow" })
     public String addRow(final SeedStarter seedStarter, final BindingResult bindingResult) {
         //seedStarter.getRows().add(new Row());
         return "seedstartermng";
     }
-
+    */
+/*
     @RequestMapping(value = "/seedstartermng", params = { "removeRow" })
     public String removeRow(final SeedStarter seedStarter, final BindingResult bindingResult,
             final HttpServletRequest req) {
@@ -141,5 +132,5 @@ public class SeedStarterMngController {
         seedStarter.getRows().remove(rowId.intValue());
         return "seedstartermng";
     }
-
+*/
 }

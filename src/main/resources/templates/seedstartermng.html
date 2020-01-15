@@ -70,6 +70,7 @@
           <p>Id: <input type="text" th:field="*{id}" /></p>
           <p>Bundleid: <input type="text" th:field="*{bundleid}" id="bundleid" /></p>
           <p>Songid: <input type="text" th:field="*{songid}" id="songid" /></p>          
+          <p>Versesid: <input type="text" th:field="*{versesid}" id="versesid" /></p>
 
           <legend th:text="#{seedstarter.data}">Seed Starter Data</legend>
           <ul th:if="${#fields.hasErrors('*')}" class="errorlist">
@@ -183,14 +184,13 @@
 
 <!-- th:unless="${#lists.isEmpty(allVerses)}" -->
 <div th:fragment="resultsListVerses"  class="results-block" th:unless="${#lists.isEmpty(allVerses)}" >
-  <p>Verses: <input type="text" th:value="${versesvalue}" 
-     id="versesvalue" /></p>
-     
   <fieldset>
     <div>
+    <!-- select all boxes -->
+    <input type="checkbox" name="select-all" id="select-all" /> 
     <ul>
       <li th:each="vers2 : ${allVerses}">
-        <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" onload="checkbox(this)" checked />
+        <input type="checkbox" th:id="|vers-${vers2.id}|" th:value="|${vers2.title}|" onclick="checkbox(this)" onload="checkbox(this)"  />
         <span th:text="${vers2.title}"></span>
       </li>
     </ul>

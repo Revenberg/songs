@@ -1,6 +1,5 @@
 function retrieveSongs(p) {
-    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
-
+    document.getElementById("resultsBlockVerses").innerHTML = ""
     var bbtn =  document.getElementById('bundleid');    
     bbtn.value = p;
 
@@ -12,7 +11,7 @@ function retrieveSongs(p) {
 }
 
 function retrieveVerses(p) { 
-    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
+    document.getElementById("resultsBlockVerses").innerHTML = ""
 
     var sbtn =  document.getElementById('songid');
     sbtn.value = p;

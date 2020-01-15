@@ -1,6 +1,6 @@
 function getSongs(item)
 {
-    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
+    document.getElementById("resultsBlockVerses").innerHTML = ""
 
     var btn =  document.getElementById('bundleid');
     btn.value = item.value;
@@ -11,7 +11,7 @@ function getSongs(item)
 }
 function getVerses(item)
 {
-    document.getElementById("resultsBlockVerses").innerHTML = "new content1"
+    document.getElementById("resultsBlockVerses").innerHTML = ""
 
     var btn =  document.getElementById('songid');
     btn.value = item.value;

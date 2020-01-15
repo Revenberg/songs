@@ -40,7 +40,8 @@ public class SeedStarter {
     private String song = null;
 
     private String versesvalue;
-    
+    private String versesid;
+
     private List<Row> rows = new ArrayList<Row>();
 
 //    String[] multiCheckboxSelectedValues;
@@ -64,7 +65,7 @@ public class SeedStarter {
     public void setBundleid(final Long bundleid) {
         this.bundleid = bundleid;
     }
-
+    
     public Long getSongid() {
         return this.songid;
     }
@@ -73,12 +74,13 @@ public class SeedStarter {
         this.songid = songid;
     }
 
-    public Date getDatePlanted() {
-        return this.datePlanted;
+    
+    public String getVersesid() {
+        return this.versesid;
     }
 
-    public void setDatePlanted(final Date datePlanted) {
-        this.datePlanted = datePlanted;
+    public void setVersesid(final String versesid) {
+        this.versesid = versesid;
     }
 
     public String getDatePlanted1() {

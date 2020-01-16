@@ -17,7 +17,7 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 or
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
-* Check the stdout or boot_example.log file to make sure no exceptions are thrown
+* Check the stdout or song.log file to make sure no exceptions are thrown
 
 Once the application runs you should see something like this
 

@@ -18,6 +18,6 @@ public interface LineRepository extends PagingAndSortingRepository<Line, Long> {
     @Query(value = "SELECT * FROM line l, vers v where l.rank=:rank AND v.versid=:versid AND s.versid=v.fk_vers", nativeQuery = true)
     Line findLineInVers(@Param("rank") int rank, @Param("versid") long versid);
 
-    @Query(value = "SELECT l.id, l.songid, l.rank, l.text, l.location, l.created_at, l.updated_at, l.fk_vers FROM line l, vers v where v.versid=:versid AND v.versid=l.fk_vers order by l.rank", nativeQuery = true)
+    @Query(value = "SELECT * FROM line l, vers v where v.versid=:versid AND v.versid=l.fk_vers order by l.rank", nativeQuery = true)
     List<Vers> findAllByVersid(@Param("versid") long versid);
 }

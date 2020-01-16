@@ -165,7 +165,7 @@ public class ProcessPPT {
                 String[] s = e.split("/");
                 String bundleName = URLEncoder.encode(s[0].trim(), "UTF-8");
                 String songName = URLEncoder.encode(s[1].replace(".pptx", ""), "UTF-8");
-//                System.out.println(bundleName + " - " + songName + " - " + folder + "/" + e);
+               //System.out.println(bundleName + " - " + songName + " - " + folder + "/" + e);
                 uploadFile("http://localhost:8090/rest/v1/ppt/" + bundleName + "/" + songName, folder + "/" + e);
             }
         }

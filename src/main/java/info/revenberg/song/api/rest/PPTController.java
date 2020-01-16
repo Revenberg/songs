@@ -123,10 +123,13 @@ public class PPTController {
 					TempFile fileInfo = new TempFile(tFile);
 					t2.add(fileInfo);
 					vers = new Vers();
-					vers.setName(fileInfo.getName());
+					String[] tokens = fileInfo.getName().split(".");
+					String versName = tokens[tokens.length - 2];
+					
+					vers.setName(versName);
 					vers.setSong(song);
 					vers.setRank(rank);
-					vers.setTitle(fileInfo.getName());
+					vers.setTitle(versName);
 					vers.setLocation(tFile.getAbsolutePath());
 					this.versService.createVers(vers);
 					rank++;

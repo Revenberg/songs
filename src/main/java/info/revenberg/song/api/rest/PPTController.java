@@ -76,7 +76,7 @@ public class PPTController {
 			"multipart/form-data" }, produces = { "application/json" })
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(value = "Process Power Point.", notes = "Returns details.")
-	public @ResponseBody List uploadData(
+	public @ResponseBody List<FindLinesInImage> uploadData(
 			@ApiParam(value = "The name of the bundle.", required = true) @PathVariable("bundle") String bundleName,
 			@ApiParam(value = "The name of the song.", required = true) @PathVariable("song") String songName,
 			@RequestPart("file") MultipartFile file) throws Exception {

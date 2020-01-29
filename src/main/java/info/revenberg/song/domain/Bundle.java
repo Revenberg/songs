@@ -16,9 +16,8 @@ import info.revenberg.song.domain.AuditModel;
 @Table(name = "bundle")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Bundle extends AuditModel {
-    public final static String secretKey = "ssshhhhhhhhhhh!!!!";
-
+public class Bundle extends AuditModel {    
+    private static final long serialVersionUID = -4206755717683730837L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")

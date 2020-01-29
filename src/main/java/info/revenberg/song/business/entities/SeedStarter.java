@@ -23,16 +23,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import info.revenberg.song.domain.Vers;
-
-
 public class SeedStarter {
 
     private Integer id = null;
     private Long bundleid = null;
     private Long songid;
 
-    private Date datePlanted = null;
     private String datePlanted1 = null;
     private Boolean covered = null;
 //    private MyType type = MyType.PLASTIC;

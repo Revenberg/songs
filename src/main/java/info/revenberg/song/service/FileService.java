@@ -186,7 +186,7 @@ public class FileService {
 		}
 		return new File(destPath + "/" + destFilename);
 	}
-
+/*
 	public File moveToMedia(String mediaLocation, String temp, String bundle, String song) throws IOException {
 		logger.info("temp: " + temp);
 		String[] s1 = temp.split("/");
@@ -197,5 +197,5 @@ public class FileService {
 		String filename = (bundle + "." + song + ".vers_" + vers + "." + ext).replace(" ", "_");
 		return copyFile(temp.replace("/" + oFilename, ""), oFilename, mediaLocation, filename);
 	}
-
+*/
 }

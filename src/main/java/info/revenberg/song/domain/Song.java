@@ -20,6 +20,8 @@ import info.revenberg.song.domain.AuditModel;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Song extends AuditModel {
+    private static final long serialVersionUID = -522275488406568162L;
+
     public final static String secretKey = "ssshhhhhhhhhhh!!!!";
 
     @Id

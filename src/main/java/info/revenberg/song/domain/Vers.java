@@ -16,8 +16,8 @@ import info.revenberg.song.domain.AuditModel;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Vers extends AuditModel {
-    public final static String secretKey = "ssshhhhhhhhhhh!!!!";
-
+    private static final long serialVersionUID = -3744664716090284011L;
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")

@@ -11,7 +11,6 @@ import info.revenberg.song.domain.Vers;
 import info.revenberg.song.exception.DataFormatException;
 import info.revenberg.song.service.VersService;
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Optional;
 

@@ -11,7 +11,6 @@ import info.revenberg.song.domain.Line;
 import info.revenberg.song.exception.DataFormatException;
 import info.revenberg.song.service.LineService;
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;

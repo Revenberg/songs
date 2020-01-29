@@ -13,6 +13,7 @@ import info.revenberg.song.domain.AuditModel;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Line extends AuditModel {
+    private static final long serialVersionUID = -8627990442911682692L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "native")
@@ -27,19 +28,30 @@ public class Line extends AuditModel {
 
     private String location;
 
+    double minY;
+    double MaxY;
+    double minX;
+    double MaxX;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "fk_vers", referencedColumnName = "versid")
     @OnDelete(action = OnDeleteAction.CASCADE)
-//    @JsonBackReference
+    // @JsonBackReference
     private Vers vers;
 
     public Line() {
     }
 
-    public Line(int rank, String text, String location, Vers vers) {
+    public Line(int rank, String text, String location,
+            double minY, double MaxY, double minX, double MaxX, Vers vers) {
         this.rank = rank;
         this.text = text;
+        this.minY = minY;
+        this.MaxY = MaxY;
+        this.minX = minX;
+        this.MaxX = MaxX;
         this.location = location;
+
         setVers(vers);
     }
 
@@ -78,7 +90,7 @@ public class Line extends AuditModel {
     public void setLocation(String location) {
         this.location = location;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

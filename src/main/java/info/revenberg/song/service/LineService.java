@@ -38,7 +38,7 @@ public class LineService {
     
     public Page<Line> getAllLines(Integer page, Integer size) {
 
-        Pageable pageable = PageRequest.of(page, size, Sort.by("name"));
+        Pageable pageable = PageRequest.of(page, size, Sort.unsorted()); // .by("rank"));
 
         Page<Line> pageOflines = lineRepository.findAll(pageable);
         return pageOflines;

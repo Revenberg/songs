@@ -130,7 +130,7 @@ public class PPTController {
 				if (vers == null) {
 					// tFile = fileService.moveToMedia(mediaLocation, temp, bundleName, songName);
 
-					String[] s1 = temp.split("\\.");
+					String[] s1 = temp.split("/");
 					String versName = s1[s1.length - 1];
 					String[] s2 = versName.split("\\.");					
 					String ext = s2[s2.length - 1];

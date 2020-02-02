@@ -187,8 +187,7 @@ public class PPTController {
 						System.out.println("########################################################");
 						ImageDefinition id = ids.get((Integer) j);
 						System.out.println(id.getFilename());
-						System.out.println("#######" + songName + " " + id.getTitle()
-								+ "#################################################");
+						System.out.println(">>>>>>>>>>>>>>>>>>" + songName + " " + id.getTitle() + "<<<");
 
 						Line line = new Line(j, songName + " " + id.getTitle(), id.getFilename(), id.getminY(),
 								id.getMaxY(), id.getminX(), id.getMaxX(), vers);

@@ -130,17 +130,18 @@ public class PPTController {
 				if (vers == null) {
 					// tFile = fileService.moveToMedia(mediaLocation, temp, bundleName, songName);
 
-					String[] s2 = temp.split("\\.");
+					String[] s1 = temp.split("\\.");
+					String versName = s1[s1.length - 1];
+					String[] s2 = versName.split("\\.");					
 					String ext = s2[s2.length - 1];
+					versName = versName.replace("." + ext, "").replace("image", "");
+
 					System.out.println("==========================");
 					System.out.println("==========================");
 					System.out.println(ext);
-					System.out.println(temp.replace("." + ext, ""));
-					System.out.println(temp.replace("." + ext, "").replace("image", ""));
-					System.out.println("==========================");
-					String versName = Integer
-							.toString(Integer.valueOf(temp.replace("." + ext, "").replace("image", "")) - 1);
-
+					System.out.println(versName);
+					System.out.println("==========================");					
+					
 					// TempFile fileInfo = new TempFile(tFile);
 
 					vers = new Vers();

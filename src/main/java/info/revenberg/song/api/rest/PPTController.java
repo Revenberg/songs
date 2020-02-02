@@ -113,7 +113,7 @@ public class PPTController {
 		logger.info(song.toString());
 		String filename = fileService.store(file, uploadLocation);
 
-		String dir_ = file.getOriginalFilename().replace("/", "_").replace(".pptx", "").replace(" ", "_");
+		String dir_ = file.getOriginalFilename().replace("/", "_").replace(".pptx", "").replace(" ", "_").replace("'","");
 		String dest = unzipLocation + "/" + dir_;
 
 		List<String> t1 = fileService.unzip(file, filename, uploadLocation, dest);
@@ -135,7 +135,15 @@ public class PPTController {
 					String[] s2 = versName.split("\\.");					
 					String ext = s2[s2.length - 1];
 					versName = versName.replace("." + ext, "").replace("image", "");
-					versName = Integer.toString(Integer.parseInt(versName) - 1);
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+					System.out.println(versName);
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+					versName = Integer.toString((Integer.parseInt(versName) - 1));
+
+					System.out.println(versName);
+					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+
 					// TempFile fileInfo = new TempFile(tFile);
 
 					vers = new Vers();

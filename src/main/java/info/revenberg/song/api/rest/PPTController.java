@@ -152,7 +152,9 @@ public class PPTController {
 					FindLinesInImage result = new FindLinesInImage(temp, mediaLocation, bundleName, songName);
 					// result1.createIMG(1, 3, "41_gezangen.Gz_001");
 
-					for (int j = 0; j < result.getversLines(); j++) {
+					Map<Integer, ImageDefinition> ids = result.getImageDefinitions();
+
+					for (int j = 0; j < ids.size(); j++) {
 						System.out.println("########################################################");
 						System.out.println("########################################################");
 						System.out.println("########################################################");
@@ -163,7 +165,7 @@ public class PPTController {
 						System.out.println("########################################################");
 						System.out.println(j);
 						System.out.println("########################################################");
-						ImageDefinition id = result.getImageDefinitions().get((Integer) j);
+						ImageDefinition id = ids.get((Integer) j);
 						System.out.println(id.getFilename());
 						System.out.println("########################################################");
 						

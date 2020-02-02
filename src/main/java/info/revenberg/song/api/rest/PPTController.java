@@ -164,10 +164,10 @@ public class PPTController {
 						System.out.println(j);
 						System.out.println("########################################################");
 						ImageDefinition id = result.getImageDefinitions().get((Integer) j);
-						System.out.println(id);
+						System.out.println(id.getFilename());
 						System.out.println("########################################################");
 						
-						Line line = new Line(j, "", id.getFilename(), id.getminY(), id.getMaxY(), id.getminX(),
+						Line line = new Line(j, songName + " " + id.getTitle(), id.getFilename(), id.getminY(), id.getMaxY(), id.getminX(),
 								id.getMaxX(), vers);
 
 						line = this.lineService.createLine(line);

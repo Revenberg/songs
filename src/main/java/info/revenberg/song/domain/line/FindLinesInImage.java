@@ -213,14 +213,23 @@ public class FindLinesInImage {
     public void saveImages(String path, String filename) throws IOException {
         BufferedImage img;
         for (int i = 0; i < this.getversLines(); i++) {
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             img = this.line(i + 1);
             String filepath = path + "/" + filename + "_" + Integer.toString(i + 1) + ".jpeg";
             ImageDefinition imageDefinition = new ImageDefinition((Integer) i);
+            
+            System.out.println(filepath);
+            
             imageDefinition.setFilename(filepath);
             imageDefinition.setTitle(filename);
             imageDefinition.setImage(img);
             imageDefinitions.put((Integer) i, imageDefinition);
-
+            
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(imageDefinitions);
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            
             save(img, filepath);
         }
     }

@@ -16,11 +16,8 @@ import info.revenberg.song.domain.AuditModel;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(
-        value = {"createdAt", "updatedAt"},
-        allowGetters = true
-)
-public abstract class AuditModel extends ResourceSupport  implements Serializable {
+@JsonIgnoreProperties(value = { "createdAt", "updatedAt" }, allowGetters = true)
+public abstract class AuditModel extends ResourceSupport implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Column(name = "created_at", nullable = false, updatable = false)
@@ -28,7 +25,7 @@ public abstract class AuditModel extends ResourceSupport  implements Serializabl
     @CreationTimestamp
     private Date createdAt;
 
-    //@Column(name = "updated_at", nullable = false)
+    // @Column(name = "updated_at", nullable = false)
     @Column(name = "updated_at", nullable = false)
     @LastModifiedDate
     @UpdateTimestamp
@@ -53,7 +50,7 @@ public abstract class AuditModel extends ResourceSupport  implements Serializabl
     private byte[] toJson(Object r) throws Exception {
         ObjectMapper map = new ObjectMapper();
         return map.writeValueAsString(r).getBytes();
-}
+    }
 
     @Override
     public String toString() {
@@ -61,7 +58,8 @@ public abstract class AuditModel extends ResourceSupport  implements Serializabl
             byte[] r1Json = toJson(this);
             return new String(r1Json);
 
-    } catch (Exception e) {              }
-    return "";
+        } catch (Exception e) {
+        }
+        return "";
     }
 }

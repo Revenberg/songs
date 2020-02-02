@@ -3,6 +3,8 @@ package info.revenberg.song.domain.line;
 import java.awt.image.BufferedImage;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.awt.Color;
 import java.awt.geom.Line2D;
 
@@ -112,5 +114,20 @@ public class ImageDefinition {
 
     public double getMaxX() {
         return this.maxX;
+    }
+    
+    private byte[] toJson(Object r) throws Exception {
+        ObjectMapper map = new ObjectMapper();
+        return map.writeValueAsString(r).getBytes();
+    }
+
+    @Override
+    public String toString() {
+        try {
+            byte[] r1Json = toJson(this);
+            return new String(r1Json);
+
+    } catch (Exception e) {              }
+    return "";
     }
 }

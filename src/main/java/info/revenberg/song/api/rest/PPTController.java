@@ -132,16 +132,10 @@ public class PPTController {
 
 					String[] s1 = temp.split("/");
 					String versName = s1[s1.length - 1];
-					String[] s2 = versName.split("\\.");					
+					String[] s2 = versName.split("\\.");
 					String ext = s2[s2.length - 1];
 					versName = versName.replace("." + ext, "").replace("image", "");
 
-					System.out.println("==========================");
-					System.out.println("==========================");
-					System.out.println(ext);
-					System.out.println(versName);
-					System.out.println("==========================");					
-					
 					// TempFile fileInfo = new TempFile(tFile);
 
 					vers = new Vers();

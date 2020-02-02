@@ -113,7 +113,8 @@ public class PPTController {
 		logger.info(song.toString());
 		String filename = fileService.store(file, uploadLocation);
 
-		String dir_ = file.getOriginalFilename().replace("/", "_").replace(".pptx", "").replace(" ", "_").replace("'","");
+		String dir_ = file.getOriginalFilename().replace("/", "_").replace(".pptx", "").replace(" ", "_").replace("'",
+				"");
 		String dest = unzipLocation + "/" + dir_;
 
 		List<String> t1 = fileService.unzip(file, filename, uploadLocation, dest);
@@ -128,11 +129,17 @@ public class PPTController {
 			if (temp.contains(".png")) {
 				vers = this.versService.findVersInSong(rank, song.getSongid());
 				if (vers == null) {
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					System.out.println("!!!!!!!!!!!!!!!!!!!! start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					System.out.println(temp);
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
 					// tFile = fileService.moveToMedia(mediaLocation, temp, bundleName, songName);
 
 					String[] s1 = temp.split("/");
 					String versName = s1[s1.length - 1];
-					String[] s2 = versName.split("\\.");					
+					String[] s2 = versName.split("\\.");
 					String ext = s2[s2.length - 1];
 					versName = versName.replace("." + ext, "").replace("image", "");
 					versName = Integer.toString((Integer.parseInt(versName) - 1));
@@ -147,7 +154,11 @@ public class PPTController {
 					vers.setSong(song);
 					vers.setRank(rank);
 					vers.setTitle(versName);
-					this.versService.createVers(vers);
+					vers = this.versService.createVers(vers);
+
+					System.out.println("!!!!!!!!!!!!!!!!!!! vers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					System.out.println(vers);
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 					FindLinesInImage result = new FindLinesInImage(temp, mediaLocation, bundleName, songName);
 					// result1.createIMG(1, 3, "41_gezangen.Gz_001");
@@ -156,27 +167,21 @@ public class PPTController {
 
 					for (int j = 0; j < ids.size(); j++) {
 						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
-						System.out.println("########################################################");
 						System.out.println(j);
 						System.out.println("########################################################");
 						ImageDefinition id = ids.get((Integer) j);
 						System.out.println(id.getFilename());
-						System.out.println("########################################################");
-						
-						Line line = new Line(j, songName + " " + id.getTitle(), id.getFilename(), id.getminY(), id.getMaxY(), id.getminX(),
-								id.getMaxX(), vers);
+						System.out.println("#######" + songName + " " + id.getTitle()
+								+ "#################################################");
+
+						Line line = new Line(j, songName + " " + id.getTitle(), id.getFilename(), id.getminY(),
+								id.getMaxY(), id.getminX(), id.getMaxX(), vers);
 
 						line = this.lineService.createLine(line);
 						System.out.println("########################################################");
-						System.out.println(line);						
+						System.out.println(line);
 						System.out.println("########################################################");
-						
+
 					}
 
 					t2.add(result);

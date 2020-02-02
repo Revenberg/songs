@@ -132,6 +132,12 @@ public class PPTController {
 
 					String[] s2 = temp.split("\\.");
 					String ext = s2[s2.length - 1];
+					System.out.println("==========================");
+					System.out.println("==========================");
+					System.out.println(ext);
+					System.out.println(temp.replace("." + ext, ""));
+					System.out.println(temp.replace("." + ext, "").replace("image", ""));
+					System.out.println("==========================");
 					String versName = Integer
 							.toString(Integer.valueOf(temp.replace("." + ext, "").replace("image", "")) - 1);
 

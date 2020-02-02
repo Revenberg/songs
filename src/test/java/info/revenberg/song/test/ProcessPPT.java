@@ -172,6 +172,7 @@ public class ProcessPPT {
     }
 
     public static void main(String[] args) throws Exception {
-        new ProcessPPT("D:/pptx");
+        new ProcessPPT("D:/pptx/test");
+        //new ProcessPPT("D:/pptx");
     }
 }

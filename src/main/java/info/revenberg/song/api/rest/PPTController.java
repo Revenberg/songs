@@ -172,14 +172,17 @@ public class PPTController {
 					System.out.println("!!!!!!!!!!!!!!!!!!! vers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					System.out.println(vers);
 					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
+					
 					FindLinesInImage result = new FindLinesInImage(temp, mediaLocation, bundleName, songName);
 					// result1.createIMG(1, 3, "41_gezangen.Gz_001");
 
 					Map<Integer, ImageDefinition> ids = result.getImageDefinitions();
 
+					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+					System.out.println(ids.size());
+					System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 					for (int j = 0; j < ids.size(); j++) {
-						System.out.println("########################################################");
+						System.out.println("########### ids #############################################");
 						System.out.println(j);
 						System.out.println("########################################################");
 						ImageDefinition id = ids.get((Integer) j);

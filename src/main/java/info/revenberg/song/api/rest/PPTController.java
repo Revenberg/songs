@@ -135,14 +135,7 @@ public class PPTController {
 					String[] s2 = versName.split("\\.");					
 					String ext = s2[s2.length - 1];
 					versName = versName.replace("." + ext, "").replace("image", "");
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-					System.out.println(versName);
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 					versName = Integer.toString((Integer.parseInt(versName) - 1));
-
-					System.out.println(versName);
-					System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 
 					// TempFile fileInfo = new TempFile(tFile);
 
@@ -160,12 +153,28 @@ public class PPTController {
 					// result1.createIMG(1, 3, "41_gezangen.Gz_001");
 
 					for (int j = 0; j < result.getversLines(); j++) {
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println("########################################################");
+						System.out.println(j);
+						System.out.println("########################################################");
 						ImageDefinition id = result.getImageDefinitions().get((Integer) j);
-
+						System.out.println(id);
+						System.out.println("########################################################");
+						
 						Line line = new Line(j, "", id.getFilename(), id.getminY(), id.getMaxY(), id.getminX(),
 								id.getMaxX(), vers);
 
-						this.lineService.createLine(line);
+						line = this.lineService.createLine(line);
+						System.out.println("########################################################");
+						System.out.println(line);						
+						System.out.println("########################################################");
+						
 					}
 
 					t2.add(result);

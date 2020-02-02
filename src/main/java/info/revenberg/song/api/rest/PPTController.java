@@ -127,10 +127,16 @@ public class PPTController {
 
 		for (String temp : t1) {
 			if (temp.contains(".png")) {
+				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				System.out.println("!!!!!!!!!!!!!!!!!!!! start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				vers = this.versService.findVersInSong(rank, song.getSongid());
+				System.out.println(rank);
+				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				System.out.println(song.getSongid());
+				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+				System.out.println(vers);
+				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				if (vers == null) {
-					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-					System.out.println("!!!!!!!!!!!!!!!!!!!! start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					System.out.println(temp);
 					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

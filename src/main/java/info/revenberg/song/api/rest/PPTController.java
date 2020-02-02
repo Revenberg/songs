@@ -159,6 +159,7 @@ public class PPTController {
 					vers.setName(versName);
 					vers.setSong(song);
 					vers.setRank(rank);
+					rank++;
 					vers.setTitle(versName);
 					vers = this.versService.createVers(vers);
 
@@ -193,8 +194,6 @@ public class PPTController {
 					t2.add(result);
 
 					// vers.setLocation(tFile.getAbsolutePath());
-
-					rank++;
 				}
 			}
 		}

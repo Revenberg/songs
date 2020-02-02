@@ -150,18 +150,24 @@ public class PPTController {
 					versName = versName.replace("." + ext, "").replace("image", "");
 					versName = Integer.toString((Integer.parseInt(versName) - 1));
 
+					System.out.println(versName);
 					// TempFile fileInfo = new TempFile(tFile);
 
+					System.out.println("!!!!!!!!!!!!!!!!!!! 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					vers = new Vers();
 					// String[] tokens = fileInfo.getName().split(".");
 					// String versName = tokens[tokens.length - 2];
 
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!! 2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					vers.setName(versName);
 					vers.setSong(song);
 					vers.setRank(rank);
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!! 3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					rank++;
 					vers.setTitle(versName);
-					vers = this.versService.createVers(vers);
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!! 4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					this.versService.createVers(vers);
+					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! 5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 					System.out.println("!!!!!!!!!!!!!!!!!!! vers !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 					System.out.println(vers);
@@ -188,7 +194,6 @@ public class PPTController {
 						System.out.println("########################################################");
 						System.out.println(line);
 						System.out.println("########################################################");
-
 					}
 
 					t2.add(result);

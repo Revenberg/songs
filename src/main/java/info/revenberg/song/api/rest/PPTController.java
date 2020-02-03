@@ -134,8 +134,16 @@ public class PPTController {
 					TempFile fileInfo = new TempFile(tFile);
 					t2.add(fileInfo);
 					vers = new Vers();
-					String[] tokens = fileInfo.getName().split(".");
-					String versName = tokens[tokens.length - 2];
+
+					String[] s1 = temp.split("/");
+					String versName = s1[s1.length - 1];
+					String[] s2 = versName.split("\\.");
+					String ext = s2[s2.length - 1];
+					versName = versName.replace("." + ext, "").replace("image", "");
+					versName = Integer.toString((Integer.parseInt(versName) - 1));
+
+//					String[] tokens = fileInfo.getName().split(".");
+//					String versName = tokens[tokens.length - 2];
 					
 					vers.setName(versName);
 					vers.setSong(song);

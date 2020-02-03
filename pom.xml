@@ -241,7 +241,7 @@
 					<configuration>
 						<jvmArguments>
 							-Xms128m
-							-Xmx1024m
+							-Xmx512m
 						</jvmArguments>
 					</configuration>
 			</plugin>			

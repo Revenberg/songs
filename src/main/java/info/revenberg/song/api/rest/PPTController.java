@@ -76,7 +76,7 @@ public class PPTController {
 			"multipart/form-data" }, produces = { "application/json" })
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(value = "Process Power Point.", notes = "Returns details.")
-	public @ResponseBody List<FindLinesInImage> uploadData(
+	public @ResponseBody List<TempFile> uploadData(
 			@ApiParam(value = "The name of the bundle.", required = true) @PathVariable("bundle") String bundleName,
 			@ApiParam(value = "The name of the song.", required = true) @PathVariable("song") String songName,
 			@RequestPart("file") MultipartFile file) throws Exception {
@@ -119,30 +119,32 @@ public class PPTController {
 
 		List<String> t1 = fileService.unzip(file, filename, uploadLocation, dest);
 
-		List<FindLinesInImage> t2 = new ArrayList<FindLinesInImage>();
-		// File tFile;
+		//List<FindLinesInImage> t2 = new ArrayList<FindLinesInImage>();
+		List<TempFile> t2 = new ArrayList<TempFile>();
+		//File tFile;
 		int rank = 1;
-
+		File tFile;
 		Vers vers;
 
 		for (String temp : t1) {
 			if (temp.contains(".png")) {
-				System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				System.out.println("!!!!!!!!!!!!!!!!!!!! start !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				vers = this.versService.findVersInSong(rank, song.getSongid());
-				System.out.println(rank);
-				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				System.out.println(song.getSongid());
-				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-				System.out.println(vers);
-				System.out.println("!!!!!!!!!!!!!!!!!!!! ---- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 				if (vers == null) {
-					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-					System.out.println(temp);
-					System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
-					// tFile = fileService.moveToMedia(mediaLocation, temp, bundleName, songName);
-
+					tFile = fileService.moveToMedia(mediaLocation, temp, bundleName, songName);
+					TempFile fileInfo = new TempFile(tFile);
+					t2.add(fileInfo);
+					vers = new Vers();
+					String[] tokens = fileInfo.getName().split(".");
+					String versName = tokens[tokens.length - 2];
+					
+					vers.setName(versName);
+					vers.setSong(song);
+					vers.setRank(rank);
+					vers.setTitle(versName);
+					vers.setLocation(tFile.getAbsolutePath());
+					this.versService.createVers(vers);
+					rank++;
+/*
 					String[] s1 = temp.split("/");
 					String versName = s1[s1.length - 1];
 					String[] s2 = versName.split("\\.");
@@ -197,10 +199,10 @@ public class PPTController {
 						System.out.println(line);
 						System.out.println("########################################################");
 					}
-
 					t2.add(result);
 
-					// vers.setLocation(tFile.getAbsolutePath());
+					*/
+				
 				}
 			}
 		}
